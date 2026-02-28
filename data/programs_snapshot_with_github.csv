@@ -1,0 +1,204 @@
+external_id,platform,name,program_link,date_launched,scope_type,github_link_count,github_links
+Code4rena:2026-02-injective-peggy-bridge,Code4rena,Injective Peggy Bridge,https://code4rena.com/audits/2026-02-injective-peggy-bridge,2026-02-25,"smart contract,go",0,
+Code4rena:2026-02-jupiter-lend,Code4rena,Jupiter Lend,https://code4rena.com/audits/2026-02-jupiter-lend,2026-02-12,"smart contract,rust",0,
+HackenProof:1inch-aqua,HackenProof,1inch Aqua,https://hackenproof.com/programs/1inch-aqua,2025-11-17,"other,smart contract,solidity",2,https://github.com/1inch/aqua | https://github.com/1inch/swap-vm
+HackenProof:1inch-business,HackenProof,1inch Business,https://hackenproof.com/programs/1inch-business,2025-06-23,"api,domain",0,
+HackenProof:1inch-infrastructure,HackenProof,1inch Infrastructure,https://hackenproof.com/programs/1inch-infrastructure,2025-06-23,"api,domain",0,
+HackenProof:1inch-wallet,HackenProof,1inch Wallet,https://hackenproof.com/programs/1inch-wallet,2025-06-23,"domain,mobile",0,
+HackenProof:1inch-web,HackenProof,1inch Web,https://hackenproof.com/programs/1inch-web,2025-06-23,domain,9,https://github.com/1inch/calldata-compressor | https://github.com/1inch/cross-chain-swap | https://github.com/1inch/delegating | https://github.com/1inch/farming | https://github.com/1inch/fusion-protocol | https://github.com/1inch/limit-order-protocol | https://github.com/1inch/solana-crosschain-protocol | https://github.com/1inch/solana-fusion | https://github.com/1inch/token-plugins
+HackenProof:adi-foundation-smart-contracts,HackenProof,ADI Foundation Smart Contracts,https://hackenproof.com/programs/adi-foundation-smart-contracts,2025-12-09,"other,smart contract,solidity",3,https://github.com/ADI-Foundation-Labs/ADI-Stack-Contracts/tree/04346d566e7625ae42ec74861da409329f9f4a3d/da-contracts | https://github.com/ADI-Foundation-Labs/ADI-Stack-Contracts/tree/04346d566e7625ae42ec74861da409329f9f4a3d/l1-contracts | https://github.com/ADI-Foundation-Labs/ADI-Stack-Contracts/tree/04346d566e7625ae42ec74861da409329f9f4a3d/l2-contracts
+HackenProof:adi-foundation-zkvm-verification,HackenProof,ADI Foundation zkVM Verification,https://hackenproof.com/programs/adi-foundation-zkvm-verification,2025-12-09,"blockchain-dlt,other,rust,smart contract,solidity",5,https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Prover/tree/4f0cf4cd1a0d7cf48d366135e53da7960b936932 | https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-System/tree/357b836552d72550b20a341e1b45b730bef87806 | https://github.com/ADI-Foundation-Labs/ADI-Stack-Contracts/tree/04346d566e7625ae42ec74861da409329f9f4a3d/l1-contracts/contracts/state-transition | https://github.com/ADI-Foundation-Labs/ADI-Stack-Protocol/tree/767759541cd018e4271f9774f0d760ce727c905d | https://github.com/ADI-Foundation-Labs/ADI-Stack-zkOS-Wrapper/tree/eb75ad8ee972c63a30ef1121a1b9dc79a2942569
+HackenProof:amlbot-web,HackenProof,AMLBot Web,https://hackenproof.com/programs/amlbot-web,2025-12-09,domain,0,
+HackenProof:alphasec-web-and-smart-contracts,HackenProof,AlphaSec Web & Smart Contracts,https://hackenproof.com/programs/alphasec-web-and-smart-contracts,2026-02-05,"domain,smart contract,solidity,wildcard",0,
+HackenProof:arcadia-finance-hack-recovery-program,HackenProof,Arcadia Finance Hack Recovery Program,https://hackenproof.com/programs/arcadia-finance-hack-recovery-program,2026-05-01,,0,
+HackenProof:ascendex-web-and-mobile,HackenProof,AscendEX Web & Mobile,https://hackenproof.com/programs/ascendex-web-and-mobile,2025-04-09,"domain,mobile,wildcard",0,
+HackenProof:astros-smart-contracts,HackenProof,Astros Smart Contracts,https://hackenproof.com/programs/astros-smart-contracts,2025-10-16,"move,other,smart contract",1,https://github.com/naviprotocol/astros-contracts/tree/main/perp_vault
+HackenProof:astros-web,HackenProof,Astros Web,https://hackenproof.com/programs/astros-web,2025-10-09,domain,0,
+HackenProof:bag-labs-web,HackenProof,Bag Labs Web,https://hackenproof.com/programs/bag-labs-web,2025-08-05,domain,0,
+HackenProof:bigone-hack-bounty-program,HackenProof,BigONE Hack Bounty Program,https://hackenproof.com/programs/bigone-hack-bounty-program,2026-05-01,,0,
+HackenProof:bitkan-web-and-mobile,HackenProof,BitKan Web & Mobile,https://hackenproof.com/programs/bitkan-web-and-mobile,2026-06-01,"domain,mobile,wildcard",0,
+HackenProof:bitkub-blockchain-technology,HackenProof,Bitkub Blockchain Technology,https://hackenproof.com/programs/bitkub-blockchain-technology,2025-08-08,"api,domain,mobile",0,
+HackenProof:bitkub-capital-group-holdings,HackenProof,Bitkub Capital Group Holdings,https://hackenproof.com/programs/bitkub-capital-group-holdings,2025-10-28,domain,0,
+HackenProof:bitmart-post-incident-forensics-bounty-hunt,HackenProof,Bitmart Post-Incident Forensics Bounty Hunt,https://hackenproof.com/programs/bitmart-post-incident-forensics-bounty-hunt,2026-05-01,,0,
+HackenProof:blockchain-dot-com,HackenProof,Blockchain.com Web & Mobile,https://hackenproof.com/programs/blockchain-dot-com,2025-04-15,"api,domain,mobile",0,
+HackenProof:bluefin-coin-contracts,HackenProof,Bluefin Coin Contracts,https://hackenproof.com/programs/bluefin-coin-contracts,2025-06-13,"move,other,smart contract",0,
+HackenProof:bluefin-dex-contracts,HackenProof,Bluefin Dex Contracts,https://hackenproof.com/programs/bluefin-dex-contracts,2025-09-02,"move,other,smart contract",1,https://github.com/hackenproof-public/bluefin-dex-contracts-v3
+HackenProof:btcturk-hack-recovery-program,HackenProof,BtcTurk Hack Recovery Program,https://hackenproof.com/programs/btcturk-hack-recovery-program,2026-05-01,,0,
+HackenProof:bucket-protocol-smart-contracts,HackenProof,Bucket Protocol Smart Contracts,https://hackenproof.com/programs/bucket-protocol-smart-contracts,2025-08-29,"move,other,smart contract",1,https://github.com/hackenproof-public/bucket-protocol
+HackenProof:cex-dot-io-web-and-mobile,HackenProof,CEX.IO Web & Mobile,https://hackenproof.com/programs/cex-dot-io-web-and-mobile,2026-01-19,"domain,mobile",0,
+HackenProof:calyx-smart-contract,HackenProof,Calyx Smart Contract,https://hackenproof.com/programs/calyx-smart-contract,2025-10-03,"other,rust,smart contract",1,https://github.com/aurora-is-near/aurora-launchpad-contracts/tree/0.7.0/contract
+HackenProof:celestia,HackenProof,Celestia,https://hackenproof.com/programs/celestia,2025-03-26,"blockchain-dlt,go,other,smart contract",10,https://github.com/celestiaorg/celestia-app | https://github.com/celestiaorg/celestia-core | https://github.com/celestiaorg/celestia-node | https://github.com/celestiaorg/go-fraud | https://github.com/celestiaorg/go-header | https://github.com/celestiaorg/go-square | https://github.com/celestiaorg/nmt | https://github.com/celestiaorg/rsmt2d | https://github.com/klauspost/reedsolomon | https://github.com/succinctlabs/sp1-blobstream
+HackenProof:cetus-smart-contracts,HackenProof,Cetus Smart Contracts,https://hackenproof.com/programs/cetus-smart-contracts,2025-07-07,"move,other,smart contract",2,https://github.com/CetusProtocol/cetus-contracts | https://github.com/hackenproof-public/cetus-clmm
+HackenProof:citrea-protocol-and-smart-contracts,HackenProof,Citrea Protocol & Smart Contracts,https://hackenproof.com/programs/citrea-protocol-and-smart-contracts,2026-01-28,"blockchain-dlt,domain,other,rust,smart contract,solidity",3,https://github.com/chainwayxyz/citrea | https://github.com/chainwayxyz/clementine | https://github.com/chainwayxyz/clementine-cli
+HackenProof:citrea-web-and-apps,HackenProof,Citrea Web & Apps,https://hackenproof.com/programs/citrea-web-and-apps,2026-01-28,domain,0,
+HackenProof:coinmetro-exchange,HackenProof,CoinMetro Exchange,https://hackenproof.com/programs/coinmetro-exchange,2021-04-28,"domain,wildcard",0,
+HackenProof:cube-exchange-web,HackenProof,Cube Exchange Web,https://hackenproof.com/programs/cube-exchange-web,2025-03-13,"domain,wildcard",0,
+HackenProof:dexx-web-and-mobile,HackenProof,DEXX Web & Mobile,https://hackenproof.com/programs/dexx-web-and-mobile,2025-02-26,"domain,mobile",0,
+HackenProof:deepfi-games,HackenProof,DeepFi Games,https://hackenproof.com/programs/deepfi-games,2026-04-01,domain,0,
+HackenProof:deepfi-trade,HackenProof,DeepFi Trade,https://hackenproof.com/programs/deepfi-trade,2026-04-01,domain,0,
+HackenProof:doubleup-smart-contracts,HackenProof,DoubleUp Smart Contracts,https://hackenproof.com/programs/doubleup-smart-contracts,2026-03-01,"domain,move,smart contract",0,
+HackenProof:doubleup-web,HackenProof,DoubleUp Web,https://hackenproof.com/programs/doubleup-web,2026-03-01,"domain,wildcard",0,
+HackenProof:ember-vaults-smart-contracts,HackenProof,Ember Vaults Smart Contracts,https://hackenproof.com/programs/ember-vaults-smart-contracts,2025-10-06,"move,other,smart contract",1,https://github.com/hackenproof-public/ember-vaults
+HackenProof:fmcpay-web-and-mobile,HackenProof,FMCPAY Web & Mobile,https://hackenproof.com/programs/fmcpay-web-and-mobile,2026-08-01,"domain,mobile",0,
+HackenProof:flipster-web-and-mobile,HackenProof,Flipster Web & Mobile,https://hackenproof.com/programs/flipster-web-and-mobile,2025-05-22,"api,domain,mobile",0,
+HackenProof:flow-protocol,HackenProof,Flow Protocol,https://hackenproof.com/programs/flow-protocol,2025-05-08,"blockchain-dlt,go,other,smart contract",7,https://github.com/onflow/atree | https://github.com/onflow/cadence | https://github.com/onflow/ccf | https://github.com/onflow/crypto | https://github.com/onflow/flow-core-contracts | https://github.com/onflow/flow-evm-bridge | https://github.com/onflow/flow-go
+HackenProof:flow-wallet,HackenProof,Flow Wallet,https://hackenproof.com/programs/flow-wallet,2026-06-01,"domain,mobile",0,
+HackenProof:flow-web,HackenProof,Flow Web,https://hackenproof.com/programs/flow-web,2025-05-08,"domain,wildcard",0,
+HackenProof:flowx-clmm-smart-contracts,HackenProof,FlowX CLMM Smart Contracts,https://hackenproof.com/programs/flowx-clmm-smart-contracts,2025-10-06,"move,other,smart contract",1,https://github.com/hackenproof-public/flowx-clmm
+HackenProof:gmgn-web-and-mobile,HackenProof,GMGN Web & Mobile,https://hackenproof.com/programs/gmgn-web-and-mobile,2025-03-17,"domain,mobile,wildcard",0,
+HackenProof:gate-us,HackenProof,Gate US,https://hackenproof.com/programs/gate-us,2026-01-13,domain,0,
+HackenProof:gear-protocol,HackenProof,Gear Protocol,https://hackenproof.com/programs/gear-protocol,2025-03-13,"blockchain-dlt,other,rust",1,https://github.com/gear-tech/gear/tree/master/core
+HackenProof:grovex-web-and-mobile,HackenProof,GroveX Web & Mobile,https://hackenproof.com/programs/grovex-web-and-mobile,2025-05-30,"domain,mobile,wildcard",0,
+HackenProof:haedal-smart-contracts,HackenProof,Haedal Smart Contracts,https://hackenproof.com/programs/haedal-smart-contracts,2025-08-25,"move,other,smart contract",2,https://github.com/hackenproof-public/hasui-bug-bounty | https://github.com/hackenproof-public/hawal-bug-bounty
+HackenProof:kcex,HackenProof,KCEX,https://hackenproof.com/programs/kcex,2025-05-29,"domain,mobile",0,
+HackenProof:kub-chain-and-ecosystem,HackenProof,KUB Chain & Ecosystem,https://hackenproof.com/programs/kub-chain-and-ecosystem,2025-08-08,"blockchain-dlt,domain,other,smart contract",1,https://github.com/kub-chain/bkc
+HackenProof:kai-finance-yield-protocol,HackenProof,Kai Finance Yield Protocol,https://hackenproof.com/programs/kai-finance-yield-protocol,2025-09-02,"move,other,smart contract",2,https://github.com/kunalabs-io/sui-smart-contracts/tree/master/access-management | https://github.com/kunalabs-io/sui-smart-contracts/tree/master/kai/leverage/core
+HackenProof:kaia-protocol,HackenProof,Kaia Protocol,https://hackenproof.com/programs/kaia-protocol,2025-11-25,"blockchain-dlt,go,other,solidity",1,https://github.com/kaiachain/kaia
+HackenProof:layer3-web,HackenProof,Layer3 Web,https://hackenproof.com/programs/layer3-web,2025-08-05,domain,1,https://github.com/layer3xyz/cubes/blob/main/src/escrow/Factory.sol
+HackenProof:levex-web-and-mobile,HackenProof,LeveX Web & Mobile,https://hackenproof.com/programs/levex-web-and-mobile,2025-03-31,"domain,mobile,wildcard",0,
+HackenProof:meest-poshta-mobile,HackenProof,Meest Poshta Mobile,https://hackenproof.com/programs/meest-poshta-mobile,2026-05-01,"domain,mobile",0,
+HackenProof:momentum-smart-contracts,HackenProof,Momentum Smart Contracts,https://hackenproof.com/programs/momentum-smart-contracts,2025-10-08,"move,other,smart contract",1,https://github.com/hackenproof-public/mmt-v3-core
+HackenProof:monday-trade-web,HackenProof,Monday Trade Web,https://hackenproof.com/programs/monday-trade-web,2026-01-19,domain,0,
+HackenProof:multipli-smart-contracts,HackenProof,Multipli Smart Contracts,https://hackenproof.com/programs/multipli-smart-contracts,2026-02-24,"blockchain-dlt,domain,other,smart contract,solidity",0,
+HackenProof:multipli-web,HackenProof,Multipli Web,https://hackenproof.com/programs/multipli-web,2026-02-24,"domain,wildcard",0,
+HackenProof:mybucks-dot-online-wallet-cracking-challenge,HackenProof,Mybucks.online Wallet Cracking Challenge,https://hackenproof.com/programs/mybucks-dot-online-wallet-cracking-challenge,2026-02-03,"domain,javascript",0,
+HackenProof:navi-protocol,HackenProof,NAVI Protocol,https://hackenproof.com/programs/navi-protocol,2025-10-16,"move,other,smart contract",2,https://github.com/naviprotocol/navi-smart-contracts/tree/main/lending_core | https://github.com/naviprotocol/navi-smart-contracts/tree/main/oracle
+HackenProof:navi-protocol-web,HackenProof,NAVI Protocol Web,https://hackenproof.com/programs/navi-protocol-web,2025-10-16,domain,0,
+HackenProof:near-intents-sdk,HackenProof,NEAR Intents: SDK,https://hackenproof.com/programs/near-intents-sdk,2026-02-10,"blockchain-dlt,domain,javascript,other,typescript",1,https://github.com/defuse-protocol/sdk-monorepo
+HackenProof:near-intents-smart-contracts,HackenProof,NEAR Intents: Smart Contracts,https://hackenproof.com/programs/near-intents-smart-contracts,2025-09-08,"blockchain-dlt,other,rust,smart contract",1,https://github.com/near/intents
+HackenProof:noya-dot-ai-smart-contracts,HackenProof,NOYA.ai Smart Contracts,https://hackenproof.com/programs/noya-dot-ai-smart-contracts,2026-05-01,"other,smart contract,solidity",1,https://github.com/Noya-ai/noya-JUL-2025-audit-scope
+HackenProof:nado-smart-contracts,HackenProof,Nado Smart Contracts,https://hackenproof.com/programs/nado-smart-contracts,2025-11-17,"other,smart contract,solidity",1,https://github.com/nadohq/nado-contracts
+HackenProof:nado-web,HackenProof,Nado Web,https://hackenproof.com/programs/nado-web,2025-11-17,domain,0,
+HackenProof:nicehash-mining-platform,HackenProof,NiceHash Mining platform,https://hackenproof.com/programs/nicehash-mining-platform,2023-06-22,"api,domain,mobile,other",0,
+HackenProof:noones-web-and-mobile,HackenProof,NoOnes Web & Mobile,https://hackenproof.com/programs/noones-web-and-mobile,2025-07-17,domain,0,
+HackenProof:nonkyc-dot-io,HackenProof,NonKyc.io,https://hackenproof.com/programs/nonkyc-dot-io,2025-07-08,"api,domain,mobile",0,
+HackenProof:ofza-web,HackenProof,OFZA Web,https://hackenproof.com/programs/ofza-web,2025-08-13,"domain,wildcard",0,
+HackenProof:parity-polkadot-release-infrastructure,HackenProof,Parity Polkadot Release Infrastructure,https://hackenproof.com/programs/parity-polkadot-release-infrastructure,2025-02-23,"domain,other,rust",0,
+HackenProof:phemex-web-and-mobile,HackenProof,Phemex Web & Mobile,https://hackenproof.com/programs/phemex-web-and-mobile,2025-11-13,"domain,mobile,wildcard",0,
+HackenProof:rtree-finance-web,HackenProof,Rtree Finance Web,https://hackenproof.com/programs/rtree-finance-web,2026-06-01,"domain,wildcard",0,
+HackenProof:sg-forge-smart-contracts,HackenProof,SG Forge Smart Contracts,https://hackenproof.com/programs/sg-forge-smart-contracts,2026-04-01,"domain,other,smart contract,solidity",1,https://github.com/castframework/smartcoin
+HackenProof:stbl-smart-contracts,HackenProof,STBL Smart Contracts,https://hackenproof.com/programs/stbl-smart-contracts,2025-10-16,"domain,smart contract,solidity",0,
+HackenProof:stbl-web,HackenProof,STBL Web,https://hackenproof.com/programs/stbl-web,2025-10-16,"domain,wildcard",0,
+HackenProof:ston-dot-fi-dex-smart-contracts-v2,HackenProof,STON.fi DEX Smart Contracts v2,https://hackenproof.com/programs/ston-dot-fi-dex-smart-contracts-v2,2025-04-22,"other,smart contract",5,https://github.com/ston-fi/dex-core-v2/blob/main/contracts/lp_account.fc | https://github.com/ston-fi/dex-core-v2/blob/main/contracts/lp_wallet.fc | https://github.com/ston-fi/dex-core-v2/blob/main/contracts/pool.fc | https://github.com/ston-fi/dex-core-v2/blob/main/contracts/router.fc | https://github.com/ston-fi/dex-core-v2/blob/main/contracts/vault.fc
+HackenProof:scallop-protocol-smart-contract,HackenProof,Scallop Protocol (Smart Contract),https://hackenproof.com/programs/scallop-protocol-smart-contract,2025-03-05,"blockchain-dlt,move,other,smart contract",1,https://github.com/scallop-io/sui-lending-protocol
+HackenProof:snowbridge-on-chain-code,HackenProof,Snowbridge On-Chain Code,https://hackenproof.com/programs/snowbridge-on-chain-code,2025-09-11,"other,rust,smart contract,solidity",2,https://github.com/Snowfork/snowbridge/tree/1832f1ab840c257cac061e21926b65c93c43853c/contracts | https://github.com/paritytech/polkadot-sdk/tree/master/bridges/snowbridge
+HackenProof:snowbridge-web,HackenProof,Snowbridge Web,https://hackenproof.com/programs/snowbridge-web,2025-09-11,"domain,other",0,
+HackenProof:solv-smart-contracts,HackenProof,Solv Smart Contracts,https://hackenproof.com/programs/solv-smart-contracts,2026-01-15,"other,rust,smart contract",1,https://github.com/solv-finance/SolvBTC-Solana-Contract/tree/4c8f194bb4c42faa617af820ed22e24b685feafb
+HackenProof:solv-web-and-infrastructure,HackenProof,Solv Web & Infrastructure,https://hackenproof.com/programs/solv-web-and-infrastructure,2025-12-29,"api,domain,wildcard",0,
+HackenProof:swap-dot-io-smart-contracts,HackenProof,Swap.io Smart Contracts,https://hackenproof.com/programs/swap-dot-io-smart-contracts,2025-03-17,"other,rust,smart contract",43,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/error.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/collect_fund_fee.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/collect_protocol_fee.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/create_operation_account.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/mod.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/transfer_reward_owner.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/update_amm_config.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/update_operation_account.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/update_pool_status.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/close_position.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/collect_remaining_rewards.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/create_pool.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/decrease_liquidity.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/increase_liquidity.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/initialize_reward.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/mod.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/open_position.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/set_reward_params.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/swap.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/swap_router_base_in.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/update_reward_info.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/lib.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/big_num.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/fixed_point_64.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/full_math.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/liquidity_math.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/mod.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/sqrt_price_math.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/swap_math.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/tick_array_bit_map.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/tick_math.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/unsafe_math.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/config.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/mod.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/operation_account.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/oracle.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/personal_position.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/pool.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/protocol_position.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/tick_array.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/util/mod.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/util/system.rs | https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/util/token.rs
+HackenProof:sweed-web,HackenProof,Sweed Web,https://hackenproof.com/programs/sweed-web,2025-09-09,domain,0,
+HackenProof:synfutures-dapp,HackenProof,SynFutures dApp,https://hackenproof.com/programs/synfutures-dapp,2025-06-17,domain,0,
+HackenProof:tapbit-web-and-mobile,HackenProof,Tapbit Web & Mobile,https://hackenproof.com/programs/tapbit-web-and-mobile,2025-06-25,"domain,mobile",0,
+HackenProof:the-sandbox-public-infrastructure,HackenProof,The Sandbox Public Infrastructure,https://hackenproof.com/programs/the-sandbox-public-infrastructure,2025-05-22,"domain,wildcard",0,
+HackenProof:the-sandbox-smart-contracts,HackenProof,The Sandbox Smart Contracts,https://hackenproof.com/programs/the-sandbox-smart-contracts,2025-05-22,"domain,smart contract,solidity",0,
+HackenProof:turbos-finance-smart-contracts,HackenProof,Turbos Finance Smart Contracts,https://hackenproof.com/programs/turbos-finance-smart-contracts,2025-09-17,"move,other,smart contract",1,https://github.com/hackenproof-public/turbos-clmm-public
+HackenProof:volo-smart-contracts,HackenProof,Volo Smart Contracts,https://hackenproof.com/programs/volo-smart-contracts,2025-10-16,"move,other,smart contract",1,https://github.com/Sui-Volo/volo-smart-contracts
+HackenProof:volo-web,HackenProof,Volo Web,https://hackenproof.com/programs/volo-web,2025-10-16,domain,0,
+HackenProof:walrus-smart-contracts,HackenProof,Walrus Smart Contracts,https://hackenproof.com/programs/walrus-smart-contracts,2025-03-27,"move,other,rust,smart contract",2,https://github.com/MystenLabs/walrus/tree/main/contracts | https://github.com/MystenLabs/walrus/tree/main/crates/walrus-core
+HackenProof:whitechain-bridge,HackenProof,Whitechain Bridge,https://hackenproof.com/programs/whitechain-bridge,2025-12-29,"other,smart contract,solidity",1,https://github.com/whitechain-labs/bridge-contracts
+HackenProof:zo-finance-smart-contracts,HackenProof,ZO Finance Smart Contracts,https://hackenproof.com/programs/zo-finance-smart-contracts,2026-06-01,"move,other,smart contract",2,https://github.com/zofinance/zo-contracts-public | https://github.com/zofinance/zo-contracts-usdz-public
+HackenProof:zo-finance-web,HackenProof,ZO Finance Web,https://hackenproof.com/programs/zo-finance-web,2026-06-01,"domain,wildcard",0,
+HackenProof:zetachain-blockchain-software,HackenProof,ZetaChain Blockchain Software,https://hackenproof.com/programs/zetachain-blockchain-software,2026-06-01,"blockchain-dlt,go,other",3,https://github.com/zeta-chain/go-tss | https://github.com/zeta-chain/node | https://github.com/zeta-chain/tss-lib
+HackenProof:zetachain-smart-contracts,HackenProof,ZetaChain Smart Contracts,https://hackenproof.com/programs/zetachain-smart-contracts,2026-06-01,"blockchain-dlt,other,smart contract,solidity",0,
+HackenProof:zoomex-web-and-mobile,HackenProof,Zoomex Web & Mobile,https://hackenproof.com/programs/zoomex-web-and-mobile,2025-06-27,"domain,mobile",0,
+Immunefi:0x,Immunefi,0x,https://immunefi.com/bug-bounty/0x/information/,2024-07-30,"smart contract,domain,solidity",0,
+Immunefi:agni,Immunefi,AGNI,https://immunefi.com/bug-bounty/agni/information/,2026-02-18,smart contract,0,
+Immunefi:aleo,Immunefi,Aleo,https://immunefi.com/bug-bounty/aleo/information/,2025-11-24,blockchain-dlt,0,
+Immunefi:alpen-labs,Immunefi,Alpen Labs,https://immunefi.com/bug-bounty/alpen-labs/information/,2025-07-09,"smart contract,domain",0,
+Immunefi:arkadiko,Immunefi,Arkadiko,https://immunefi.com/bug-bounty/arkadiko/information/,2024-06-03,"smart contract,domain,clarity",0,
+Immunefi:aspida,Immunefi,Aspida,https://immunefi.com/bug-bounty/aspida/information/,2024-02-21,"smart contract,domain",0,
+Immunefi:aster,Immunefi,Aster,https://immunefi.com/bug-bounty/aster/information/,2025-04-16,"smart contract,domain",0,
+Immunefi:avalabs,Immunefi,Ava Labs,https://immunefi.com/bug-bounty/avalabs/information/,2023-12-04,"domain,go,javascript,solidity",0,
+Immunefi:avail,Immunefi,Avail,https://immunefi.com/bug-bounty/avail/information/,2024-07-23,"smart contract,domain,solidity",0,
+Immunefi:babylon-labs,Immunefi,Babylon Labs,https://immunefi.com/bug-bounty/babylon-labs/information/,2024-09-16,"domain,blockchain-dlt,go,typescript,javascript,rust",0,
+Immunefi:berachain,Immunefi,Berachain,https://immunefi.com/bug-bounty/berachain/information/,2025-02-06,"blockchain-dlt,smart contract,go,solidity,rust",0,
+Immunefi:berachain-webapps,Immunefi,Berachain (Web/Apps),https://immunefi.com/bug-bounty/berachain-webapps/information/,2025-03-18,domain,0,
+Immunefi:bitflow,Immunefi,Bitflow,https://immunefi.com/bug-bounty/bitflow/information/,2025-11-26,"smart contract,domain,clarity",0,
+Immunefi:capyfi,Immunefi,CapyFi,https://immunefi.com/bug-bounty/capyfi/information/,2025-11-19,"smart contract,domain",0,
+Immunefi:cardanofoundation,Immunefi,Cardano Foundation,https://immunefi.com/bug-bounty/cardanofoundation/information/,2024-03-28,domain,0,
+Immunefi:compoundfinance,Immunefi,Compound Finance,https://immunefi.com/bug-bounty/compoundfinance/information/,2024-12-11,"smart contract,solidity",0,
+Immunefi:coreum,Immunefi,Coreum,https://immunefi.com/bug-bounty/coreum/information/,2023-12-20,"blockchain-dlt,go,rust",0,
+Immunefi:daimo-pay,Immunefi,Daimo Pay,https://immunefi.com/bug-bounty/daimo-pay/information/,2025-06-06,"smart contract,solidity",0,
+Immunefi:dexeprotocol,Immunefi,DeXe Protocol,https://immunefi.com/bug-bounty/dexeprotocol/information/,2024-01-23,"smart contract,python,typescript,go",1,https://github.com/dexe-network/DeXe-Protocol/tree/master/contracts
+Immunefi:ens,Immunefi,ENS,https://immunefi.com/bug-bounty/ens/information/,2024-05-10,"smart contract,domain,solidity",0,
+Immunefi:ensuro,Immunefi,Ensuro,https://immunefi.com/bug-bounty/ensuro/information/,2024-01-11,"smart contract,solidity",0,
+Immunefi:enzyme-onyx,Immunefi,Enzyme Onyx,https://immunefi.com/bug-bounty/enzyme-onyx/information/,2025-09-04,"smart contract,solidity",0,
+Immunefi:ethena,Immunefi,Ethena,https://immunefi.com/bug-bounty/ethena/information/,2024-04-04,"smart contract,domain",0,
+Immunefi:etherfi,Immunefi,Ether.fi,https://immunefi.com/bug-bounty/etherfi/information/,2024-03-27,"smart contract,domain,solidity",0,
+Immunefi:exodus,Immunefi,Exodus,https://immunefi.com/bug-bounty/exodus/information/,2025-12-30,domain,0,
+Immunefi:fbtc,Immunefi,FBTC,https://immunefi.com/bug-bounty/fbtc/information/,2024-12-19,smart contract,0,
+Immunefi:foil,Immunefi,FOIL,https://immunefi.com/bug-bounty/foil/information/,2025-04-23,"smart contract,domain",0,
+Immunefi:farcaster,Immunefi,Farcaster,https://immunefi.com/bug-bounty/farcaster/information/,2025-06-18,domain,0,
+Immunefi:felix,Immunefi,Felix,https://immunefi.com/bug-bounty/felix/information/,2025-10-02,smart contract,0,
+Immunefi:firedancer,Immunefi,Firedancer,https://immunefi.com/bug-bounty/firedancer/information/,2024-09-18,"blockchain-dlt,rust,c++",0,
+Immunefi:floe-labs,Immunefi,Floe Labs,https://immunefi.com/bug-bounty/floe-labs/information/,2026-01-16,"domain,smart contract",0,
+Immunefi:gogopool,Immunefi,GoGoPool,https://immunefi.com/bug-bounty/gogopool/information/,2024-01-08,smart contract,0,
+Immunefi:granite-protocol,Immunefi,Granite Protocol,https://immunefi.com/bug-bounty/granite-protocol/information/,2025-02-26,"smart contract,domain,clarity",0,
+Immunefi:haven1,Immunefi,Haven1,https://immunefi.com/bug-bounty/haven1/information/,2025-04-30,smart contract,0,
+Immunefi:hedera,Immunefi,Hedera,https://immunefi.com/bug-bounty/hedera/information/,2025-02-05,blockchain-dlt,0,
+Immunefi:hermetica,Immunefi,Hermetica,https://immunefi.com/bug-bounty/hermetica/information/,2026-02-12,"smart contract,domain",0,
+Immunefi:hibachi,Immunefi,Hibachi,https://immunefi.com/bug-bounty/hibachi/information/,2025-01-08,domain,0,
+Immunefi:hourglass,Immunefi,Hourglass,https://immunefi.com/bug-bounty/hourglass/information/,2024-11-26,"smart contract,domain",0,
+Immunefi:intmax,Immunefi,INTMAX,https://immunefi.com/bug-bounty/intmax/information/,2025-05-25,"blockchain-dlt,smart contract",0,
+Immunefi:immutable,Immunefi,Immutable,https://immunefi.com/bug-bounty/immutable/information/,2025-06-10,smart contract,0,
+Immunefi:impossible-cloud-network,Immunefi,Impossible Cloud Network,https://immunefi.com/bug-bounty/impossible-cloud-network/information/,2025-09-09,smart contract,0,
+Immunefi:injective,Immunefi,Injective,https://immunefi.com/bug-bounty/injective/information/,2025-07-21,"domain,smart contract,blockchain-dlt",0,
+Immunefi:jito,Immunefi,Jito,https://immunefi.com/bug-bounty/jito/information/,2024-08-28,"smart contract,blockchain-dlt,rust,solidity,javascript,typescript,python",0,
+Immunefi:jito-bam-client,Immunefi,Jito - BAM Client,https://immunefi.com/bug-bounty/jito-bam-client/information/,2025-10-22,"blockchain-dlt,rust",0,
+Immunefi:kamino,Immunefi,Kamino,https://immunefi.com/bug-bounty/kamino/information/,2025-10-06,"smart contract,domain",0,
+Immunefi:katana,Immunefi,Katana,https://immunefi.com/bug-bounty/katana/information/,2026-02-11,smart contract,0,
+Immunefi:kelp-dao,Immunefi,Kelp DAO,https://immunefi.com/bug-bounty/kelp-dao/information/,2024-08-02,"smart contract,domain",0,
+Immunefi:kiln-webapp,Immunefi,Kiln (dApp/Infra),https://immunefi.com/bug-bounty/kiln-webapp/information/,2025-10-30,domain,0,
+Immunefi:kiln-defi,Immunefi,Kiln DeFi,https://immunefi.com/bug-bounty/kiln-defi/information/,2024-09-25,"smart contract,go,typescript,solidity,python,c++",0,
+Immunefi:kiln-on-chain-v1,Immunefi,Kiln On-Chain v1,https://immunefi.com/bug-bounty/kiln-on-chain-v1/information/,2024-10-01,"smart contract,solidity",0,
+Immunefi:kleidi,Immunefi,Kleidi,https://immunefi.com/bug-bounty/kleidi/information/,2026-02-13,smart contract,0,
+Immunefi:light-protocol,Immunefi,Light Protocol,https://immunefi.com/bug-bounty/light-protocol/information/,2024-09-12,smart contract,0,
+Immunefi:lombard-finance,Immunefi,Lombard Finance,https://immunefi.com/bug-bounty/lombard-finance/information/,2024-09-04,"smart contract,domain",0,
+Immunefi:merchant-moe,Immunefi,Merchant Moe,https://immunefi.com/bug-bounty/merchant-moe/information/,2026-01-30,"smart contract,solidity",0,
+Immunefi:nftfitestnetrefi,Immunefi,NFTfi (Testnet Refi),https://immunefi.com/bug-bounty/nftfitestnetrefi/information/,2024-01-17,"smart contract,solidity",0,
+Immunefi:neutron,Immunefi,Neutron,https://immunefi.com/bug-bounty/neutron/information/,2024-07-02,"smart contract,blockchain-dlt,go,rust",0,
+Immunefi:notional-exponent,Immunefi,Notional Exponent,https://immunefi.com/bug-bounty/notional-exponent/information/,2026-01-16,smart contract,0,
+Immunefi:nucleus,Immunefi,Nucleus,https://immunefi.com/bug-bounty/nucleus/information/,2024-12-05,"smart contract,solidity",0,
+Immunefi:ofza-1,Immunefi,OFZA,https://immunefi.com/bug-bounty/ofza-1/information/,2025-06-18,domain,0,
+Immunefi:oasis,Immunefi,Oasis,https://immunefi.com/bug-bounty/oasis/information/,2024-02-20,"domain,blockchain-dlt",0,
+Immunefi:openzeppelin-stellar,Immunefi,OpenZeppelin on Stellar,https://immunefi.com/bug-bounty/openzeppelin-stellar/information/,2025-05-08,smart contract,0,
+Immunefi:orderlynetwork,Immunefi,Orderly Network,https://immunefi.com/bug-bounty/orderlynetwork/information/,2024-02-27,"smart contract,domain,solidity",0,
+Immunefi:ostium,Immunefi,Ostium,https://immunefi.com/bug-bounty/ostium/information/,2025-04-30,domain,0,
+Immunefi:paradex,Immunefi,Paradex,https://immunefi.com/bug-bounty/paradex/information/,2025-08-22,"domain,smart contract",0,
+Immunefi:parallel,Immunefi,Parallel,https://immunefi.com/bug-bounty/parallel/information/,2025-10-02,"smart contract,domain,javascript,solidity,typescript,go",0,
+Immunefi:polymarket,Immunefi,Polymarket,https://immunefi.com/bug-bounty/polymarket/information/,2024-04-22,"smart contract,domain",0,
+Immunefi:pythnetwork,Immunefi,Pyth Network,https://immunefi.com/bug-bounty/pythnetwork/information/,2024-06-24,"smart contract,domain",0,
+Immunefi:renzoprotocol,Immunefi,Renzo Protocol,https://immunefi.com/bug-bounty/renzoprotocol/information/,2023-12-14,"smart contract,domain,javascript,solidity",0,
+Immunefi:resolv,Immunefi,Resolv,https://immunefi.com/bug-bounty/resolv/information/,2025-03-31,"domain,smart contract",0,
+Immunefi:rootstocklabs,Immunefi,RootstockLabs,https://immunefi.com/bug-bounty/rootstocklabs/information/,2026-02-10,"blockchain-dlt,smart contract,domain",0,
+Immunefi:royco,Immunefi,Royco Dawn,https://immunefi.com/bug-bounty/royco/information/,2026-02-17,"smart contract,domain",0,
+Immunefi:segmentfinance,Immunefi,Segment Finance,https://immunefi.com/bug-bounty/segmentfinance/information/,2024-02-16,"smart contract,solidity",0,
+Immunefi:stackingdao,Immunefi,StackingDAO,https://immunefi.com/bug-bounty/stackingdao/information/,2024-02-04,"smart contract,domain,clarity",0,
+Immunefi:stakestone,Immunefi,StakeStone,https://immunefi.com/bug-bounty/stakestone/information/,2024-09-12,"smart contract,solidity",0,
+Immunefi:stargate,Immunefi,Stargate,https://immunefi.com/bug-bounty/stargate/information/,2024-09-24,"smart contract,solidity",0,
+Immunefi:starknet-staking,Immunefi,Starknet Staking,https://immunefi.com/bug-bounty/starknet-staking/information/,2024-11-19,smart contract,0,
+Immunefi:teahousefinance,Immunefi,Teahouse Finance,https://immunefi.com/bug-bounty/teahousefinance/information/,2024-01-10,"smart contract,solidity",0,
+Immunefi:templar-protocol,Immunefi,Templar Protocol,https://immunefi.com/bug-bounty/templar-protocol/information/,2025-10-27,"smart contract,rust",0,
+Immunefi:termstructurelabs,Immunefi,TermMax,https://immunefi.com/bug-bounty/termstructurelabs/information/,2024-06-12,"smart contract,domain,solidity",0,
+Immunefi:twyne,Immunefi,Twyne,https://immunefi.com/bug-bounty/twyne/information/,2026-01-16,"smart contract,solidity",0,
+Immunefi:usdn,Immunefi,USDN,https://immunefi.com/bug-bounty/usdn/information/,2025-04-21,smart contract,0,
+Immunefi:usdt0,Immunefi,USDT0,https://immunefi.com/bug-bounty/usdt0/information/,2025-01-30,"smart contract,typescript,solidity",0,
+Immunefi:usx,Immunefi,USX,https://immunefi.com/bug-bounty/usx/information/,2025-11-17,"smart contract,domain,solidity",0,
+Immunefi:uniswaponzksync,Immunefi,Uniswap on zkSync,https://immunefi.com/bug-bounty/uniswaponzksync/information/,2023-12-11,"smart contract,solidity",0,
+Immunefi:veda,Immunefi,Veda,https://immunefi.com/bug-bounty/veda/information/,2026-01-21,smart contract,0,
+Immunefi:velvetcapital,Immunefi,Velvet Capital,https://immunefi.com/bug-bounty/velvetcapital/information/,2023-12-15,smart contract,0,
+Immunefi:velvet-capital-v2,Immunefi,Velvet Capital V2,https://immunefi.com/bug-bounty/velvet-capital-v2/information/,2024-09-05,smart contract,0,
+Immunefi:vesu,Immunefi,Vesu,https://immunefi.com/bug-bounty/vesu/information/,2024-07-10,"smart contract,cairo",0,
+Immunefi:wildcatprotocol,Immunefi,Wildcat Protocol,https://immunefi.com/bug-bounty/wildcatprotocol/information/,2023-12-27,"smart contract,solidity",0,
+Immunefi:xion,Immunefi,XION,https://immunefi.com/bug-bounty/xion/information/,2025-05-08,"smart contract,blockchain-dlt,domain",0,
+Immunefi:xoxno,Immunefi,XOXNO,https://immunefi.com/bug-bounty/xoxno/information/,2025-09-16,"smart contract,rust",0,
+Immunefi:xterio,Immunefi,Xterio,https://immunefi.com/bug-bounty/xterio/information/,2024-07-08,"smart contract,domain,solidity",0,
+Immunefi:yo-protocol,Immunefi,YO Protocol,https://immunefi.com/bug-bounty/yo-protocol/information/,2025-05-05,"smart contract,domain",0,
+Immunefi:zksync-os,Immunefi,ZKsync OS,https://immunefi.com/bug-bounty/zksync-os/information/,2025-11-24,blockchain-dlt,0,
+Immunefi:zano,Immunefi,Zano,https://immunefi.com/bug-bounty/zano/information/,2025-07-14,"domain,blockchain-dlt,c++",0,
+Immunefi:zestprotocol,Immunefi,Zest Protocol,https://immunefi.com/bug-bounty/zestprotocol/information/,2024-03-11,"smart contract,domain,clarity",0,
+Immunefi:zest-protocol-v2,Immunefi,Zest Protocol V2,https://immunefi.com/bug-bounty/zest-protocol-v2/information/,2026-01-15,"smart contract,clarity",0,
+Immunefi:monero-oxide,Immunefi,monero-oxide,https://immunefi.com/bug-bounty/monero-oxide/information/,2025-09-09,"blockchain-dlt,rust",0,
+Immunefi:stakelink,Immunefi,stake.link,https://immunefi.com/bug-bounty/stakelink/information/,2025-05-14,"smart contract,domain",0,
+Immunefi:zkverify,Immunefi,zkVerify,https://immunefi.com/bug-bounty/zkverify/information/,2025-09-05,"blockchain-dlt,domain,rust",0,
+Sherlock:1240,Sherlock,Rain,https://app.sherlock.xyz/audits/contests/1240,2026-03-02,"smart contract,solidity",0,

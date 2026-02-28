@@ -1,0 +1,1 @@
+"""Bug bounty tracker package."""

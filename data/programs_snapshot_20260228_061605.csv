@@ -1,0 +1,204 @@
+platform,name,handle,external_id,date_launched,scope_type,bounty_min,bounty_max,link
+Code4rena,Injective Peggy Bridge,2026-02-injective-peggy-bridge,Code4rena:2026-02-injective-peggy-bridge,2026-02-25,"smart contract,go",0.0,105500.0,https://code4rena.com/audits/2026-02-injective-peggy-bridge
+Code4rena,Jupiter Lend,2026-02-jupiter-lend,Code4rena:2026-02-jupiter-lend,2026-02-12,"smart contract,rust",0.0,107000.0,https://code4rena.com/audits/2026-02-jupiter-lend
+HackenProof,FMCPAY Web & Mobile,fmcpay-web-and-mobile,HackenProof:fmcpay-web-and-mobile,2026-08-01,"domain,mobile",50.0,5000.0,https://hackenproof.com/programs/fmcpay-web-and-mobile
+HackenProof,BitKan Web & Mobile,bitkan-web-and-mobile,HackenProof:bitkan-web-and-mobile,2026-06-01,"domain,mobile,wildcard",100.0,1000.0,https://hackenproof.com/programs/bitkan-web-and-mobile
+HackenProof,Flow Wallet,flow-wallet,HackenProof:flow-wallet,2026-06-01,"domain,mobile",200.0,25000.0,https://hackenproof.com/programs/flow-wallet
+HackenProof,Rtree Finance Web,rtree-finance-web,HackenProof:rtree-finance-web,2026-06-01,"domain,wildcard",50.0,5000.0,https://hackenproof.com/programs/rtree-finance-web
+HackenProof,ZO Finance Smart Contracts,zo-finance-smart-contracts,HackenProof:zo-finance-smart-contracts,2026-06-01,"move,other,smart contract",200.0,10000.0,https://hackenproof.com/programs/zo-finance-smart-contracts
+HackenProof,ZO Finance Web,zo-finance-web,HackenProof:zo-finance-web,2026-06-01,"domain,wildcard",200.0,10000.0,https://hackenproof.com/programs/zo-finance-web
+HackenProof,ZetaChain Blockchain Software,zetachain-blockchain-software,HackenProof:zetachain-blockchain-software,2026-06-01,"blockchain-dlt,go,other",1000.0,200000.0,https://hackenproof.com/programs/zetachain-blockchain-software
+HackenProof,ZetaChain Smart Contracts,zetachain-smart-contracts,HackenProof:zetachain-smart-contracts,2026-06-01,"blockchain-dlt,other,smart contract,solidity",1000.0,100000.0,https://hackenproof.com/programs/zetachain-smart-contracts
+HackenProof,Arcadia Finance Hack Recovery Program,arcadia-finance-hack-recovery-program,HackenProof:arcadia-finance-hack-recovery-program,2026-05-01,,0.0,360000.0,https://hackenproof.com/programs/arcadia-finance-hack-recovery-program
+HackenProof,BigONE Hack Bounty Program,bigone-hack-bounty-program,HackenProof:bigone-hack-bounty-program,2026-05-01,,100.0,8100000.0,https://hackenproof.com/programs/bigone-hack-bounty-program
+HackenProof,Bitmart Post-Incident Forensics Bounty Hunt,bitmart-post-incident-forensics-bounty-hunt,HackenProof:bitmart-post-incident-forensics-bounty-hunt,2026-05-01,,50.0,58000000.0,https://hackenproof.com/programs/bitmart-post-incident-forensics-bounty-hunt
+HackenProof,BtcTurk Hack Recovery Program,btcturk-hack-recovery-program,HackenProof:btcturk-hack-recovery-program,2026-05-01,,0.0,2400000.0,https://hackenproof.com/programs/btcturk-hack-recovery-program
+HackenProof,Meest Poshta Mobile,meest-poshta-mobile,HackenProof:meest-poshta-mobile,2026-05-01,"domain,mobile",50.0,1000.0,https://hackenproof.com/programs/meest-poshta-mobile
+HackenProof,NOYA.ai Smart Contracts,noya-dot-ai-smart-contracts,HackenProof:noya-dot-ai-smart-contracts,2026-05-01,"other,smart contract,solidity",500.0,50000.0,https://hackenproof.com/programs/noya-dot-ai-smart-contracts
+HackenProof,DeepFi Games,deepfi-games,HackenProof:deepfi-games,2026-04-01,domain,200.0,3000.0,https://hackenproof.com/programs/deepfi-games
+HackenProof,DeepFi Trade,deepfi-trade,HackenProof:deepfi-trade,2026-04-01,domain,200.0,3000.0,https://hackenproof.com/programs/deepfi-trade
+HackenProof,SG Forge Smart Contracts,sg-forge-smart-contracts,HackenProof:sg-forge-smart-contracts,2026-04-01,"domain,other,smart contract,solidity",200.0,10000.0,https://hackenproof.com/programs/sg-forge-smart-contracts
+HackenProof,DoubleUp Smart Contracts,doubleup-smart-contracts,HackenProof:doubleup-smart-contracts,2026-03-01,"domain,move,smart contract",100.0,50000.0,https://hackenproof.com/programs/doubleup-smart-contracts
+HackenProof,DoubleUp Web,doubleup-web,HackenProof:doubleup-web,2026-03-01,"domain,wildcard",100.0,10000.0,https://hackenproof.com/programs/doubleup-web
+HackenProof,Multipli Smart Contracts,multipli-smart-contracts,HackenProof:multipli-smart-contracts,2026-02-24,"blockchain-dlt,domain,other,smart contract,solidity",0.0,10000.0,https://hackenproof.com/programs/multipli-smart-contracts
+HackenProof,Multipli Web,multipli-web,HackenProof:multipli-web,2026-02-24,"domain,wildcard",0.0,2000.0,https://hackenproof.com/programs/multipli-web
+HackenProof,NEAR Intents: SDK,near-intents-sdk,HackenProof:near-intents-sdk,2026-02-10,"blockchain-dlt,domain,javascript,other,typescript",100.0,20000.0,https://hackenproof.com/programs/near-intents-sdk
+HackenProof,AlphaSec Web & Smart Contracts,alphasec-web-and-smart-contracts,HackenProof:alphasec-web-and-smart-contracts,2026-02-05,"domain,smart contract,solidity,wildcard",100.0,30000.0,https://hackenproof.com/programs/alphasec-web-and-smart-contracts
+HackenProof,Mybucks.online Wallet Cracking Challenge,mybucks-dot-online-wallet-cracking-challenge,HackenProof:mybucks-dot-online-wallet-cracking-challenge,2026-02-03,"domain,javascript",1100.0,1100.0,https://hackenproof.com/programs/mybucks-dot-online-wallet-cracking-challenge
+HackenProof,Citrea Protocol & Smart Contracts,citrea-protocol-and-smart-contracts,HackenProof:citrea-protocol-and-smart-contracts,2026-01-28,"blockchain-dlt,domain,other,rust,smart contract,solidity",1000.0,250000.0,https://hackenproof.com/programs/citrea-protocol-and-smart-contracts
+HackenProof,Citrea Web & Apps,citrea-web-and-apps,HackenProof:citrea-web-and-apps,2026-01-28,domain,50.0,25000.0,https://hackenproof.com/programs/citrea-web-and-apps
+HackenProof,CEX.IO Web & Mobile,cex-dot-io-web-and-mobile,HackenProof:cex-dot-io-web-and-mobile,2026-01-19,"domain,mobile",100.0,500.0,https://hackenproof.com/programs/cex-dot-io-web-and-mobile
+HackenProof,Monday Trade Web,monday-trade-web,HackenProof:monday-trade-web,2026-01-19,domain,50.0,3000.0,https://hackenproof.com/programs/monday-trade-web
+HackenProof,Solv Smart Contracts,solv-smart-contracts,HackenProof:solv-smart-contracts,2026-01-15,"other,rust,smart contract",200.0,50000.0,https://hackenproof.com/programs/solv-smart-contracts
+HackenProof,Gate US,gate-us,HackenProof:gate-us,2026-01-13,domain,50.0,5000.0,https://hackenproof.com/programs/gate-us
+HackenProof,Solv Web & Infrastructure,solv-web-and-infrastructure,HackenProof:solv-web-and-infrastructure,2025-12-29,"api,domain,wildcard",100.0,20000.0,https://hackenproof.com/programs/solv-web-and-infrastructure
+HackenProof,Whitechain Bridge,whitechain-bridge,HackenProof:whitechain-bridge,2025-12-29,"other,smart contract,solidity",50.0,10000.0,https://hackenproof.com/programs/whitechain-bridge
+HackenProof,ADI Foundation Smart Contracts,adi-foundation-smart-contracts,HackenProof:adi-foundation-smart-contracts,2025-12-09,"other,smart contract,solidity",200.0,10000.0,https://hackenproof.com/programs/adi-foundation-smart-contracts
+HackenProof,ADI Foundation zkVM Verification,adi-foundation-zkvm-verification,HackenProof:adi-foundation-zkvm-verification,2025-12-09,"blockchain-dlt,other,rust,smart contract,solidity",200.0,10000.0,https://hackenproof.com/programs/adi-foundation-zkvm-verification
+HackenProof,AMLBot Web,amlbot-web,HackenProof:amlbot-web,2025-12-09,domain,50.0,500.0,https://hackenproof.com/programs/amlbot-web
+HackenProof,Kaia Protocol,kaia-protocol,HackenProof:kaia-protocol,2025-11-25,"blockchain-dlt,go,other,solidity",200.0,50000.0,https://hackenproof.com/programs/kaia-protocol
+HackenProof,1inch Aqua,1inch-aqua,HackenProof:1inch-aqua,2025-11-17,"other,smart contract,solidity",100.0,100000.0,https://hackenproof.com/programs/1inch-aqua
+HackenProof,Nado Smart Contracts,nado-smart-contracts,HackenProof:nado-smart-contracts,2025-11-17,"other,smart contract,solidity",50.0,500000.0,https://hackenproof.com/programs/nado-smart-contracts
+HackenProof,Nado Web,nado-web,HackenProof:nado-web,2025-11-17,domain,50.0,10000.0,https://hackenproof.com/programs/nado-web
+HackenProof,Phemex Web & Mobile,phemex-web-and-mobile,HackenProof:phemex-web-and-mobile,2025-11-13,"domain,mobile,wildcard",50.0,500000.0,https://hackenproof.com/programs/phemex-web-and-mobile
+HackenProof,Bitkub Capital Group Holdings,bitkub-capital-group-holdings,HackenProof:bitkub-capital-group-holdings,2025-10-28,domain,50.0,1000.0,https://hackenproof.com/programs/bitkub-capital-group-holdings
+HackenProof,Astros Smart Contracts,astros-smart-contracts,HackenProof:astros-smart-contracts,2025-10-16,"move,other,smart contract",150.0,150000.0,https://hackenproof.com/programs/astros-smart-contracts
+HackenProof,NAVI Protocol,navi-protocol,HackenProof:navi-protocol,2025-10-16,"move,other,smart contract",300.0,300000.0,https://hackenproof.com/programs/navi-protocol
+HackenProof,NAVI Protocol Web,navi-protocol-web,HackenProof:navi-protocol-web,2025-10-16,domain,100.0,10000.0,https://hackenproof.com/programs/navi-protocol-web
+HackenProof,STBL Smart Contracts,stbl-smart-contracts,HackenProof:stbl-smart-contracts,2025-10-16,"domain,smart contract,solidity",200.0,20000.0,https://hackenproof.com/programs/stbl-smart-contracts
+HackenProof,STBL Web,stbl-web,HackenProof:stbl-web,2025-10-16,"domain,wildcard",200.0,10000.0,https://hackenproof.com/programs/stbl-web
+HackenProof,Volo Smart Contracts,volo-smart-contracts,HackenProof:volo-smart-contracts,2025-10-16,"move,other,smart contract",150.0,150000.0,https://hackenproof.com/programs/volo-smart-contracts
+HackenProof,Volo Web,volo-web,HackenProof:volo-web,2025-10-16,domain,50.0,5000.0,https://hackenproof.com/programs/volo-web
+HackenProof,Astros Web,astros-web,HackenProof:astros-web,2025-10-09,domain,50.0,5000.0,https://hackenproof.com/programs/astros-web
+HackenProof,Momentum Smart Contracts,momentum-smart-contracts,HackenProof:momentum-smart-contracts,2025-10-08,"move,other,smart contract",50.0,200000.0,https://hackenproof.com/programs/momentum-smart-contracts
+HackenProof,Ember Vaults Smart Contracts,ember-vaults-smart-contracts,HackenProof:ember-vaults-smart-contracts,2025-10-06,"move,other,smart contract",5000.0,15000.0,https://hackenproof.com/programs/ember-vaults-smart-contracts
+HackenProof,FlowX CLMM Smart Contracts,flowx-clmm-smart-contracts,HackenProof:flowx-clmm-smart-contracts,2025-10-06,"move,other,smart contract",200.0,5000.0,https://hackenproof.com/programs/flowx-clmm-smart-contracts
+HackenProof,Calyx Smart Contract,calyx-smart-contract,HackenProof:calyx-smart-contract,2025-10-03,"other,rust,smart contract",100.0,100000.0,https://hackenproof.com/programs/calyx-smart-contract
+HackenProof,Turbos Finance Smart Contracts,turbos-finance-smart-contracts,HackenProof:turbos-finance-smart-contracts,2025-09-17,"move,other,smart contract",50.0,15000.0,https://hackenproof.com/programs/turbos-finance-smart-contracts
+HackenProof,Snowbridge On-Chain Code,snowbridge-on-chain-code,HackenProof:snowbridge-on-chain-code,2025-09-11,"other,rust,smart contract,solidity",200.0,75000.0,https://hackenproof.com/programs/snowbridge-on-chain-code
+HackenProof,Snowbridge Web,snowbridge-web,HackenProof:snowbridge-web,2025-09-11,"domain,other",200.0,15000.0,https://hackenproof.com/programs/snowbridge-web
+HackenProof,Sweed Web,sweed-web,HackenProof:sweed-web,2025-09-09,domain,50.0,2000.0,https://hackenproof.com/programs/sweed-web
+HackenProof,NEAR Intents: Smart Contracts,near-intents-smart-contracts,HackenProof:near-intents-smart-contracts,2025-09-08,"blockchain-dlt,other,rust,smart contract",100.0,300000.0,https://hackenproof.com/programs/near-intents-smart-contracts
+HackenProof,Bluefin Dex Contracts,bluefin-dex-contracts,HackenProof:bluefin-dex-contracts,2025-09-02,"move,other,smart contract",5000.0,15000.0,https://hackenproof.com/programs/bluefin-dex-contracts
+HackenProof,Kai Finance Yield Protocol,kai-finance-yield-protocol,HackenProof:kai-finance-yield-protocol,2025-09-02,"move,other,smart contract",5000.0,100000.0,https://hackenproof.com/programs/kai-finance-yield-protocol
+HackenProof,Bucket Protocol Smart Contracts,bucket-protocol-smart-contracts,HackenProof:bucket-protocol-smart-contracts,2025-08-29,"move,other,smart contract",10.0,500000.0,https://hackenproof.com/programs/bucket-protocol-smart-contracts
+HackenProof,Haedal Smart Contracts,haedal-smart-contracts,HackenProof:haedal-smart-contracts,2025-08-25,"move,other,smart contract",5.0,200000.0,https://hackenproof.com/programs/haedal-smart-contracts
+HackenProof,OFZA Web,ofza-web,HackenProof:ofza-web,2025-08-13,"domain,wildcard",100.0,10000.0,https://hackenproof.com/programs/ofza-web
+HackenProof,Bitkub Blockchain Technology,bitkub-blockchain-technology,HackenProof:bitkub-blockchain-technology,2025-08-08,"api,domain,mobile",50.0,2500.0,https://hackenproof.com/programs/bitkub-blockchain-technology
+HackenProof,KUB Chain & Ecosystem,kub-chain-and-ecosystem,HackenProof:kub-chain-and-ecosystem,2025-08-08,"blockchain-dlt,domain,other,smart contract",100.0,5000.0,https://hackenproof.com/programs/kub-chain-and-ecosystem
+HackenProof,Bag Labs Web,bag-labs-web,HackenProof:bag-labs-web,2025-08-05,domain,200.0,10000.0,https://hackenproof.com/programs/bag-labs-web
+HackenProof,Layer3 Web,layer3-web,HackenProof:layer3-web,2025-08-05,domain,200.0,10000.0,https://hackenproof.com/programs/layer3-web
+HackenProof,NoOnes Web & Mobile,noones-web-and-mobile,HackenProof:noones-web-and-mobile,2025-07-17,domain,150.0,5000.0,https://hackenproof.com/programs/noones-web-and-mobile
+HackenProof,NonKyc.io,nonkyc-dot-io,HackenProof:nonkyc-dot-io,2025-07-08,"api,domain,mobile",50.0,5000.0,https://hackenproof.com/programs/nonkyc-dot-io
+HackenProof,Cetus Smart Contracts,cetus-smart-contracts,HackenProof:cetus-smart-contracts,2025-07-07,"move,other,smart contract",10.0,300000.0,https://hackenproof.com/programs/cetus-smart-contracts
+HackenProof,Zoomex Web & Mobile,zoomex-web-and-mobile,HackenProof:zoomex-web-and-mobile,2025-06-27,"domain,mobile",100.0,10000.0,https://hackenproof.com/programs/zoomex-web-and-mobile
+HackenProof,Tapbit Web & Mobile,tapbit-web-and-mobile,HackenProof:tapbit-web-and-mobile,2025-06-25,"domain,mobile",200.0,10000.0,https://hackenproof.com/programs/tapbit-web-and-mobile
+HackenProof,1inch Business,1inch-business,HackenProof:1inch-business,2025-06-23,"api,domain",100.0,100000.0,https://hackenproof.com/programs/1inch-business
+HackenProof,1inch Infrastructure,1inch-infrastructure,HackenProof:1inch-infrastructure,2025-06-23,"api,domain",100.0,20000.0,https://hackenproof.com/programs/1inch-infrastructure
+HackenProof,1inch Wallet,1inch-wallet,HackenProof:1inch-wallet,2025-06-23,"domain,mobile",100.0,100000.0,https://hackenproof.com/programs/1inch-wallet
+HackenProof,1inch Web,1inch-web,HackenProof:1inch-web,2025-06-23,domain,100.0,50000.0,https://hackenproof.com/programs/1inch-web
+HackenProof,SynFutures dApp,synfutures-dapp,HackenProof:synfutures-dapp,2025-06-17,domain,1000.0,10000.0,https://hackenproof.com/programs/synfutures-dapp
+HackenProof,Bluefin Coin Contracts,bluefin-coin-contracts,HackenProof:bluefin-coin-contracts,2025-06-13,"move,other,smart contract",5000.0,15000.0,https://hackenproof.com/programs/bluefin-coin-contracts
+HackenProof,GroveX Web & Mobile,grovex-web-and-mobile,HackenProof:grovex-web-and-mobile,2025-05-30,"domain,mobile,wildcard",100.0,1500.0,https://hackenproof.com/programs/grovex-web-and-mobile
+HackenProof,KCEX,kcex,HackenProof:kcex,2025-05-29,"domain,mobile",200.0,5000.0,https://hackenproof.com/programs/kcex
+HackenProof,Flipster Web & Mobile,flipster-web-and-mobile,HackenProof:flipster-web-and-mobile,2025-05-22,"api,domain,mobile",50.0,3000.0,https://hackenproof.com/programs/flipster-web-and-mobile
+HackenProof,The Sandbox Public Infrastructure,the-sandbox-public-infrastructure,HackenProof:the-sandbox-public-infrastructure,2025-05-22,"domain,wildcard",100.0,5000.0,https://hackenproof.com/programs/the-sandbox-public-infrastructure
+HackenProof,The Sandbox Smart Contracts,the-sandbox-smart-contracts,HackenProof:the-sandbox-smart-contracts,2025-05-22,"domain,smart contract,solidity",1000.0,200000.0,https://hackenproof.com/programs/the-sandbox-smart-contracts
+HackenProof,Flow Protocol,flow-protocol,HackenProof:flow-protocol,2025-05-08,"blockchain-dlt,go,other,smart contract",1000.0,100000.0,https://hackenproof.com/programs/flow-protocol
+HackenProof,Flow Web,flow-web,HackenProof:flow-web,2025-05-08,"domain,wildcard",500.0,4000.0,https://hackenproof.com/programs/flow-web
+HackenProof,STON.fi DEX Smart Contracts v2,ston-dot-fi-dex-smart-contracts-v2,HackenProof:ston-dot-fi-dex-smart-contracts-v2,2025-04-22,"other,smart contract",5000.0,100000.0,https://hackenproof.com/programs/ston-dot-fi-dex-smart-contracts-v2
+HackenProof,Blockchain.com Web & Mobile,blockchain-dot-com,HackenProof:blockchain-dot-com,2025-04-15,"api,domain,mobile",100.0,10000.0,https://hackenproof.com/programs/blockchain-dot-com
+HackenProof,AscendEX Web & Mobile,ascendex-web-and-mobile,HackenProof:ascendex-web-and-mobile,2025-04-09,"domain,mobile,wildcard",100.0,500.0,https://hackenproof.com/programs/ascendex-web-and-mobile
+HackenProof,LeveX Web & Mobile,levex-web-and-mobile,HackenProof:levex-web-and-mobile,2025-03-31,"domain,mobile,wildcard",100.0,5000.0,https://hackenproof.com/programs/levex-web-and-mobile
+HackenProof,Walrus Smart Contracts,walrus-smart-contracts,HackenProof:walrus-smart-contracts,2025-03-27,"move,other,rust,smart contract",1000.0,100000.0,https://hackenproof.com/programs/walrus-smart-contracts
+HackenProof,Celestia,celestia,HackenProof:celestia,2025-03-26,"blockchain-dlt,go,other,smart contract",0.0,375000.0,https://hackenproof.com/programs/celestia
+HackenProof,GMGN Web & Mobile,gmgn-web-and-mobile,HackenProof:gmgn-web-and-mobile,2025-03-17,"domain,mobile,wildcard",50.0,1000000.0,https://hackenproof.com/programs/gmgn-web-and-mobile
+HackenProof,Swap.io Smart Contracts,swap-dot-io-smart-contracts,HackenProof:swap-dot-io-smart-contracts,2025-03-17,"other,rust,smart contract",3000.0,100000.0,https://hackenproof.com/programs/swap-dot-io-smart-contracts
+HackenProof,Cube Exchange Web,cube-exchange-web,HackenProof:cube-exchange-web,2025-03-13,"domain,wildcard",200.0,10000.0,https://hackenproof.com/programs/cube-exchange-web
+HackenProof,Gear Protocol,gear-protocol,HackenProof:gear-protocol,2025-03-13,"blockchain-dlt,other,rust",1000.0,25000.0,https://hackenproof.com/programs/gear-protocol
+HackenProof,Scallop Protocol (Smart Contract),scallop-protocol-smart-contract,HackenProof:scallop-protocol-smart-contract,2025-03-05,"blockchain-dlt,move,other,smart contract",30.0,300000.0,https://hackenproof.com/programs/scallop-protocol-smart-contract
+HackenProof,DEXX Web & Mobile,dexx-web-and-mobile,HackenProof:dexx-web-and-mobile,2025-02-26,"domain,mobile",100.0,10000.0,https://hackenproof.com/programs/dexx-web-and-mobile
+HackenProof,Parity Polkadot Release Infrastructure,parity-polkadot-release-infrastructure,HackenProof:parity-polkadot-release-infrastructure,2025-02-23,"domain,other,rust",100.0,25000.0,https://hackenproof.com/programs/parity-polkadot-release-infrastructure
+HackenProof,NiceHash Mining platform,nicehash-mining-platform,HackenProof:nicehash-mining-platform,2023-06-22,"api,domain,mobile,other",0.0,25000.0,https://hackenproof.com/programs/nicehash-mining-platform
+HackenProof,CoinMetro Exchange,coinmetro-exchange,HackenProof:coinmetro-exchange,2021-04-28,"domain,wildcard",50.0,3000.0,https://hackenproof.com/programs/coinmetro-exchange
+Immunefi,AGNI,agni,Immunefi:agni,2026-02-18,smart contract,1000.0,10000.0,https://immunefi.com/bug-bounty/agni/information/
+Immunefi,Royco Dawn,royco,Immunefi:royco,2026-02-17,"smart contract,domain",2000.0,250000.0,https://immunefi.com/bug-bounty/royco/information/
+Immunefi,Kleidi,kleidi,Immunefi:kleidi,2026-02-13,smart contract,5000.0,50000.0,https://immunefi.com/bug-bounty/kleidi/information/
+Immunefi,Hermetica,hermetica,Immunefi:hermetica,2026-02-12,"smart contract,domain",1000.0,100000.0,https://immunefi.com/bug-bounty/hermetica/information/
+Immunefi,Katana,katana,Immunefi:katana,2026-02-11,smart contract,1000.0,80000.0,https://immunefi.com/bug-bounty/katana/information/
+Immunefi,RootstockLabs,rootstocklabs,Immunefi:rootstocklabs,2026-02-10,"blockchain-dlt,smart contract,domain",1000.0,200000.0,https://immunefi.com/bug-bounty/rootstocklabs/information/
+Immunefi,Merchant Moe,merchant-moe,Immunefi:merchant-moe,2026-01-30,"smart contract,solidity",1000.0,100000.0,https://immunefi.com/bug-bounty/merchant-moe/information/
+Immunefi,Veda,veda,Immunefi:veda,2026-01-21,smart contract,10000.0,1000000.0,https://immunefi.com/bug-bounty/veda/information/
+Immunefi,Floe Labs,floe-labs,Immunefi:floe-labs,2026-01-16,"domain,smart contract",1000.0,50000.0,https://immunefi.com/bug-bounty/floe-labs/information/
+Immunefi,Notional Exponent,notional-exponent,Immunefi:notional-exponent,2026-01-16,smart contract,10000.0,250000.0,https://immunefi.com/bug-bounty/notional-exponent/information/
+Immunefi,Twyne,twyne,Immunefi:twyne,2026-01-16,"smart contract,solidity",3000.0,50000.0,https://immunefi.com/bug-bounty/twyne/information/
+Immunefi,Zest Protocol V2,zest-protocol-v2,Immunefi:zest-protocol-v2,2026-01-15,"smart contract,clarity",1000.0,100000.0,https://immunefi.com/bug-bounty/zest-protocol-v2/information/
+Immunefi,Exodus,exodus,Immunefi:exodus,2025-12-30,domain,500.0,18000.0,https://immunefi.com/bug-bounty/exodus/information/
+Immunefi,Bitflow,bitflow,Immunefi:bitflow,2025-11-26,"smart contract,domain,clarity",1000.0,100000.0,https://immunefi.com/bug-bounty/bitflow/information/
+Immunefi,Aleo,aleo,Immunefi:aleo,2025-11-24,blockchain-dlt,0.0,65000.0,https://immunefi.com/bug-bounty/aleo/information/
+Immunefi,ZKsync OS,zksync-os,Immunefi:zksync-os,2025-11-24,blockchain-dlt,5000.0,100000.0,https://immunefi.com/bug-bounty/zksync-os/information/
+Immunefi,CapyFi,capyfi,Immunefi:capyfi,2025-11-19,"smart contract,domain",1000.0,1000000.0,https://immunefi.com/bug-bounty/capyfi/information/
+Immunefi,USX,usx,Immunefi:usx,2025-11-17,"smart contract,domain,solidity",3000.0,100000.0,https://immunefi.com/bug-bounty/usx/information/
+Immunefi,Kiln (dApp/Infra),kiln-webapp,Immunefi:kiln-webapp,2025-10-30,domain,1000.0,100000.0,https://immunefi.com/bug-bounty/kiln-webapp/information/
+Immunefi,Templar Protocol,templar-protocol,Immunefi:templar-protocol,2025-10-27,"smart contract,rust",1000.0,100000.0,https://immunefi.com/bug-bounty/templar-protocol/information/
+Immunefi,Jito - BAM Client,jito-bam-client,Immunefi:jito-bam-client,2025-10-22,"blockchain-dlt,rust",1000.0,100000.0,https://immunefi.com/bug-bounty/jito-bam-client/information/
+Immunefi,Kamino,kamino,Immunefi:kamino,2025-10-06,"smart contract,domain",10000.0,1500000.0,https://immunefi.com/bug-bounty/kamino/information/
+Immunefi,Felix,felix,Immunefi:felix,2025-10-02,smart contract,1000.0,100000.0,https://immunefi.com/bug-bounty/felix/information/
+Immunefi,Parallel,parallel,Immunefi:parallel,2025-10-02,"smart contract,domain,javascript,solidity,typescript,go",1000.0,250000.0,https://immunefi.com/bug-bounty/parallel/information/
+Immunefi,XOXNO,xoxno,Immunefi:xoxno,2025-09-16,"smart contract,rust",1000.0,50000.0,https://immunefi.com/bug-bounty/xoxno/information/
+Immunefi,Impossible Cloud Network,impossible-cloud-network,Immunefi:impossible-cloud-network,2025-09-09,smart contract,1500.0,25000.0,https://immunefi.com/bug-bounty/impossible-cloud-network/information/
+Immunefi,monero-oxide,monero-oxide,Immunefi:monero-oxide,2025-09-09,"blockchain-dlt,rust",1000.0,100000.0,https://immunefi.com/bug-bounty/monero-oxide/information/
+Immunefi,zkVerify,zkverify,Immunefi:zkverify,2025-09-05,"blockchain-dlt,domain,rust",5000.0,50000.0,https://immunefi.com/bug-bounty/zkverify/information/
+Immunefi,Enzyme Onyx,enzyme-onyx,Immunefi:enzyme-onyx,2025-09-04,"smart contract,solidity",1000.0,200000.0,https://immunefi.com/bug-bounty/enzyme-onyx/information/
+Immunefi,Paradex,paradex,Immunefi:paradex,2025-08-22,"domain,smart contract",500.0,500000.0,https://immunefi.com/bug-bounty/paradex/information/
+Immunefi,Injective,injective,Immunefi:injective,2025-07-21,"domain,smart contract,blockchain-dlt",1000.0,500000.0,https://immunefi.com/bug-bounty/injective/information/
+Immunefi,Zano,zano,Immunefi:zano,2025-07-14,"domain,blockchain-dlt,c++",2000.0,10000.0,https://immunefi.com/bug-bounty/zano/information/
+Immunefi,Alpen Labs,alpen-labs,Immunefi:alpen-labs,2025-07-09,"smart contract,domain",1000.0,5000.0,https://immunefi.com/bug-bounty/alpen-labs/information/
+Immunefi,Farcaster,farcaster,Immunefi:farcaster,2025-06-18,domain,1000.0,25000.0,https://immunefi.com/bug-bounty/farcaster/information/
+Immunefi,OFZA,ofza-1,Immunefi:ofza-1,2025-06-18,domain,500.0,10000.0,https://immunefi.com/bug-bounty/ofza-1/information/
+Immunefi,Immutable,immutable,Immunefi:immutable,2025-06-10,smart contract,1000.0,1000000.0,https://immunefi.com/bug-bounty/immutable/information/
+Immunefi,Daimo Pay,daimo-pay,Immunefi:daimo-pay,2025-06-06,"smart contract,solidity",1000.0,20000.0,https://immunefi.com/bug-bounty/daimo-pay/information/
+Immunefi,INTMAX,intmax,Immunefi:intmax,2025-05-25,"blockchain-dlt,smart contract",1000.0,10000.0,https://immunefi.com/bug-bounty/intmax/information/
+Immunefi,stake.link,stakelink,Immunefi:stakelink,2025-05-14,"smart contract,domain",1000.0,100000.0,https://immunefi.com/bug-bounty/stakelink/information/
+Immunefi,OpenZeppelin on Stellar,openzeppelin-stellar,Immunefi:openzeppelin-stellar,2025-05-08,smart contract,1000.0,25000.0,https://immunefi.com/bug-bounty/openzeppelin-stellar/information/
+Immunefi,XION,xion,Immunefi:xion,2025-05-08,"smart contract,blockchain-dlt,domain",1000.0,250000.0,https://immunefi.com/bug-bounty/xion/information/
+Immunefi,YO Protocol,yo-protocol,Immunefi:yo-protocol,2025-05-05,"smart contract,domain",1000.0,10000.0,https://immunefi.com/bug-bounty/yo-protocol/information/
+Immunefi,Haven1,haven1,Immunefi:haven1,2025-04-30,smart contract,1000.0,100000.0,https://immunefi.com/bug-bounty/haven1/information/
+Immunefi,Ostium,ostium,Immunefi:ostium,2025-04-30,domain,1000.0,100000.0,https://immunefi.com/bug-bounty/ostium/information/
+Immunefi,FOIL,foil,Immunefi:foil,2025-04-23,"smart contract,domain",1000.0,10000.0,https://immunefi.com/bug-bounty/foil/information/
+Immunefi,USDN,usdn,Immunefi:usdn,2025-04-21,smart contract,1000.0,50000.0,https://immunefi.com/bug-bounty/usdn/information/
+Immunefi,Aster,aster,Immunefi:aster,2025-04-16,"smart contract,domain",1000.0,200000.0,https://immunefi.com/bug-bounty/aster/information/
+Immunefi,Resolv,resolv,Immunefi:resolv,2025-03-31,"domain,smart contract",1000.0,500000.0,https://immunefi.com/bug-bounty/resolv/information/
+Immunefi,Berachain (Web/Apps),berachain-webapps,Immunefi:berachain-webapps,2025-03-18,domain,1000.0,10000.0,https://immunefi.com/bug-bounty/berachain-webapps/information/
+Immunefi,Granite Protocol,granite-protocol,Immunefi:granite-protocol,2025-02-26,"smart contract,domain,clarity",1000.0,150000.0,https://immunefi.com/bug-bounty/granite-protocol/information/
+Immunefi,Berachain,berachain,Immunefi:berachain,2025-02-06,"blockchain-dlt,smart contract,go,solidity,rust",0.0,250000.0,https://immunefi.com/bug-bounty/berachain/information/
+Immunefi,Hedera,hedera,Immunefi:hedera,2025-02-05,blockchain-dlt,3000.0,30000.0,https://immunefi.com/bug-bounty/hedera/information/
+Immunefi,USDT0,usdt0,Immunefi:usdt0,2025-01-30,"smart contract,typescript,solidity",5000.0,6000000.0,https://immunefi.com/bug-bounty/usdt0/information/
+Immunefi,Hibachi,hibachi,Immunefi:hibachi,2025-01-08,domain,2500.0,20000.0,https://immunefi.com/bug-bounty/hibachi/information/
+Immunefi,FBTC,fbtc,Immunefi:fbtc,2024-12-19,smart contract,1000.0,100000.0,https://immunefi.com/bug-bounty/fbtc/information/
+Immunefi,Compound Finance,compoundfinance,Immunefi:compoundfinance,2024-12-11,"smart contract,solidity",1000.0,1000000.0,https://immunefi.com/bug-bounty/compoundfinance/information/
+Immunefi,Nucleus,nucleus,Immunefi:nucleus,2024-12-05,"smart contract,solidity",1000.0,500000.0,https://immunefi.com/bug-bounty/nucleus/information/
+Immunefi,Hourglass,hourglass,Immunefi:hourglass,2024-11-26,"smart contract,domain",1000.0,50000.0,https://immunefi.com/bug-bounty/hourglass/information/
+Immunefi,Starknet Staking,starknet-staking,Immunefi:starknet-staking,2024-11-19,smart contract,1000.0,100000.0,https://immunefi.com/bug-bounty/starknet-staking/information/
+Immunefi,Kiln On-Chain v1,kiln-on-chain-v1,Immunefi:kiln-on-chain-v1,2024-10-01,"smart contract,solidity",5000.0,1000000.0,https://immunefi.com/bug-bounty/kiln-on-chain-v1/information/
+Immunefi,Kiln DeFi,kiln-defi,Immunefi:kiln-defi,2024-09-25,"smart contract,go,typescript,solidity,python,c++",5000.0,500000.0,https://immunefi.com/bug-bounty/kiln-defi/information/
+Immunefi,Stargate,stargate,Immunefi:stargate,2024-09-24,"smart contract,solidity",5000.0,10000000.0,https://immunefi.com/bug-bounty/stargate/information/
+Immunefi,Firedancer,firedancer,Immunefi:firedancer,2024-09-18,"blockchain-dlt,rust,c++",5000.0,500000.0,https://immunefi.com/bug-bounty/firedancer/information/
+Immunefi,Babylon Labs,babylon-labs,Immunefi:babylon-labs,2024-09-16,"domain,blockchain-dlt,go,typescript,javascript,rust",1000.0,500000.0,https://immunefi.com/bug-bounty/babylon-labs/information/
+Immunefi,Light Protocol,light-protocol,Immunefi:light-protocol,2024-09-12,smart contract,0.0,50000.0,https://immunefi.com/bug-bounty/light-protocol/information/
+Immunefi,StakeStone,stakestone,Immunefi:stakestone,2024-09-12,"smart contract,solidity",5000.0,300000.0,https://immunefi.com/bug-bounty/stakestone/information/
+Immunefi,Velvet Capital V2,velvet-capital-v2,Immunefi:velvet-capital-v2,2024-09-05,smart contract,1000.0,10000.0,https://immunefi.com/bug-bounty/velvet-capital-v2/information/
+Immunefi,Lombard Finance,lombard-finance,Immunefi:lombard-finance,2024-09-04,"smart contract,domain",1000.0,250000.0,https://immunefi.com/bug-bounty/lombard-finance/information/
+Immunefi,Jito,jito,Immunefi:jito,2024-08-28,"smart contract,blockchain-dlt,rust,solidity,javascript,typescript,python",1000.0,250000.0,https://immunefi.com/bug-bounty/jito/information/
+Immunefi,Kelp DAO,kelp-dao,Immunefi:kelp-dao,2024-08-02,"smart contract,domain",1000.0,250000.0,https://immunefi.com/bug-bounty/kelp-dao/information/
+Immunefi,0x,0x,Immunefi:0x,2024-07-30,"smart contract,domain,solidity",1000.0,1000000.0,https://immunefi.com/bug-bounty/0x/information/
+Immunefi,Avail,avail,Immunefi:avail,2024-07-23,"smart contract,domain,solidity",1000.0,250000.0,https://immunefi.com/bug-bounty/avail/information/
+Immunefi,Vesu,vesu,Immunefi:vesu,2024-07-10,"smart contract,cairo",1000.0,100000.0,https://immunefi.com/bug-bounty/vesu/information/
+Immunefi,Xterio,xterio,Immunefi:xterio,2024-07-08,"smart contract,domain,solidity",1000.0,80000.0,https://immunefi.com/bug-bounty/xterio/information/
+Immunefi,Neutron,neutron,Immunefi:neutron,2024-07-02,"smart contract,blockchain-dlt,go,rust",1000.0,100000.0,https://immunefi.com/bug-bounty/neutron/information/
+Immunefi,Pyth Network,pythnetwork,Immunefi:pythnetwork,2024-06-24,"smart contract,domain",1000.0,250000.0,https://immunefi.com/bug-bounty/pythnetwork/information/
+Immunefi,TermMax,termstructurelabs,Immunefi:termstructurelabs,2024-06-12,"smart contract,domain,solidity",1500.0,50000.0,https://immunefi.com/bug-bounty/termstructurelabs/information/
+Immunefi,Arkadiko,arkadiko,Immunefi:arkadiko,2024-06-03,"smart contract,domain,clarity",1000.0,100000.0,https://immunefi.com/bug-bounty/arkadiko/information/
+Immunefi,ENS,ens,Immunefi:ens,2024-05-10,"smart contract,domain,solidity",1000.0,250000.0,https://immunefi.com/bug-bounty/ens/information/
+Immunefi,Polymarket,polymarket,Immunefi:polymarket,2024-04-22,"smart contract,domain",1000.0,1000000.0,https://immunefi.com/bug-bounty/polymarket/information/
+Immunefi,Ethena,ethena,Immunefi:ethena,2024-04-04,"smart contract,domain",2500.0,3000000.0,https://immunefi.com/bug-bounty/ethena/information/
+Immunefi,Cardano Foundation,cardanofoundation,Immunefi:cardanofoundation,2024-03-28,domain,1000.0,10000.0,https://immunefi.com/bug-bounty/cardanofoundation/information/
+Immunefi,Ether.fi,etherfi,Immunefi:etherfi,2024-03-27,"smart contract,domain,solidity",1000.0,300000.0,https://immunefi.com/bug-bounty/etherfi/information/
+Immunefi,Zest Protocol,zestprotocol,Immunefi:zestprotocol,2024-03-11,"smart contract,domain,clarity",1000.0,100000.0,https://immunefi.com/bug-bounty/zestprotocol/information/
+Immunefi,Orderly Network,orderlynetwork,Immunefi:orderlynetwork,2024-02-27,"smart contract,domain,solidity",1000.0,100000.0,https://immunefi.com/bug-bounty/orderlynetwork/information/
+Immunefi,Aspida,aspida,Immunefi:aspida,2024-02-21,"smart contract,domain",1000.0,50000.0,https://immunefi.com/bug-bounty/aspida/information/
+Immunefi,Oasis,oasis,Immunefi:oasis,2024-02-20,"domain,blockchain-dlt",1000.0,100000.0,https://immunefi.com/bug-bounty/oasis/information/
+Immunefi,Segment Finance,segmentfinance,Immunefi:segmentfinance,2024-02-16,"smart contract,solidity",5000.0,100000.0,https://immunefi.com/bug-bounty/segmentfinance/information/
+Immunefi,StackingDAO,stackingdao,Immunefi:stackingdao,2024-02-04,"smart contract,domain,clarity",0.0,100000.0,https://immunefi.com/bug-bounty/stackingdao/information/
+Immunefi,DeXe Protocol,dexeprotocol,Immunefi:dexeprotocol,2024-01-23,"smart contract,python,typescript,go",1000.0,500000.0,https://immunefi.com/bug-bounty/dexeprotocol/information/
+Immunefi,NFTfi (Testnet Refi),nftfitestnetrefi,Immunefi:nftfitestnetrefi,2024-01-17,"smart contract,solidity",20000.0,20000.0,https://immunefi.com/bug-bounty/nftfitestnetrefi/information/
+Immunefi,Ensuro,ensuro,Immunefi:ensuro,2024-01-11,"smart contract,solidity",1000.0,30000.0,https://immunefi.com/bug-bounty/ensuro/information/
+Immunefi,Teahouse Finance,teahousefinance,Immunefi:teahousefinance,2024-01-10,"smart contract,solidity",5000.0,15000.0,https://immunefi.com/bug-bounty/teahousefinance/information/
+Immunefi,GoGoPool,gogopool,Immunefi:gogopool,2024-01-08,smart contract,5000.0,50000.0,https://immunefi.com/bug-bounty/gogopool/information/
+Immunefi,Wildcat Protocol,wildcatprotocol,Immunefi:wildcatprotocol,2023-12-27,"smart contract,solidity",2000.0,10000.0,https://immunefi.com/bug-bounty/wildcatprotocol/information/
+Immunefi,Coreum,coreum,Immunefi:coreum,2023-12-20,"blockchain-dlt,go,rust",1000.0,25000.0,https://immunefi.com/bug-bounty/coreum/information/
+Immunefi,Velvet Capital,velvetcapital,Immunefi:velvetcapital,2023-12-15,smart contract,1000.0,51000.0,https://immunefi.com/bug-bounty/velvetcapital/information/
+Immunefi,Renzo Protocol,renzoprotocol,Immunefi:renzoprotocol,2023-12-14,"smart contract,domain,javascript,solidity",0.0,500000.0,https://immunefi.com/bug-bounty/renzoprotocol/information/
+Immunefi,Uniswap on zkSync,uniswaponzksync,Immunefi:uniswaponzksync,2023-12-11,"smart contract,solidity",2000.0,20000.0,https://immunefi.com/bug-bounty/uniswaponzksync/information/
+Immunefi,Ava Labs,avalabs,Immunefi:avalabs,2023-12-04,"domain,go,javascript,solidity",1000.0,10000.0,https://immunefi.com/bug-bounty/avalabs/information/
+Sherlock,Rain,1240,Sherlock:1240,2026-03-02,"smart contract,solidity",0.0,17500.0,https://app.sherlock.xyz/audits/contests/1240

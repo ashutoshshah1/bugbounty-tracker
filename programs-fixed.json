@@ -1,0 +1,1588 @@
+[
+    {
+        "name": "The Sandbox Public Infrastructure",
+        "start_date": "22 May 2025",
+        "last_updated": "19 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "DeXe Protocol Smart Contracts",
+        "start_date": "15 Jan 2024",
+        "last_updated": "19 Feb 2026",
+        "scope": [
+            "https://github.com/dexe-network/DeXe-Protocol/tree/master/contracts"
+        ]
+    },
+    {
+        "name": "Sui Protocol",
+        "start_date": "15 Sep 2023",
+        "last_updated": "19 Feb 2026",
+        "scope": [
+            "https://github.com/MystenLabs/sui/tree/testnet/crates/sui-node",
+            "https://github.com/MystenLabs/sui/tree/testnet/crates/sui-core",
+            "https://github.com/MystenLabs/sui/tree/testnet/crates/sui-types",
+            "https://github.com/MystenLabs/sui/tree/testnet/crates/json-rpc",
+            "https://github.com/MystenLabs/sui/tree/testnet/crates/json-rpc-types",
+            "https://github.com/MystenLabs/sui/tree/testnet/external-crates/move",
+            "https://github.com/MystenLabs/sui/tree/main/sui-execution/latest/sui-adapter",
+            "https://github.com/MystenLabs/sui/tree/main/sui-execution/latest/sui-verifier",
+            "https://github.com/MystenLabs/sui/tree/main/crates/sui-framework",
+            "https://github.com/MystenLabs/sui/tree/main/crates/sui-bridge",
+            "https://github.com/MystenLabs/sui/tree/main/bridge",
+            "https://github.com/MystenLabs/deepbookv3",
+            "https://github.com/MystenLabs/seal/tree/main/crates/key-server",
+            "https://github.com/MystenLabs/seal/tree/main/move/seal/sources"
+        ]
+    },
+    {
+        "name": "ZO Finance Web",
+        "start_date": "01 Jun 2026",
+        "last_updated": "17 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "ZO Finance Smart Contracts",
+        "start_date": "01 Jun 2026",
+        "last_updated": "17 Feb 2026",
+        "scope": [
+            "https://github.com/zofinance/zo-contracts-usdz-public",
+            "https://github.com/zofinance/zo-contracts-public"
+        ]
+    },
+    {
+        "name": "Flow Wallet",
+        "start_date": "01 Jun 2026",
+        "last_updated": "17 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Parity Polkadot Release Infrastructure",
+        "start_date": "23 Feb 2025",
+        "last_updated": "17 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "MetaMask Validator Staking Smart Contracts",
+        "start_date": "18 Mar 2024",
+        "last_updated": "17 Feb 2026",
+        "scope": [
+            "https://github.com/kilnfi/staking-contracts/tree/f33eb8dc37fab40217dbe1e69853ca3fcd884a2d"
+        ]
+    },
+    {
+        "name": "Solv Smart Contracts",
+        "start_date": "15 Jan 2026",
+        "last_updated": "16 Feb 2026",
+        "scope": [
+            "https://github.com/solv-finance/SolvBTC-Solana-Contract/tree/4c8f194bb4c42faa617af820ed22e24b685feafb"
+        ]
+    },
+    {
+        "name": "Solv Web & Infrastructure",
+        "start_date": "29 Dec 2025",
+        "last_updated": "16 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Arcadia Finance Hack Recovery Program",
+        "start_date": "17 Jul 2025",
+        "last_updated": "16 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Walrus Smart Contracts",
+        "start_date": "27 Mar 2025",
+        "last_updated": "16 Feb 2026",
+        "scope": [
+            "https://github.com/MystenLabs/walrus/tree/main/contracts",
+            "https://github.com/MystenLabs/walrus/tree/main/crates/walrus-core"
+        ]
+    },
+    {
+        "name": "gno.land",
+        "start_date": "13 Dec 2024",
+        "last_updated": "16 Feb 2026",
+        "scope": [
+            "https://github.com/gnolang/gno"
+        ]
+    },
+    {
+        "name": "AtomOne",
+        "start_date": "03 Dec 2024",
+        "last_updated": "16 Feb 2026",
+        "scope": [
+            "https://github.com/atomone-hub/atomone"
+        ]
+    },
+    {
+        "name": "DeltaPrime Smart Contracts",
+        "start_date": "29 May 2023",
+        "last_updated": "16 Feb 2026",
+        "scope": [
+            "https://github.com/DeltaPrimeLabs/deltaprime-contracts-v2/tree/v1.0.0"
+        ]
+    },
+    {
+        "name": "Citrea Web & Apps",
+        "start_date": "28 Jan 2026",
+        "last_updated": "13 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Kaia Protocol",
+        "start_date": "25 Nov 2025",
+        "last_updated": "13 Feb 2026",
+        "scope": [
+            "https://github.com/kaiachain/kaia"
+        ]
+    },
+    {
+        "name": "Volo Smart Contracts",
+        "start_date": "16 Oct 2025",
+        "last_updated": "13 Feb 2026",
+        "scope": [
+            "https://github.com/Sui-Volo/volo-smart-contracts"
+        ]
+    },
+    {
+        "name": "Dione Protocol",
+        "start_date": "31 Dec 2026",
+        "last_updated": "13 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "CoinEx Web & Mobile",
+        "start_date": "01 Jun 2026",
+        "last_updated": "13 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "RISC Zero zkVM",
+        "start_date": "01 Jun 2026",
+        "last_updated": "13 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Cronos Smart Contracts",
+        "start_date": "28 Mar 2024",
+        "last_updated": "13 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Aviator SkyBridge Smart Contracts",
+        "start_date": "01 Sep 2026",
+        "last_updated": "12 Feb 2026",
+        "scope": [
+            "https://github.com/AviatorAC/skybridge-public"
+        ]
+    },
+    {
+        "name": "Internet Computer Protocol",
+        "start_date": "03 Jul 2024",
+        "last_updated": "12 Feb 2026",
+        "scope": [
+            "https://github.com/dfinity/ic",
+            "https://github.com/dfinity/ic/tree/master/rs/nns",
+            "https://github.com/dfinity/ic/tree/master/rs/rosetta-api",
+            "https://github.com/dfinity/nns-dapp",
+            "https://github.com/dfinity/internet-identity",
+            "https://github.com/dfinity/ic/tree/master/rs/sns",
+            "https://github.com/dfinity/ICRC-1",
+            "https://github.com/dfinity/motoko-base",
+            "https://github.com/dfinity/motoko",
+            "https://github.com/dfinity/sdk",
+            "https://github.com/dfinity/cdk-rs",
+            "https://github.com/dfinity/agent-js",
+            "https://github.com/dfinity/agent-rs",
+            "https://github.com/dfinity/candid",
+            "https://github.com/dfinity/quill",
+            "https://github.com/dfinity/icx-proxy",
+            "https://github.com/dfinity/ic/tree/master/rs/boundary_node",
+            "https://github.com/dfinity/exchange-rate-canister",
+            "https://github.com/dfinity/oisy-wallet",
+            "https://github.com/dfinity/chain-fusion-signer",
+            "https://github.com/dfinity/orbit"
+        ]
+    },
+    {
+        "name": "Aptos Network",
+        "start_date": "06 Jun 2024",
+        "last_updated": "12 Feb 2026",
+        "scope": [
+            "https://github.com/aptos-labs/aptos-core/tree/mainnet"
+        ]
+    },
+    {
+        "name": "NEAR Intents: SDK",
+        "start_date": "10 Feb 2026",
+        "last_updated": "11 Feb 2026",
+        "scope": [
+            "https://github.com/defuse-protocol/sdk-monorepo"
+        ]
+    },
+    {
+        "name": "Mybucks.online Wallet Cracking Challenge",
+        "start_date": "03 Feb 2026",
+        "last_updated": "11 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "1inch Aqua",
+        "start_date": "17 Nov 2025",
+        "last_updated": "11 Feb 2026",
+        "scope": [
+            "https://github.com/1inch/aqua",
+            "https://github.com/1inch/swap-vm"
+        ]
+    },
+    {
+        "name": "Sweed Web",
+        "start_date": "09 Sep 2025",
+        "last_updated": "11 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "NEAR Intents: Smart Contracts",
+        "start_date": "08 Sep 2025",
+        "last_updated": "11 Feb 2026",
+        "scope": [
+            "https://github.com/near/intents"
+        ]
+    },
+    {
+        "name": "Kaia Web",
+        "start_date": "25 Nov 2025",
+        "last_updated": "11 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Citrea Protocol & Smart Contracts",
+        "start_date": "28 Jan 2026",
+        "last_updated": "10 Feb 2026",
+        "scope": [
+            "https://github.com/chainwayxyz/citrea",
+            "https://github.com/chainwayxyz/clementine",
+            "https://github.com/chainwayxyz/clementine-cli"
+        ]
+    },
+    {
+        "name": "Snowbridge On-Chain Code",
+        "start_date": "11 Sep 2025",
+        "last_updated": "10 Feb 2026",
+        "scope": [
+            "https://github.com/Snowfork/snowbridge/tree/1832f1ab840c257cac061e21926b65c93c43853c/contracts",
+            "https://github.com/paritytech/polkadot-sdk/tree/master/bridges/snowbridge"
+        ]
+    },
+    {
+        "name": "Cronos Blockchain Protocols",
+        "start_date": "28 Mar 2024",
+        "last_updated": "10 Feb 2026",
+        "scope": [
+            "https://github.com/crypto-org-chain/cronos/releases",
+            "https://github.com/crypto-org-chain/ethermint/releases",
+            "https://github.com/crypto-org-chain/chain-main/releases"
+        ]
+    },
+    {
+        "name": "Celestia",
+        "start_date": "26 Mar 2025",
+        "last_updated": "09 Feb 2026",
+        "scope": [
+            "https://github.com/celestiaorg/celestia-core",
+            "https://github.com/celestiaorg/celestia-app",
+            "https://github.com/celestiaorg/celestia-node",
+            "https://github.com/celestiaorg/go-header",
+            "https://github.com/celestiaorg/rsmt2d",
+            "https://github.com/celestiaorg/nmt",
+            "https://github.com/celestiaorg/go-square",
+            "https://github.com/celestiaorg/go-fraud",
+            "https://github.com/klauspost/reedsolomon",
+            "https://github.com/succinctlabs/sp1-blobstream"
+        ]
+    },
+    {
+        "name": "VeChainThor",
+        "start_date": "22 Aug 2019",
+        "last_updated": "09 Feb 2026",
+        "scope": [
+            "https://github.com/vechain/thor"
+        ]
+    },
+    {
+        "name": "STBL Web",
+        "start_date": "16 Oct 2025",
+        "last_updated": "06 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Bluefin Dex Contracts",
+        "start_date": "02 Sep 2025",
+        "last_updated": "06 Feb 2026",
+        "scope": [
+            "https://github.com/hackenproof-public/bluefin-dex-contracts-v3"
+        ]
+    },
+    {
+        "name": "NoOnes Web & Mobile",
+        "start_date": "17 Jul 2025",
+        "last_updated": "06 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Cetus Smart Contracts",
+        "start_date": "07 Jul 2025",
+        "last_updated": "06 Feb 2026",
+        "scope": [
+            "https://github.com/hackenproof-public/cetus-clmm",
+            "https://github.com/CetusProtocol/cetus-contracts"
+        ]
+    },
+    {
+        "name": "Zoomex Web & Mobile",
+        "start_date": "27 Jun 2025",
+        "last_updated": "06 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "CoinMetro Exchange",
+        "start_date": "28 Apr 2021",
+        "last_updated": "06 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "AscendEX Web & Mobile",
+        "start_date": "09 Apr 2025",
+        "last_updated": "06 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Backpack Web & API",
+        "start_date": "29 Jul 2024",
+        "last_updated": "06 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Superposition Finance Web",
+        "start_date": "03 May 2024",
+        "last_updated": "06 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Poloniex Web & API",
+        "start_date": "15 Mar 2024",
+        "last_updated": "06 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Pionex App & API",
+        "start_date": "20 Nov 2023",
+        "last_updated": "06 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Enkrypt Wallet",
+        "start_date": "21 Jun 2023",
+        "last_updated": "06 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Chainstack",
+        "start_date": "15 Feb 2023",
+        "last_updated": "06 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Dex-Trade",
+        "start_date": "06 Feb 2022",
+        "last_updated": "06 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "BTSE Bug Bounty Program",
+        "start_date": "05 Nov 2021",
+        "last_updated": "06 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "P2B Exchange",
+        "start_date": "11 Mar 2021",
+        "last_updated": "06 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "AlphaSec Web & Smart Contracts",
+        "start_date": "05 Feb 2026",
+        "last_updated": "05 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Polkadot SDK, Runtime by Parity",
+        "start_date": "23 Feb 2025",
+        "last_updated": "05 Feb 2026",
+        "scope": [
+            "https://github.com/paritytech/polkadot-sdk",
+            "https://github.com/polkadot-fellows/runtimes/"
+        ]
+    },
+    {
+        "name": "Whitechain Bridge",
+        "start_date": "29 Dec 2025",
+        "last_updated": "03 Feb 2026",
+        "scope": [
+            "https://github.com/whitechain-labs/bridge-contracts"
+        ]
+    },
+    {
+        "name": "Calyx Smart Contract",
+        "start_date": "03 Oct 2025",
+        "last_updated": "03 Feb 2026",
+        "scope": [
+            "https://github.com/aurora-is-near/aurora-launchpad-contracts/tree/0.7.0/contract"
+        ]
+    },
+    {
+        "name": "NonKyc.io",
+        "start_date": "08 Jul 2025",
+        "last_updated": "03 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "ZetaChain Smart Contracts",
+        "start_date": "03 Jul 2025",
+        "last_updated": "03 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "ZetaChain Blockchain Software",
+        "start_date": "03 Jul 2025",
+        "last_updated": "03 Feb 2026",
+        "scope": [
+            "https://github.com/zeta-chain/node",
+            "https://github.com/zeta-chain/go-tss",
+            "https://github.com/zeta-chain/tss-lib"
+        ]
+    },
+    {
+        "name": "Flow Web",
+        "start_date": "08 May 2025",
+        "last_updated": "03 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Flow Protocol",
+        "start_date": "08 May 2025",
+        "last_updated": "03 Feb 2026",
+        "scope": [
+            "https://github.com/onflow/flow-go",
+            "https://github.com/onflow/crypto",
+            "https://github.com/onflow/cadence",
+            "https://github.com/onflow/atree",
+            "https://github.com/onflow/ccf",
+            "https://github.com/onflow/flow-core-contracts",
+            "https://github.com/onflow/flow-evm-bridge"
+        ]
+    },
+    {
+        "name": "ZetaChain Web Apps",
+        "start_date": "08 Jan 2024",
+        "last_updated": "03 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "NEAR Smart Contracts",
+        "start_date": "30 Mar 2026",
+        "last_updated": "03 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "NEAR Protocol",
+        "start_date": "30 Mar 2026",
+        "last_updated": "03 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "CoinGecko",
+        "start_date": "22 Jul 2020",
+        "last_updated": "03 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Polkadot Bridge",
+        "start_date": "23 Feb 2025",
+        "last_updated": "02 Feb 2026",
+        "scope": [
+            "https://github.com/paritytech/parity-bridges-common",
+            "https://github.com/paritytech/polkadot-sdk/tree/master/bridges",
+            "https://github.com/paritytech/polkadot-sdk/tree/master/cumulus/parachains/runtimes/bridge-hubs",
+            "https://github.com/polkadot-fellows/runtimes/tree/main/system-parachains/bridge-hubs"
+        ]
+    },
+    {
+        "name": "EVAA Smart Contracts",
+        "start_date": "01 Nov 2026",
+        "last_updated": "02 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Aurora Web",
+        "start_date": "01 Apr 2023",
+        "last_updated": "02 Feb 2026",
+        "scope": []
+    },
+    {
+        "name": "Aurora Smart Contract",
+        "start_date": "01 Apr 2023",
+        "last_updated": "02 Feb 2026",
+        "scope": [
+            "https://github.com/aurora-is-near/aurora-engine/tree/master/engine",
+            "https://github.com/aurora-is-near/aurora-engine/tree/develop/engine",
+            "https://github.com/aurora-is-near/aurora-engine/tree/master/engine-precompiles",
+            "https://github.com/aurora-is-near/aurora-engine/tree/develop/engine-precompiles",
+            "https://github.com/aurora-is-near/aurora-engine/tree/master/engine-sdk",
+            "https://github.com/aurora-is-near/aurora-engine/tree/develop/engine-sdk",
+            "https://github.com/aurora-is-near/aurora-engine/tree/master/engine-transactions",
+            "https://github.com/aurora-is-near/aurora-engine/tree/develop/engine-transactions",
+            "https://github.com/aurora-is-near/aurora-engine/tree/master/engine-types",
+            "https://github.com/aurora-is-near/aurora-engine/tree/develop/engine-types",
+            "https://github.com/aurora-is-near/aurora-engine/tree/master/etc/eth-contracts",
+            "https://github.com/aurora-is-near/aurora-engine/tree/develop/etc/eth-contracts",
+            "https://github.com/aurora-is-near/sputnikvm"
+        ]
+    },
+    {
+        "name": "BitKan Web & Mobile",
+        "start_date": "01 Jun 2026",
+        "last_updated": "30 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "SG Forge Smart Contracts",
+        "start_date": "01 Apr 2026",
+        "last_updated": "29 Jan 2026",
+        "scope": [
+            "https://github.com/castframework/smartcoin"
+        ]
+    },
+    {
+        "name": "The Sandbox Smart Contracts",
+        "start_date": "22 May 2025",
+        "last_updated": "28 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "ADI Foundation zkVM Verification",
+        "start_date": "09 Dec 2025",
+        "last_updated": "27 Jan 2026",
+        "scope": [
+            "https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Prover/tree/4f0cf4cd1a0d7cf48d366135e53da7960b936932",
+            "https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-System/tree/357b836552d72550b20a341e1b45b730bef87806",
+            "https://github.com/ADI-Foundation-Labs/ADI-Stack-Contracts/tree/04346d566e7625ae42ec74861da409329f9f4a3d/l1-contracts/contracts/state-transition",
+            "https://github.com/ADI-Foundation-Labs/ADI-Stack-Protocol/tree/767759541cd018e4271f9774f0d760ce727c905d",
+            "https://github.com/ADI-Foundation-Labs/ADI-Stack-zkOS-Wrapper/tree/eb75ad8ee972c63a30ef1121a1b9dc79a2942569"
+        ]
+    },
+    {
+        "name": "ADI Foundation Smart Contracts",
+        "start_date": "09 Dec 2025",
+        "last_updated": "27 Jan 2026",
+        "scope": [
+            "https://github.com/ADI-Foundation-Labs/ADI-Stack-Contracts/tree/04346d566e7625ae42ec74861da409329f9f4a3d/l1-contracts",
+            "https://github.com/ADI-Foundation-Labs/ADI-Stack-Contracts/tree/04346d566e7625ae42ec74861da409329f9f4a3d/l2-contracts",
+            "https://github.com/ADI-Foundation-Labs/ADI-Stack-Contracts/tree/04346d566e7625ae42ec74861da409329f9f4a3d/da-contracts"
+        ]
+    },
+    {
+        "name": "Gate US",
+        "start_date": "13 Jan 2026",
+        "last_updated": "23 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "NiceHash Mining platform",
+        "start_date": "22 Jun 2023",
+        "last_updated": "23 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "Slush Wallet",
+        "start_date": "16 Feb 2024",
+        "last_updated": "23 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "BloFin Web & Mobile",
+        "start_date": "12 Dec 2023",
+        "last_updated": "23 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "Bitrue",
+        "start_date": "08 Feb 2022",
+        "last_updated": "23 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "DODOFeeRouteProxy Smart Contract",
+        "start_date": "06 Mar 2023",
+        "last_updated": "23 Jan 2026",
+        "scope": [
+            "https://github.com/DODOEX/dodo-route-contract"
+        ]
+    },
+    {
+        "name": "Coinstore",
+        "start_date": "19 Feb 2022",
+        "last_updated": "23 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "LCX",
+        "start_date": "13 Sep 2021",
+        "last_updated": "23 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "Meest Poshta Mobile",
+        "start_date": "01 May 2026",
+        "last_updated": "21 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "OORT Protocol",
+        "start_date": "01 Jun 2026",
+        "last_updated": "21 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "Tickets Travel Network / Updated UI",
+        "start_date": "01 Feb 2023",
+        "last_updated": "21 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "CEX.IO Web & Mobile",
+        "start_date": "19 Jan 2026",
+        "last_updated": "20 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "Impermax Finance Smart Contracts",
+        "start_date": "31 Mar 2026",
+        "last_updated": "20 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "Monday Trade Web",
+        "start_date": "19 Jan 2026",
+        "last_updated": "19 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "Turbos Finance Smart Contracts",
+        "start_date": "17 Sep 2025",
+        "last_updated": "16 Jan 2026",
+        "scope": [
+            "https://github.com/hackenproof-public/turbos-clmm-public"
+        ]
+    },
+    {
+        "name": "Inheriti® App",
+        "start_date": "20 Sep 2024",
+        "last_updated": "14 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "SafeSwap App",
+        "start_date": "20 Sep 2024",
+        "last_updated": "14 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "LiNEAR Protocol",
+        "start_date": "30 Jul 2024",
+        "last_updated": "13 Jan 2026",
+        "scope": [
+            "https://github.com/linear-protocol/LiNEAR",
+            "https://github.com/linear-protocol/phoenix-bonds"
+        ]
+    },
+    {
+        "name": "NEAR Foundation Web (Low)",
+        "start_date": "29 Jun 2023",
+        "last_updated": "13 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "NEAR Web",
+        "start_date": "20 Feb 2023",
+        "last_updated": "13 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "CoinW Web & Mobile",
+        "start_date": "22 Mar 2024",
+        "last_updated": "12 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "Fastex Web",
+        "start_date": "01 May 2026",
+        "last_updated": "12 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "Astros Smart Contracts",
+        "start_date": "16 Oct 2025",
+        "last_updated": "09 Jan 2026",
+        "scope": [
+            "https://github.com/naviprotocol/astros-contracts/tree/main/perp_vault"
+        ]
+    },
+    {
+        "name": "Volo Web",
+        "start_date": "16 Oct 2025",
+        "last_updated": "09 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "NAVI Protocol Web",
+        "start_date": "16 Oct 2025",
+        "last_updated": "09 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "NAVI Protocol",
+        "start_date": "16 Oct 2025",
+        "last_updated": "09 Jan 2026",
+        "scope": [
+            "https://github.com/naviprotocol/navi-smart-contracts/tree/main/lending_core",
+            "https://github.com/naviprotocol/navi-smart-contracts/tree/main/oracle"
+        ]
+    },
+    {
+        "name": "Momentum Smart Contracts",
+        "start_date": "08 Oct 2025",
+        "last_updated": "09 Jan 2026",
+        "scope": [
+            "https://github.com/hackenproof-public/mmt-v3-core"
+        ]
+    },
+    {
+        "name": "Ember Vaults Smart Contracts",
+        "start_date": "06 Oct 2025",
+        "last_updated": "09 Jan 2026",
+        "scope": [
+            "https://github.com/hackenproof-public/ember-vaults"
+        ]
+    },
+    {
+        "name": "FlowX CLMM Smart Contracts",
+        "start_date": "06 Oct 2025",
+        "last_updated": "09 Jan 2026",
+        "scope": [
+            "https://github.com/hackenproof-public/flowx-clmm"
+        ]
+    },
+    {
+        "name": "Astros Web",
+        "start_date": "09 Oct 2025",
+        "last_updated": "08 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "Rtree Finance Web",
+        "start_date": "01 Jun 2026",
+        "last_updated": "08 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "Swap.io Smart Contracts",
+        "start_date": "17 Mar 2025",
+        "last_updated": "08 Jan 2026",
+        "scope": [
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/collect_fund_fee.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/collect_protocol_fee.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/create_operation_account.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/mod.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/transfer_reward_owner.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/update_amm_config.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/update_operation_account.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/update_pool_status.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/close_position.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/collect_remaining_rewards.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/create_pool.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/decrease_liquidity.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/increase_liquidity.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/initialize_reward.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/mod.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/open_position.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/set_reward_params.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/swap.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/swap_router_base_in.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/update_reward_info.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/big_num.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/fixed_point_64.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/full_math.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/liquidity_math.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/mod.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/sqrt_price_math.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/swap_math.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/tick_array_bit_map.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/tick_math.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/unsafe_math.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/config.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/mod.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/operation_account.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/oracle.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/personal_position.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/pool.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/protocol_position.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/tick_array.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/util/mod.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/util/system.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/util/token.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/error.rs",
+            "https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/lib.rs"
+        ]
+    },
+    {
+        "name": "OFZA Web",
+        "start_date": "13 Aug 2025",
+        "last_updated": "05 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "Hacken Web & Apps",
+        "start_date": "09 Jan 2025",
+        "last_updated": "05 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "HackenProof",
+        "start_date": "09 Oct 2019",
+        "last_updated": "05 Jan 2026",
+        "scope": []
+    },
+    {
+        "name": "0G Labs Smart Contracts",
+        "start_date": "01 Jul 2026",
+        "last_updated": "29 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "DoubleUp Smart Contracts",
+        "start_date": "01 Mar 2026",
+        "last_updated": "26 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "DoubleUp Web",
+        "start_date": "01 Mar 2026",
+        "last_updated": "26 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "Kai Finance Yield Protocol",
+        "start_date": "02 Sep 2025",
+        "last_updated": "26 Dec 2025",
+        "scope": [
+            "https://github.com/kunalabs-io/sui-smart-contracts/tree/master/kai/leverage/core",
+            "https://github.com/kunalabs-io/sui-smart-contracts/tree/master/access-management"
+        ]
+    },
+    {
+        "name": "Haedal Smart Contracts",
+        "start_date": "25 Aug 2025",
+        "last_updated": "26 Dec 2025",
+        "scope": [
+            "https://github.com/hackenproof-public/hasui-bug-bounty",
+            "https://github.com/hackenproof-public/hawal-bug-bounty"
+        ]
+    },
+    {
+        "name": "BtcTurk Hack Recovery Program",
+        "start_date": "14 Aug 2025",
+        "last_updated": "26 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "KCEX",
+        "start_date": "29 May 2025",
+        "last_updated": "26 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "Bluefin Spot Contracts",
+        "start_date": "09 Dec 2024",
+        "last_updated": "26 Dec 2025",
+        "scope": [
+            "https://github.com/hackenproof-public/bluefin-coin-contracts"
+        ]
+    },
+    {
+        "name": "Asphere Web",
+        "start_date": "16 Oct 2024",
+        "last_updated": "26 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "Trustee Plus Mobile",
+        "start_date": "12 Sep 2023",
+        "last_updated": "26 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "Nado Smart Contracts",
+        "start_date": "17 Nov 2025",
+        "last_updated": "23 Dec 2025",
+        "scope": [
+            "https://github.com/nadohq/nado-contracts"
+        ]
+    },
+    {
+        "name": "Nado Web",
+        "start_date": "17 Nov 2025",
+        "last_updated": "23 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "Layer3 Smart Contracts",
+        "start_date": "15 Aug 2024",
+        "last_updated": "23 Dec 2025",
+        "scope": [
+            "https://github.com/layer3xyz/cubes/blob/main/src/escrow/Factory.sol"
+        ]
+    },
+    {
+        "name": "CoinDCX Recovery Bounty Program",
+        "start_date": "29 Jul 2025",
+        "last_updated": "18 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "DeepFi Games",
+        "start_date": "01 Apr 2026",
+        "last_updated": "15 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "DeepFi Trade",
+        "start_date": "01 Apr 2026",
+        "last_updated": "15 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "FMCPAY Web & Mobile",
+        "start_date": "01 Aug 2026",
+        "last_updated": "15 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "Deepcoin Web & Mobile",
+        "start_date": "01 Oct 2026",
+        "last_updated": "15 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "Bucket Protocol Smart Contracts",
+        "start_date": "29 Aug 2025",
+        "last_updated": "12 Dec 2025",
+        "scope": [
+            "https://github.com/hackenproof-public/bucket-protocol"
+        ]
+    },
+    {
+        "name": "Blockchain.com Web & Mobile",
+        "start_date": "15 Apr 2025",
+        "last_updated": "12 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "Treehouse Smart Contracts",
+        "start_date": "10 Apr 2025",
+        "last_updated": "12 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "Toobit Web & Mobile",
+        "start_date": "18 Oct 2023",
+        "last_updated": "12 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "Bitexen Smart Contracts",
+        "start_date": "24 Jul 2023",
+        "last_updated": "12 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "LetsExchange Web & API & Widget: Swap, Bridge, DEX",
+        "start_date": "23 Jun 2023",
+        "last_updated": "12 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "bitcastle Web",
+        "start_date": "08 May 2023",
+        "last_updated": "12 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "XT",
+        "start_date": "24 Apr 2023",
+        "last_updated": "12 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "Coin98",
+        "start_date": "21 Dec 2022",
+        "last_updated": "12 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "OKX",
+        "start_date": "28 Dec 2021",
+        "last_updated": "12 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "Bitunix Web",
+        "start_date": "29 Mar 2024",
+        "last_updated": "10 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "AMLBot Web",
+        "start_date": "09 Dec 2025",
+        "last_updated": "09 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "Flipster Web & Mobile",
+        "start_date": "22 May 2025",
+        "last_updated": "08 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "NOYA.ai Smart Contracts",
+        "start_date": "01 May 2026",
+        "last_updated": "04 Dec 2025",
+        "scope": [
+            "https://github.com/Noya-ai/noya-JUL-2025-audit-scope"
+        ]
+    },
+    {
+        "name": "EXMO",
+        "start_date": "05 Nov 2021",
+        "last_updated": "03 Dec 2025",
+        "scope": []
+    },
+    {
+        "name": "STON.fi DEX Smart Contracts v2",
+        "start_date": "22 Apr 2025",
+        "last_updated": "28 Nov 2025",
+        "scope": [
+            "https://github.com/ston-fi/dex-core-v2/blob/main/contracts/lp_account.fc",
+            "https://github.com/ston-fi/dex-core-v2/blob/main/contracts/lp_wallet.fc",
+            "https://github.com/ston-fi/dex-core-v2/blob/main/contracts/pool.fc",
+            "https://github.com/ston-fi/dex-core-v2/blob/main/contracts/router.fc",
+            "https://github.com/ston-fi/dex-core-v2/blob/main/contracts/vault.fc"
+        ]
+    },
+    {
+        "name": "Scallop Protocol (Smart Contract)",
+        "start_date": "05 Mar 2025",
+        "last_updated": "28 Nov 2025",
+        "scope": [
+            "https://github.com/scallop-io/sui-lending-protocol"
+        ]
+    },
+    {
+        "name": "DEXX Web & Mobile",
+        "start_date": "26 Feb 2025",
+        "last_updated": "28 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "WEEX Web & App",
+        "start_date": "09 Dec 2024",
+        "last_updated": "28 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "Allbridge",
+        "start_date": "26 Oct 2022",
+        "last_updated": "28 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "Bitmart Post-Incident Forensics Bounty Hunt",
+        "start_date": "03 Apr 2025",
+        "last_updated": "25 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "Zest Protocol Smart Contracts",
+        "start_date": "01 Apr 2026",
+        "last_updated": "25 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "TON",
+        "start_date": "21 May 2024",
+        "last_updated": "24 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "BitMart Exchange",
+        "start_date": "12 Jul 2022",
+        "last_updated": "21 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "1inch Smart Contract",
+        "start_date": "03 Jan 2024",
+        "last_updated": "20 Nov 2025",
+        "scope": [
+            "https://github.com/1inch/limit-order-protocol",
+            "https://github.com/1inch/fusion-protocol",
+            "https://github.com/1inch/token-plugins",
+            "https://github.com/1inch/farming",
+            "https://github.com/1inch/delegating",
+            "https://github.com/1inch/calldata-compressor",
+            "https://github.com/1inch/cross-chain-swap",
+            "https://github.com/1inch/solana-crosschain-protocol",
+            "https://github.com/1inch/solana-fusion"
+        ]
+    },
+    {
+        "name": "Phemex Web & Mobile",
+        "start_date": "13 Nov 2025",
+        "last_updated": "19 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "SynFutures dApp",
+        "start_date": "17 Jun 2025",
+        "last_updated": "14 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "LeveX Web & Mobile",
+        "start_date": "31 Mar 2025",
+        "last_updated": "14 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "Cube Exchange Web",
+        "start_date": "13 Mar 2025",
+        "last_updated": "14 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "Treehouse Web",
+        "start_date": "30 Sep 2024",
+        "last_updated": "14 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "Horizon Protocol Smart Contracts",
+        "start_date": "01 May 2026",
+        "last_updated": "13 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "DOP Protocol",
+        "start_date": "01 May 2026",
+        "last_updated": "12 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "GMGN Web & Mobile",
+        "start_date": "17 Mar 2025",
+        "last_updated": "11 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "1inch Infrastructure",
+        "start_date": "23 Jun 2025",
+        "last_updated": "07 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "1inch Business",
+        "start_date": "23 Jun 2025",
+        "last_updated": "07 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "1inch Web",
+        "start_date": "23 Jun 2025",
+        "last_updated": "07 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "1inch Wallet",
+        "start_date": "23 Jun 2025",
+        "last_updated": "07 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "RISC Zero Blockchain Verifiers",
+        "start_date": "31 Jan 2025",
+        "last_updated": "07 Nov 2025",
+        "scope": [
+            "https://github.com/risc0/risc0-ethereum/tree/main/contracts/src"
+        ]
+    },
+    {
+        "name": "Tothemoon Web",
+        "start_date": "20 Nov 2024",
+        "last_updated": "07 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "MyEtherWallet",
+        "start_date": "21 Jun 2023",
+        "last_updated": "07 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "BingX Exchange",
+        "start_date": "30 Sep 2022",
+        "last_updated": "07 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "IoTeX",
+        "start_date": "20 Apr 2022",
+        "last_updated": "07 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "Bitkub",
+        "start_date": "15 Nov 2021",
+        "last_updated": "07 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "Gate",
+        "start_date": "19 Aug 2021",
+        "last_updated": "07 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "Gear Protocol",
+        "start_date": "13 Mar 2025",
+        "last_updated": "05 Nov 2025",
+        "scope": [
+            "https://github.com/gear-tech/gear/tree/master/core"
+        ]
+    },
+    {
+        "name": "Aptos Naming Service (ANS)",
+        "start_date": "08 Oct 2024",
+        "last_updated": "05 Nov 2025",
+        "scope": [
+            "https://github.com/aptos-labs/aptos-names-contracts/tree/main"
+        ]
+    },
+    {
+        "name": "Cronos Web",
+        "start_date": "28 Mar 2024",
+        "last_updated": "05 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "Whitechain Network",
+        "start_date": "24 Apr 2023",
+        "last_updated": "05 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "WhiteMarket Web",
+        "start_date": "28 Apr 2023",
+        "last_updated": "05 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "WhiteBIT Blog",
+        "start_date": "24 Apr 2023",
+        "last_updated": "05 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "Status",
+        "start_date": "15 Mar 2023",
+        "last_updated": "05 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "ShapeShift",
+        "start_date": "02 Nov 2022",
+        "last_updated": "05 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "Waku",
+        "start_date": "12 Sep 2022",
+        "last_updated": "05 Nov 2025",
+        "scope": [
+            "https://github.com/waku-org/js-waku",
+            "https://github.com/waku-org/js-waku-examplesf",
+            "https://github.com/status-im/go-waku",
+            "https://github.com/status-im/go-waku/tree/master/examples"
+        ]
+    },
+    {
+        "name": "HTX",
+        "start_date": "15 Jul 2021",
+        "last_updated": "05 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "WhiteBIT",
+        "start_date": "20 Nov 2020",
+        "last_updated": "05 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "STBL Smart Contracts",
+        "start_date": "16 Oct 2025",
+        "last_updated": "04 Nov 2025",
+        "scope": []
+    },
+    {
+        "name": "BigONE Global Exchange",
+        "start_date": "13 Oct 2022",
+        "last_updated": "31 Oct 2025",
+        "scope": []
+    },
+    {
+        "name": "Bitkub Capital Group Holdings",
+        "start_date": "28 Oct 2025",
+        "last_updated": "28 Oct 2025",
+        "scope": []
+    },
+    {
+        "name": "BigONE Hack Bounty Program",
+        "start_date": "18 Jul 2025",
+        "last_updated": "21 Oct 2025",
+        "scope": []
+    },
+    {
+        "name": "INIT Capital Web",
+        "start_date": "15 Jul 2024",
+        "last_updated": "16 Oct 2025",
+        "scope": []
+    },
+    {
+        "name": "Bitexen Web & App",
+        "start_date": "24 Jul 2023",
+        "last_updated": "15 Oct 2025",
+        "scope": []
+    },
+    {
+        "name": "Account Abstraction Bugs",
+        "start_date": "16 Sep 2024",
+        "last_updated": "13 Oct 2025",
+        "scope": [
+            "https://github.com/eth-infinitism/account-abstraction",
+            "https://github.com/ethereum/ercs/blob/master/ERCS/erc-4337.md",
+            "https://github.com/ethereum/ercs/blob/master/ERCS/erc-7562.md"
+        ]
+    },
+    {
+        "name": "Snowbridge Web",
+        "start_date": "11 Sep 2025",
+        "last_updated": "08 Oct 2025",
+        "scope": []
+    },
+    {
+        "name": "Bitkub Blockchain Technology",
+        "start_date": "08 Aug 2025",
+        "last_updated": "30 Sep 2025",
+        "scope": []
+    },
+    {
+        "name": "Tickets Travel Network / Mobile",
+        "start_date": "06 Feb 2025",
+        "last_updated": "26 Sep 2025",
+        "scope": []
+    },
+    {
+        "name": "Cronos zkEVM Smart Contracts",
+        "start_date": "08 Nov 2024",
+        "last_updated": "16 Sep 2025",
+        "scope": []
+    },
+    {
+        "name": "emojicoin.fun frontend",
+        "start_date": "18 Apr 2025",
+        "last_updated": "11 Sep 2025",
+        "scope": []
+    },
+    {
+        "name": "Bluefin Coin Contracts",
+        "start_date": "13 Jun 2025",
+        "last_updated": "03 Sep 2025",
+        "scope": []
+    },
+    {
+        "name": "Bluefin Web",
+        "start_date": "01 Jul 2024",
+        "last_updated": "03 Sep 2025",
+        "scope": []
+    },
+    {
+        "name": "GroveX Web & Mobile",
+        "start_date": "30 May 2025",
+        "last_updated": "01 Sep 2025",
+        "scope": []
+    },
+    {
+        "name": "Aptos Function Values",
+        "start_date": "23 Jul 2025",
+        "last_updated": "01 Sep 2025",
+        "scope": []
+    },
+    {
+        "name": "Unitus V2 Smart Contracts",
+        "start_date": "10 May 2024",
+        "last_updated": "29 Aug 2025",
+        "scope": [
+            "https://github.com/UnitusLabs/Contracts/wiki/Deployments#base-contracts"
+        ]
+    },
+    {
+        "name": "KUB Chain & Ecosystem",
+        "start_date": "08 Aug 2025",
+        "last_updated": "08 Aug 2025",
+        "scope": [
+            "https://github.com/kub-chain/bkc"
+        ]
+    },
+    {
+        "name": "Bag Labs Web",
+        "start_date": "05 Aug 2025",
+        "last_updated": "07 Aug 2025",
+        "scope": []
+    },
+    {
+        "name": "Layer3 Web",
+        "start_date": "05 Aug 2025",
+        "last_updated": "07 Aug 2025",
+        "scope": []
+    },
+    {
+        "name": "Tapbit Web & Mobile",
+        "start_date": "25 Jun 2025",
+        "last_updated": "07 Aug 2025",
+        "scope": []
+    },
+    {
+        "name": "DeTEE Hackers Challenge",
+        "start_date": "28 Apr 2025",
+        "last_updated": "30 Jul 2025",
+        "scope": []
+    },
+    {
+        "name": "InceptionLRT Smart Contracts",
+        "start_date": "18 Nov 2024",
+        "last_updated": "12 Jul 2025",
+        "scope": []
+    },
+    {
+        "name": "Biconomy Web & Mobile",
+        "start_date": "22 Jul 2024",
+        "last_updated": "12 Jun 2025",
+        "scope": []
+    },
+    {
+        "name": "KINZA Smart Contracts",
+        "start_date": "28 Nov 2023",
+        "last_updated": "12 Jun 2025",
+        "scope": []
+    },
+    {
+        "name": "PointPay Web & Mobile",
+        "start_date": "13 Oct 2023",
+        "last_updated": "12 Jun 2025",
+        "scope": []
+    },
+    {
+        "name": "BitDelta",
+        "start_date": "31 Jul 2023",
+        "last_updated": "12 Jun 2025",
+        "scope": []
+    },
+    {
+        "name": "DODOLimitOrder Smart Contract",
+        "start_date": "06 Mar 2023",
+        "last_updated": "12 Jun 2025",
+        "scope": [
+            "https://github.com/DODOEX/dodo-limit-order/blob/main/src/DODOLimitOrder.solf"
+        ]
+    },
+    {
+        "name": "Telegram Apps Center",
+        "start_date": "21 May 2024",
+        "last_updated": "27 May 2025",
+        "scope": []
+    },
+    {
+        "name": "BitStorage Web & API",
+        "start_date": "12 Sep 2023",
+        "last_updated": "22 May 2025",
+        "scope": []
+    },
+    {
+        "name": "Dexalot Web & Mobile",
+        "start_date": "15 May 2023",
+        "last_updated": "12 May 2025",
+        "scope": []
+    },
+    {
+        "name": "INIT Capital Smart Contracts",
+        "start_date": "15 Jul 2024",
+        "last_updated": "19 Mar 2025",
+        "scope": []
+    },
+    {
+        "name": "CoinTR Pro Mobile & API",
+        "start_date": "30 Nov 2023",
+        "last_updated": "19 Mar 2025",
+        "scope": []
+    },
+    {
+        "name": "EVAA Web",
+        "start_date": "29 May 2023",
+        "last_updated": "19 Mar 2025",
+        "scope": []
+    },
+    {
+        "name": "UACatsDivision Web",
+        "start_date": "24 Feb 2023",
+        "last_updated": "19 Mar 2025",
+        "scope": []
+    },
+    {
+        "name": "UACatsDivision Smart Contracts",
+        "start_date": "24 Feb 2023",
+        "last_updated": "19 Mar 2025",
+        "scope": []
+    },
+    {
+        "name": "Alfred Telegram Trading Bot",
+        "start_date": "15 Nov 2023",
+        "last_updated": "19 Mar 2025",
+        "scope": []
+    },
+    {
+        "name": "Cryptology",
+        "start_date": "28 Oct 2021",
+        "last_updated": "19 Mar 2025",
+        "scope": []
+    }
+]

@@ -1,0 +1,25 @@
+[Unit]
+Description=Bug Bounty Tracker API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=bratwork
+Group=bratwork
+WorkingDirectory=/home/bratwork/Desktop/live
+EnvironmentFile=/home/bratwork/Desktop/live/.env
+ExecStart=/home/bratwork/Desktop/live/.venv/bin/python /home/bratwork/Desktop/live/run.py
+Restart=always
+RestartSec=5
+TimeoutStopSec=20
+KillSignal=SIGINT
+
+# Basic hardening for long-running service
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=/home/bratwork/Desktop/live/data
+
+[Install]
+WantedBy=multi-user.target

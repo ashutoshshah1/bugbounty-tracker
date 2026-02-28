@@ -1,0 +1,206 @@
+program_name,program_external_id,match_type,github_url,repo_owner,repo_name,branch,file_path,watch_id
+DeXe Protocol Smart Contracts,Immunefi:dexeprotocol,canonical,https://github.com/dexe-network/DeXe-Protocol/tree/master/contracts,dexe-network,DeXe-Protocol,master,contracts,1
+Sui Protocol,,unmatched,https://github.com/MystenLabs/sui/tree/testnet/crates/sui-node,MystenLabs,sui,testnet,crates/sui-node,2
+Sui Protocol,,unmatched,https://github.com/MystenLabs/sui/tree/testnet/crates/sui-core,MystenLabs,sui,testnet,crates/sui-core,3
+Sui Protocol,,unmatched,https://github.com/MystenLabs/sui/tree/testnet/crates/sui-types,MystenLabs,sui,testnet,crates/sui-types,4
+Sui Protocol,,unmatched,https://github.com/MystenLabs/sui/tree/testnet/crates/json-rpc,MystenLabs,sui,testnet,crates/json-rpc,5
+Sui Protocol,,unmatched,https://github.com/MystenLabs/sui/tree/testnet/crates/json-rpc-types,MystenLabs,sui,testnet,crates/json-rpc-types,6
+Sui Protocol,,unmatched,https://github.com/MystenLabs/sui/tree/testnet/external-crates/move,MystenLabs,sui,testnet,external-crates/move,7
+Sui Protocol,,unmatched,https://github.com/MystenLabs/sui/tree/main/sui-execution/latest/sui-adapter,MystenLabs,sui,main,sui-execution/latest/sui-adapter,8
+Sui Protocol,,unmatched,https://github.com/MystenLabs/sui/tree/main/sui-execution/latest/sui-verifier,MystenLabs,sui,main,sui-execution/latest/sui-verifier,9
+Sui Protocol,,unmatched,https://github.com/MystenLabs/sui/tree/main/crates/sui-framework,MystenLabs,sui,main,crates/sui-framework,10
+Sui Protocol,,unmatched,https://github.com/MystenLabs/sui/tree/main/crates/sui-bridge,MystenLabs,sui,main,crates/sui-bridge,11
+Sui Protocol,,unmatched,https://github.com/MystenLabs/sui/tree/main/bridge,MystenLabs,sui,main,bridge,12
+Sui Protocol,,unmatched,https://github.com/MystenLabs/deepbookv3,MystenLabs,deepbookv3,main,,13
+Sui Protocol,,unmatched,https://github.com/MystenLabs/seal/tree/main/crates/key-server,MystenLabs,seal,main,crates/key-server,14
+Sui Protocol,,unmatched,https://github.com/MystenLabs/seal/tree/main/move/seal/sources,MystenLabs,seal,main,move/seal/sources,15
+ZO Finance Smart Contracts,HackenProof:zo-finance-smart-contracts,exact,https://github.com/zofinance/zo-contracts-usdz-public,zofinance,zo-contracts-usdz-public,main,,16
+ZO Finance Smart Contracts,HackenProof:zo-finance-smart-contracts,exact,https://github.com/zofinance/zo-contracts-public,zofinance,zo-contracts-public,main,,17
+MetaMask Validator Staking Smart Contracts,,unmatched,https://github.com/kilnfi/staking-contracts/tree/f33eb8dc37fab40217dbe1e69853ca3fcd884a2d,kilnfi,staking-contracts,main,,18
+Solv Smart Contracts,HackenProof:solv-smart-contracts,exact,https://github.com/solv-finance/SolvBTC-Solana-Contract/tree/4c8f194bb4c42faa617af820ed22e24b685feafb,solv-finance,SolvBTC-Solana-Contract,main,,19
+Walrus Smart Contracts,HackenProof:walrus-smart-contracts,exact,https://github.com/MystenLabs/walrus/tree/main/contracts,MystenLabs,walrus,main,contracts,20
+Walrus Smart Contracts,HackenProof:walrus-smart-contracts,exact,https://github.com/MystenLabs/walrus/tree/main/crates/walrus-core,MystenLabs,walrus,main,crates/walrus-core,21
+gno.land,,unmatched,https://github.com/gnolang/gno,gnolang,gno,main,,22
+AtomOne,,unmatched,https://github.com/atomone-hub/atomone,atomone-hub,atomone,main,,23
+DeltaPrime Smart Contracts,,unmatched,https://github.com/DeltaPrimeLabs/deltaprime-contracts-v2/tree/v1.0.0,DeltaPrimeLabs,deltaprime-contracts-v2,main,,24
+Kaia Protocol,HackenProof:kaia-protocol,exact,https://github.com/kaiachain/kaia,kaiachain,kaia,main,,25
+Volo Smart Contracts,HackenProof:volo-smart-contracts,exact,https://github.com/Sui-Volo/volo-smart-contracts,Sui-Volo,volo-smart-contracts,main,,26
+Aviator SkyBridge Smart Contracts,,unmatched,https://github.com/AviatorAC/skybridge-public,AviatorAC,skybridge-public,main,,27
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/ic,dfinity,ic,main,,28
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/ic/tree/master/rs/nns,dfinity,ic,master,rs/nns,29
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/ic/tree/master/rs/rosetta-api,dfinity,ic,master,rs/rosetta-api,30
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/nns-dapp,dfinity,nns-dapp,main,,31
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/internet-identity,dfinity,internet-identity,main,,32
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/ic/tree/master/rs/sns,dfinity,ic,master,rs/sns,33
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/ICRC-1,dfinity,ICRC-1,main,,34
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/motoko-base,dfinity,motoko-base,main,,35
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/motoko,dfinity,motoko,main,,36
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/sdk,dfinity,sdk,main,,37
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/cdk-rs,dfinity,cdk-rs,main,,38
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/agent-js,dfinity,agent-js,main,,39
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/agent-rs,dfinity,agent-rs,main,,40
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/candid,dfinity,candid,main,,41
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/quill,dfinity,quill,main,,42
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/icx-proxy,dfinity,icx-proxy,main,,43
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/ic/tree/master/rs/boundary_node,dfinity,ic,master,rs/boundary_node,44
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/exchange-rate-canister,dfinity,exchange-rate-canister,main,,45
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/oisy-wallet,dfinity,oisy-wallet,main,,46
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/chain-fusion-signer,dfinity,chain-fusion-signer,main,,47
+Internet Computer Protocol,,unmatched,https://github.com/dfinity/orbit,dfinity,orbit,main,,48
+Aptos Network,,unmatched,https://github.com/aptos-labs/aptos-core/tree/mainnet,aptos-labs,aptos-core,main,,49
+NEAR Intents: SDK,HackenProof:near-intents-sdk,exact,https://github.com/defuse-protocol/sdk-monorepo,defuse-protocol,sdk-monorepo,main,,50
+1inch Aqua,HackenProof:1inch-aqua,exact,https://github.com/1inch/aqua,1inch,aqua,main,,51
+1inch Aqua,HackenProof:1inch-aqua,exact,https://github.com/1inch/swap-vm,1inch,swap-vm,main,,52
+NEAR Intents: Smart Contracts,HackenProof:near-intents-smart-contracts,exact,https://github.com/near/intents,near,intents,main,,53
+Citrea Protocol & Smart Contracts,HackenProof:citrea-protocol-and-smart-contracts,exact,https://github.com/chainwayxyz/citrea,chainwayxyz,citrea,main,,54
+Citrea Protocol & Smart Contracts,HackenProof:citrea-protocol-and-smart-contracts,exact,https://github.com/chainwayxyz/clementine,chainwayxyz,clementine,main,,55
+Citrea Protocol & Smart Contracts,HackenProof:citrea-protocol-and-smart-contracts,exact,https://github.com/chainwayxyz/clementine-cli,chainwayxyz,clementine-cli,main,,56
+Snowbridge On-Chain Code,HackenProof:snowbridge-on-chain-code,exact,https://github.com/Snowfork/snowbridge/tree/1832f1ab840c257cac061e21926b65c93c43853c/contracts,Snowfork,snowbridge,1832f1ab840c257cac061e21926b65c93c43853c,contracts,57
+Snowbridge On-Chain Code,HackenProof:snowbridge-on-chain-code,exact,https://github.com/paritytech/polkadot-sdk/tree/master/bridges/snowbridge,paritytech,polkadot-sdk,master,bridges/snowbridge,58
+Cronos Blockchain Protocols,,unmatched,https://github.com/crypto-org-chain/cronos/releases,crypto-org-chain,cronos,main,,59
+Cronos Blockchain Protocols,,unmatched,https://github.com/crypto-org-chain/ethermint/releases,crypto-org-chain,ethermint,main,,60
+Cronos Blockchain Protocols,,unmatched,https://github.com/crypto-org-chain/chain-main/releases,crypto-org-chain,chain-main,main,,61
+Celestia,HackenProof:celestia,exact,https://github.com/celestiaorg/celestia-core,celestiaorg,celestia-core,main,,62
+Celestia,HackenProof:celestia,exact,https://github.com/celestiaorg/celestia-app,celestiaorg,celestia-app,main,,63
+Celestia,HackenProof:celestia,exact,https://github.com/celestiaorg/celestia-node,celestiaorg,celestia-node,main,,64
+Celestia,HackenProof:celestia,exact,https://github.com/celestiaorg/go-header,celestiaorg,go-header,main,,65
+Celestia,HackenProof:celestia,exact,https://github.com/celestiaorg/rsmt2d,celestiaorg,rsmt2d,main,,66
+Celestia,HackenProof:celestia,exact,https://github.com/celestiaorg/nmt,celestiaorg,nmt,main,,67
+Celestia,HackenProof:celestia,exact,https://github.com/celestiaorg/go-square,celestiaorg,go-square,main,,68
+Celestia,HackenProof:celestia,exact,https://github.com/celestiaorg/go-fraud,celestiaorg,go-fraud,main,,69
+Celestia,HackenProof:celestia,exact,https://github.com/klauspost/reedsolomon,klauspost,reedsolomon,main,,70
+Celestia,HackenProof:celestia,exact,https://github.com/succinctlabs/sp1-blobstream,succinctlabs,sp1-blobstream,main,,71
+VeChainThor,,unmatched,https://github.com/vechain/thor,vechain,thor,main,,72
+Bluefin Dex Contracts,HackenProof:bluefin-dex-contracts,exact,https://github.com/hackenproof-public/bluefin-dex-contracts-v3,hackenproof-public,bluefin-dex-contracts-v3,main,,73
+Cetus Smart Contracts,HackenProof:cetus-smart-contracts,exact,https://github.com/hackenproof-public/cetus-clmm,hackenproof-public,cetus-clmm,main,,74
+Cetus Smart Contracts,HackenProof:cetus-smart-contracts,exact,https://github.com/CetusProtocol/cetus-contracts,CetusProtocol,cetus-contracts,main,,75
+"Polkadot SDK, Runtime by Parity",,unmatched,https://github.com/paritytech/polkadot-sdk,paritytech,polkadot-sdk,main,,76
+"Polkadot SDK, Runtime by Parity",,unmatched,https://github.com/polkadot-fellows/runtimes/,polkadot-fellows,runtimes,main,,77
+Whitechain Bridge,HackenProof:whitechain-bridge,exact,https://github.com/whitechain-labs/bridge-contracts,whitechain-labs,bridge-contracts,main,,78
+Calyx Smart Contract,HackenProof:calyx-smart-contract,exact,https://github.com/aurora-is-near/aurora-launchpad-contracts/tree/0.7.0/contract,aurora-is-near,aurora-launchpad-contracts,0.7.0,contract,79
+ZetaChain Blockchain Software,HackenProof:zetachain-blockchain-software,exact,https://github.com/zeta-chain/node,zeta-chain,node,main,,80
+ZetaChain Blockchain Software,HackenProof:zetachain-blockchain-software,exact,https://github.com/zeta-chain/go-tss,zeta-chain,go-tss,main,,81
+ZetaChain Blockchain Software,HackenProof:zetachain-blockchain-software,exact,https://github.com/zeta-chain/tss-lib,zeta-chain,tss-lib,main,,82
+Flow Protocol,HackenProof:flow-protocol,exact,https://github.com/onflow/flow-go,onflow,flow-go,main,,83
+Flow Protocol,HackenProof:flow-protocol,exact,https://github.com/onflow/crypto,onflow,crypto,main,,84
+Flow Protocol,HackenProof:flow-protocol,exact,https://github.com/onflow/cadence,onflow,cadence,main,,85
+Flow Protocol,HackenProof:flow-protocol,exact,https://github.com/onflow/atree,onflow,atree,main,,86
+Flow Protocol,HackenProof:flow-protocol,exact,https://github.com/onflow/ccf,onflow,ccf,main,,87
+Flow Protocol,HackenProof:flow-protocol,exact,https://github.com/onflow/flow-core-contracts,onflow,flow-core-contracts,main,,88
+Flow Protocol,HackenProof:flow-protocol,exact,https://github.com/onflow/flow-evm-bridge,onflow,flow-evm-bridge,main,,89
+Polkadot Bridge,,unmatched,https://github.com/paritytech/parity-bridges-common,paritytech,parity-bridges-common,main,,90
+Polkadot Bridge,,unmatched,https://github.com/paritytech/polkadot-sdk/tree/master/bridges,paritytech,polkadot-sdk,master,bridges,91
+Polkadot Bridge,,unmatched,https://github.com/paritytech/polkadot-sdk/tree/master/cumulus/parachains/runtimes/bridge-hubs,paritytech,polkadot-sdk,master,cumulus/parachains/runtimes/bridge-hubs,92
+Polkadot Bridge,,unmatched,https://github.com/polkadot-fellows/runtimes/tree/main/system-parachains/bridge-hubs,polkadot-fellows,runtimes,main,system-parachains/bridge-hubs,93
+Aurora Smart Contract,,unmatched,https://github.com/aurora-is-near/aurora-engine/tree/master/engine,aurora-is-near,aurora-engine,master,engine,94
+Aurora Smart Contract,,unmatched,https://github.com/aurora-is-near/aurora-engine/tree/develop/engine,aurora-is-near,aurora-engine,develop,engine,95
+Aurora Smart Contract,,unmatched,https://github.com/aurora-is-near/aurora-engine/tree/master/engine-precompiles,aurora-is-near,aurora-engine,master,engine-precompiles,96
+Aurora Smart Contract,,unmatched,https://github.com/aurora-is-near/aurora-engine/tree/develop/engine-precompiles,aurora-is-near,aurora-engine,develop,engine-precompiles,97
+Aurora Smart Contract,,unmatched,https://github.com/aurora-is-near/aurora-engine/tree/master/engine-sdk,aurora-is-near,aurora-engine,master,engine-sdk,98
+Aurora Smart Contract,,unmatched,https://github.com/aurora-is-near/aurora-engine/tree/develop/engine-sdk,aurora-is-near,aurora-engine,develop,engine-sdk,99
+Aurora Smart Contract,,unmatched,https://github.com/aurora-is-near/aurora-engine/tree/master/engine-transactions,aurora-is-near,aurora-engine,master,engine-transactions,100
+Aurora Smart Contract,,unmatched,https://github.com/aurora-is-near/aurora-engine/tree/develop/engine-transactions,aurora-is-near,aurora-engine,develop,engine-transactions,101
+Aurora Smart Contract,,unmatched,https://github.com/aurora-is-near/aurora-engine/tree/master/engine-types,aurora-is-near,aurora-engine,master,engine-types,102
+Aurora Smart Contract,,unmatched,https://github.com/aurora-is-near/aurora-engine/tree/develop/engine-types,aurora-is-near,aurora-engine,develop,engine-types,103
+Aurora Smart Contract,,unmatched,https://github.com/aurora-is-near/aurora-engine/tree/master/etc/eth-contracts,aurora-is-near,aurora-engine,master,etc/eth-contracts,104
+Aurora Smart Contract,,unmatched,https://github.com/aurora-is-near/aurora-engine/tree/develop/etc/eth-contracts,aurora-is-near,aurora-engine,develop,etc/eth-contracts,105
+Aurora Smart Contract,,unmatched,https://github.com/aurora-is-near/sputnikvm,aurora-is-near,sputnikvm,main,,106
+SG Forge Smart Contracts,HackenProof:sg-forge-smart-contracts,exact,https://github.com/castframework/smartcoin,castframework,smartcoin,main,,107
+ADI Foundation zkVM Verification,HackenProof:adi-foundation-zkvm-verification,exact,https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Prover/tree/4f0cf4cd1a0d7cf48d366135e53da7960b936932,ADI-Foundation-Labs,ADI-Stack-Airbender-Prover,main,,108
+ADI Foundation zkVM Verification,HackenProof:adi-foundation-zkvm-verification,exact,https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-System/tree/357b836552d72550b20a341e1b45b730bef87806,ADI-Foundation-Labs,ADI-Stack-Airbender-System,main,,109
+ADI Foundation zkVM Verification,HackenProof:adi-foundation-zkvm-verification,exact,https://github.com/ADI-Foundation-Labs/ADI-Stack-Contracts/tree/04346d566e7625ae42ec74861da409329f9f4a3d/l1-contracts/contracts/state-transition,ADI-Foundation-Labs,ADI-Stack-Contracts,04346d566e7625ae42ec74861da409329f9f4a3d,l1-contracts/contracts/state-transition,110
+ADI Foundation zkVM Verification,HackenProof:adi-foundation-zkvm-verification,exact,https://github.com/ADI-Foundation-Labs/ADI-Stack-Protocol/tree/767759541cd018e4271f9774f0d760ce727c905d,ADI-Foundation-Labs,ADI-Stack-Protocol,main,,111
+ADI Foundation zkVM Verification,HackenProof:adi-foundation-zkvm-verification,exact,https://github.com/ADI-Foundation-Labs/ADI-Stack-zkOS-Wrapper/tree/eb75ad8ee972c63a30ef1121a1b9dc79a2942569,ADI-Foundation-Labs,ADI-Stack-zkOS-Wrapper,main,,112
+ADI Foundation Smart Contracts,HackenProof:adi-foundation-smart-contracts,exact,https://github.com/ADI-Foundation-Labs/ADI-Stack-Contracts/tree/04346d566e7625ae42ec74861da409329f9f4a3d/l1-contracts,ADI-Foundation-Labs,ADI-Stack-Contracts,04346d566e7625ae42ec74861da409329f9f4a3d,l1-contracts,113
+ADI Foundation Smart Contracts,HackenProof:adi-foundation-smart-contracts,exact,https://github.com/ADI-Foundation-Labs/ADI-Stack-Contracts/tree/04346d566e7625ae42ec74861da409329f9f4a3d/l2-contracts,ADI-Foundation-Labs,ADI-Stack-Contracts,04346d566e7625ae42ec74861da409329f9f4a3d,l2-contracts,114
+ADI Foundation Smart Contracts,HackenProof:adi-foundation-smart-contracts,exact,https://github.com/ADI-Foundation-Labs/ADI-Stack-Contracts/tree/04346d566e7625ae42ec74861da409329f9f4a3d/da-contracts,ADI-Foundation-Labs,ADI-Stack-Contracts,04346d566e7625ae42ec74861da409329f9f4a3d,da-contracts,115
+DODOFeeRouteProxy Smart Contract,,unmatched,https://github.com/DODOEX/dodo-route-contract,DODOEX,dodo-route-contract,main,,116
+Turbos Finance Smart Contracts,HackenProof:turbos-finance-smart-contracts,exact,https://github.com/hackenproof-public/turbos-clmm-public,hackenproof-public,turbos-clmm-public,main,,117
+LiNEAR Protocol,,unmatched,https://github.com/linear-protocol/LiNEAR,linear-protocol,LiNEAR,main,,118
+LiNEAR Protocol,,unmatched,https://github.com/linear-protocol/phoenix-bonds,linear-protocol,phoenix-bonds,main,,119
+Astros Smart Contracts,HackenProof:astros-smart-contracts,exact,https://github.com/naviprotocol/astros-contracts/tree/main/perp_vault,naviprotocol,astros-contracts,main,perp_vault,120
+NAVI Protocol,HackenProof:navi-protocol,exact,https://github.com/naviprotocol/navi-smart-contracts/tree/main/lending_core,naviprotocol,navi-smart-contracts,main,lending_core,121
+NAVI Protocol,HackenProof:navi-protocol,exact,https://github.com/naviprotocol/navi-smart-contracts/tree/main/oracle,naviprotocol,navi-smart-contracts,main,oracle,122
+Momentum Smart Contracts,HackenProof:momentum-smart-contracts,exact,https://github.com/hackenproof-public/mmt-v3-core,hackenproof-public,mmt-v3-core,main,,123
+Ember Vaults Smart Contracts,HackenProof:ember-vaults-smart-contracts,exact,https://github.com/hackenproof-public/ember-vaults,hackenproof-public,ember-vaults,main,,124
+FlowX CLMM Smart Contracts,HackenProof:flowx-clmm-smart-contracts,exact,https://github.com/hackenproof-public/flowx-clmm,hackenproof-public,flowx-clmm,main,,125
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/collect_fund_fee.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/admin/collect_fund_fee.rs,126
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/collect_protocol_fee.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/admin/collect_protocol_fee.rs,127
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/create_operation_account.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/admin/create_operation_account.rs,128
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/mod.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/admin/mod.rs,129
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/transfer_reward_owner.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/admin/transfer_reward_owner.rs,130
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/update_amm_config.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/admin/update_amm_config.rs,131
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/update_operation_account.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/admin/update_operation_account.rs,132
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/admin/update_pool_status.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/admin/update_pool_status.rs,133
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/close_position.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/close_position.rs,134
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/collect_remaining_rewards.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/collect_remaining_rewards.rs,135
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/create_pool.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/create_pool.rs,136
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/decrease_liquidity.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/decrease_liquidity.rs,137
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/increase_liquidity.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/increase_liquidity.rs,138
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/initialize_reward.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/initialize_reward.rs,139
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/mod.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/mod.rs,140
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/open_position.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/open_position.rs,141
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/set_reward_params.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/set_reward_params.rs,142
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/swap.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/swap.rs,143
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/swap_router_base_in.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/swap_router_base_in.rs,144
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/instructions/update_reward_info.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/instructions/update_reward_info.rs,145
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/big_num.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/libraries/big_num.rs,146
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/fixed_point_64.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/libraries/fixed_point_64.rs,147
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/full_math.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/libraries/full_math.rs,148
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/liquidity_math.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/libraries/liquidity_math.rs,149
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/mod.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/libraries/mod.rs,150
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/sqrt_price_math.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/libraries/sqrt_price_math.rs,151
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/swap_math.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/libraries/swap_math.rs,152
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/tick_array_bit_map.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/libraries/tick_array_bit_map.rs,153
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/tick_math.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/libraries/tick_math.rs,154
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/libraries/unsafe_math.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/libraries/unsafe_math.rs,155
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/config.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/states/config.rs,156
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/mod.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/states/mod.rs,157
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/operation_account.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/states/operation_account.rs,158
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/oracle.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/states/oracle.rs,159
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/personal_position.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/states/personal_position.rs,160
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/pool.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/states/pool.rs,161
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/protocol_position.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/states/protocol_position.rs,162
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/states/tick_array.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/states/tick_array.rs,163
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/util/mod.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/util/mod.rs,164
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/util/system.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/util/system.rs,165
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/util/token.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/util/token.rs,166
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/error.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/error.rs,167
+Swap.io Smart Contracts,HackenProof:swap-dot-io-smart-contracts,exact,https://github.com/swap-dot-io/swap-io-clmm/blob/586ca2beb81721b33ae1f2975b8f016cf242c492/programs/amm/src/lib.rs,swap-dot-io,swap-io-clmm,586ca2beb81721b33ae1f2975b8f016cf242c492,programs/amm/src/lib.rs,168
+Kai Finance Yield Protocol,HackenProof:kai-finance-yield-protocol,exact,https://github.com/kunalabs-io/sui-smart-contracts/tree/master/kai/leverage/core,kunalabs-io,sui-smart-contracts,master,kai/leverage/core,169
+Kai Finance Yield Protocol,HackenProof:kai-finance-yield-protocol,exact,https://github.com/kunalabs-io/sui-smart-contracts/tree/master/access-management,kunalabs-io,sui-smart-contracts,master,access-management,170
+Haedal Smart Contracts,HackenProof:haedal-smart-contracts,exact,https://github.com/hackenproof-public/hasui-bug-bounty,hackenproof-public,hasui-bug-bounty,main,,171
+Haedal Smart Contracts,HackenProof:haedal-smart-contracts,exact,https://github.com/hackenproof-public/hawal-bug-bounty,hackenproof-public,hawal-bug-bounty,main,,172
+Bluefin Spot Contracts,,unmatched,https://github.com/hackenproof-public/bluefin-coin-contracts,hackenproof-public,bluefin-coin-contracts,main,,173
+Nado Smart Contracts,HackenProof:nado-smart-contracts,exact,https://github.com/nadohq/nado-contracts,nadohq,nado-contracts,main,,174
+Layer3 Smart Contracts,HackenProof:layer3-web,canonical,https://github.com/layer3xyz/cubes/blob/main/src/escrow/Factory.sol,layer3xyz,cubes,main,src/escrow/Factory.sol,175
+Bucket Protocol Smart Contracts,HackenProof:bucket-protocol-smart-contracts,exact,https://github.com/hackenproof-public/bucket-protocol,hackenproof-public,bucket-protocol,main,,176
+NOYA.ai Smart Contracts,HackenProof:noya-dot-ai-smart-contracts,exact,https://github.com/Noya-ai/noya-JUL-2025-audit-scope,Noya-ai,noya-JUL-2025-audit-scope,main,,177
+STON.fi DEX Smart Contracts v2,HackenProof:ston-dot-fi-dex-smart-contracts-v2,exact,https://github.com/ston-fi/dex-core-v2/blob/main/contracts/lp_account.fc,ston-fi,dex-core-v2,main,contracts/lp_account.fc,178
+STON.fi DEX Smart Contracts v2,HackenProof:ston-dot-fi-dex-smart-contracts-v2,exact,https://github.com/ston-fi/dex-core-v2/blob/main/contracts/lp_wallet.fc,ston-fi,dex-core-v2,main,contracts/lp_wallet.fc,179
+STON.fi DEX Smart Contracts v2,HackenProof:ston-dot-fi-dex-smart-contracts-v2,exact,https://github.com/ston-fi/dex-core-v2/blob/main/contracts/pool.fc,ston-fi,dex-core-v2,main,contracts/pool.fc,180
+STON.fi DEX Smart Contracts v2,HackenProof:ston-dot-fi-dex-smart-contracts-v2,exact,https://github.com/ston-fi/dex-core-v2/blob/main/contracts/router.fc,ston-fi,dex-core-v2,main,contracts/router.fc,181
+STON.fi DEX Smart Contracts v2,HackenProof:ston-dot-fi-dex-smart-contracts-v2,exact,https://github.com/ston-fi/dex-core-v2/blob/main/contracts/vault.fc,ston-fi,dex-core-v2,main,contracts/vault.fc,182
+Scallop Protocol (Smart Contract),HackenProof:scallop-protocol-smart-contract,exact,https://github.com/scallop-io/sui-lending-protocol,scallop-io,sui-lending-protocol,main,,183
+1inch Smart Contract,HackenProof:1inch-web,canonical,https://github.com/1inch/limit-order-protocol,1inch,limit-order-protocol,main,,184
+1inch Smart Contract,HackenProof:1inch-web,canonical,https://github.com/1inch/fusion-protocol,1inch,fusion-protocol,main,,185
+1inch Smart Contract,HackenProof:1inch-web,canonical,https://github.com/1inch/token-plugins,1inch,token-plugins,main,,186
+1inch Smart Contract,HackenProof:1inch-web,canonical,https://github.com/1inch/farming,1inch,farming,main,,187
+1inch Smart Contract,HackenProof:1inch-web,canonical,https://github.com/1inch/delegating,1inch,delegating,main,,188
+1inch Smart Contract,HackenProof:1inch-web,canonical,https://github.com/1inch/calldata-compressor,1inch,calldata-compressor,main,,189
+1inch Smart Contract,HackenProof:1inch-web,canonical,https://github.com/1inch/cross-chain-swap,1inch,cross-chain-swap,main,,190
+1inch Smart Contract,HackenProof:1inch-web,canonical,https://github.com/1inch/solana-crosschain-protocol,1inch,solana-crosschain-protocol,main,,191
+1inch Smart Contract,HackenProof:1inch-web,canonical,https://github.com/1inch/solana-fusion,1inch,solana-fusion,main,,192
+RISC Zero Blockchain Verifiers,,unmatched,https://github.com/risc0/risc0-ethereum/tree/main/contracts/src,risc0,risc0-ethereum,main,contracts/src,193
+Gear Protocol,HackenProof:gear-protocol,exact,https://github.com/gear-tech/gear/tree/master/core,gear-tech,gear,master,core,194
+Aptos Naming Service (ANS),,unmatched,https://github.com/aptos-labs/aptos-names-contracts/tree/main,aptos-labs,aptos-names-contracts,main,,195
+Waku,,unmatched,https://github.com/waku-org/js-waku,waku-org,js-waku,main,,196
+Waku,,unmatched,https://github.com/waku-org/js-waku-examplesf,waku-org,js-waku-examplesf,main,,197
+Waku,,unmatched,https://github.com/status-im/go-waku,status-im,go-waku,main,,198
+Waku,,unmatched,https://github.com/status-im/go-waku/tree/master/examples,status-im,go-waku,master,examples,199
+Account Abstraction Bugs,,unmatched,https://github.com/eth-infinitism/account-abstraction,eth-infinitism,account-abstraction,main,,200
+Account Abstraction Bugs,,unmatched,https://github.com/ethereum/ercs/blob/master/ERCS/erc-4337.md,ethereum,ercs,master,ERCS/erc-4337.md,201
+Account Abstraction Bugs,,unmatched,https://github.com/ethereum/ercs/blob/master/ERCS/erc-7562.md,ethereum,ercs,master,ERCS/erc-7562.md,202
+Unitus V2 Smart Contracts,,unmatched,https://github.com/UnitusLabs/Contracts/wiki/Deployments#base-contracts,UnitusLabs,Contracts,main,,203
+KUB Chain & Ecosystem,HackenProof:kub-chain-and-ecosystem,exact,https://github.com/kub-chain/bkc,kub-chain,bkc,main,,204
+DODOLimitOrder Smart Contract,,unmatched,https://github.com/DODOEX/dodo-limit-order/blob/main/src/DODOLimitOrder.solf,DODOEX,dodo-limit-order,main,src/DODOLimitOrder.solf,205

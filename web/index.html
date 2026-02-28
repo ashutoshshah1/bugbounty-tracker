@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bug Bounty Ops Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/web/styles.css" />
+  </head>
+  <body>
+    <div class="bg-blob blob-a" aria-hidden="true"></div>
+    <div class="bg-blob blob-b" aria-hidden="true"></div>
+    <div class="bg-blob blob-c" aria-hidden="true"></div>
+
+    <header class="site-header reveal" id="top">
+      <div class="brand-wrap">
+        <p class="eyebrow">Smart Contract Security</p>
+        <h1>Bug Bounty Ops Platform</h1>
+        <p class="lead">
+          Professional tracking for HackenProof, Sherlock, Immunefi, and Code4rena with live program,
+          GitHub, and submission workflows.
+        </p>
+      </div>
+      <div class="header-actions">
+        <a id="github-login-btn" class="btn ghost" href="/api/auth/github/login">GitHub Login</a>
+        <button id="refresh-all" class="btn">Refresh All</button>
+        <button id="run-bbradar" class="btn accent">Run BBRadar</button>
+        <button id="run-github" class="btn accent-alt">Run GitHub</button>
+      </div>
+    </header>
+
+    <nav class="quick-nav reveal delay-1" aria-label="Sections">
+      <a href="#overview">Overview</a>
+      <a href="#programs">Programs</a>
+      <a href="#events-watches">Events & Watches</a>
+      <a href="#submissions">Submissions</a>
+      <a href="#insights">Insights</a>
+      <a href="#advanced">Advanced</a>
+      <a href="#automation">Automation</a>
+      <a href="#api-backend">API & Backend</a>
+    </nav>
+
+    <main>
+      <section id="overview" class="glass panel reveal delay-2">
+        <div class="panel-head">
+          <h2>Platform Overview</h2>
+          <div class="inline-actions">
+            <button id="cleanup-dry" class="btn soft">Dry Cleanup</button>
+            <button id="cleanup-apply" class="btn soft-alt">Apply Cleanup</button>
+          </div>
+        </div>
+
+        <div class="metrics-grid">
+          <article class="metric-card">
+            <h3>Programs</h3>
+            <p id="metric-programs">-</p>
+          </article>
+          <article class="metric-card">
+            <h3>Active Watches</h3>
+            <p id="metric-watches">-</p>
+          </article>
+          <article class="metric-card">
+            <h3>Recent Events</h3>
+            <p id="metric-events">-</p>
+          </article>
+          <article class="metric-card">
+            <h3>Submissions</h3>
+            <p id="metric-submissions">-</p>
+          </article>
+        </div>
+
+        <div class="status-shell">
+          <div>
+            <h3 class="minor-title">Backend Status</h3>
+            <div id="status-grid" class="status-grid"></div>
+          </div>
+          <div>
+            <h3 class="minor-title">Run Summaries</h3>
+            <ul id="run-summary-list" class="summary-list"></ul>
+          </div>
+        </div>
+
+        <div class="glass panel">
+          <div class="panel-head">
+            <h3>Scan Job Queue</h3>
+            <button id="load-jobs" class="btn soft">Reload Jobs</button>
+          </div>
+          <ul id="jobs-list" class="event-list"></ul>
+        </div>
+      </section>
+
+      <section id="programs" class="glass panel reveal delay-3">
+        <div class="panel-head">
+          <h2>Programs</h2>
+          <p id="programs-summary" class="hint">-</p>
+        </div>
+
+        <div class="filters-row">
+          <label>
+            Program Search
+            <input id="program-search" type="text" placeholder="Search by program name / handle" />
+          </label>
+          <label>
+            Platform
+            <select id="program-platform">
+              <option value="">All</option>
+              <option value="HackenProof">HackenProof</option>
+              <option value="Immunefi">Immunefi</option>
+              <option value="Code4rena">Code4rena</option>
+              <option value="Sherlock">Sherlock</option>
+            </select>
+          </label>
+          <label>
+            Focus
+            <select id="program-focus">
+              <option value="smart_contract" selected>Smart Contract + Blockchain</option>
+              <option value="all">All Programs</option>
+            </select>
+          </label>
+          <label>
+            Limit
+            <input id="program-limit" type="number" min="1" max="1000" value="120" />
+          </label>
+          <label class="check">
+            <input id="program-updated-only" type="checkbox" />
+            Updated only
+          </label>
+          <button id="load-programs" class="btn soft">Load Programs</button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Platform</th>
+                <th>Launch Date</th>
+                <th>Last Change</th>
+                <th>Scope</th>
+                <th>Reward</th>
+                <th>GitHub Links</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody id="programs-body"></tbody>
+          </table>
+        </div>
+
+        <div id="platform-lists" class="platform-lists"></div>
+
+        <div class="dual-grid">
+          <div class="glass panel">
+            <div class="panel-head">
+              <h3>Hotlist Tags</h3>
+              <button id="load-hotlist" class="btn soft">Load Hotlist</button>
+            </div>
+            <form id="program-tag-form" class="submission-form">
+              <input id="tag-program-id" type="text" placeholder="Program external_id" required />
+              <input id="tag-name" type="text" value="hotlist" placeholder="Tag" required />
+              <input id="tag-boost" type="number" value="8" placeholder="Boost score" />
+              <input id="tag-note" type="text" placeholder="Note (optional)" />
+              <button type="submit" class="btn soft">Save Tag</button>
+            </form>
+            <div class="table-wrap small">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Program</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Tags</th>
+                  </tr>
+                </thead>
+                <tbody id="hotlist-body"></tbody>
+              </table>
+            </div>
+          </div>
+          <div class="glass panel">
+            <div class="panel-head">
+              <h3>Program Diff Timeline</h3>
+            </div>
+            <form id="timeline-form" class="submission-form">
+              <input id="timeline-program-id" type="text" placeholder="Program external_id" required />
+              <button type="submit" class="btn soft">Load Timeline</button>
+            </form>
+            <ul id="timeline-list" class="event-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="events-watches" class="dual-grid reveal delay-4">
+        <div class="glass panel">
+          <div class="panel-head">
+            <h2>Recent Events</h2>
+            <button id="load-events" class="btn soft">Reload</button>
+          </div>
+
+          <div class="filters-row compact">
+            <label>
+              Event Type
+              <select id="event-type">
+                <option value="">All</option>
+                <option value="new_program">new_program</option>
+                <option value="program_updated">program_updated</option>
+                <option value="github_updated">github_updated</option>
+                <option value="run_error">run_error</option>
+                <option value="maintenance_cleanup">maintenance_cleanup</option>
+              </select>
+            </label>
+          </div>
+
+          <ul id="events-list" class="event-list"></ul>
+        </div>
+
+        <div class="glass panel">
+          <div class="panel-head">
+            <h2>GitHub Watches</h2>
+            <button id="load-watches" class="btn soft">Reload</button>
+          </div>
+
+          <form id="watch-form" class="watch-form">
+            <input
+              id="watch-github-url"
+              type="url"
+              placeholder="https://github.com/org/repo/tree/main/path"
+              required
+            />
+            <input id="watch-program-id" type="text" placeholder="Program external_id (optional)" />
+            <button type="submit" class="btn soft">Add Watch</button>
+          </form>
+
+          <div class="filters-row compact">
+            <label>
+              Search GitHub
+              <input id="watch-search" type="text" placeholder="repo / path / github text" />
+            </label>
+            <label>
+              Program Name
+              <input id="watch-program-search" type="text" placeholder="Search program name" />
+            </label>
+            <button id="watch-search-btn" class="btn soft" type="button">Search</button>
+            <button id="watch-clear-btn" class="btn ghost" type="button">Clear</button>
+          </div>
+
+          <div class="table-wrap small">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Program</th>
+                  <th>Repository</th>
+                  <th>Path</th>
+                  <th>Branch</th>
+                  <th>SHA</th>
+                  <th>GitHub</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="watches-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="submissions" class="glass panel reveal delay-5">
+        <div class="panel-head">
+          <h2>Submission Tracker</h2>
+          <button id="load-submissions" class="btn soft">Reload</button>
+        </div>
+
+        <form id="submission-form" class="submission-form">
+          <input id="sub-platform" type="text" placeholder="Platform" required />
+          <input id="sub-program" type="text" placeholder="Program name" required />
+          <input id="sub-title" type="text" placeholder="Bug title" required />
+          <select id="sub-severity">
+            <option value="critical">critical</option>
+            <option value="high" selected>high</option>
+            <option value="medium">medium</option>
+            <option value="low">low</option>
+            <option value="info">info</option>
+          </select>
+          <select id="sub-status">
+            <option value="submitted" selected>submitted</option>
+            <option value="triaged">triaged</option>
+            <option value="rejected">rejected</option>
+            <option value="resolved">resolved</option>
+          </select>
+          <button type="submit" class="btn soft">Add Submission</button>
+        </form>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Platform</th>
+                <th>Program</th>
+                <th>Bug</th>
+                <th>Severity</th>
+                <th>Status</th>
+                <th>Updated</th>
+              </tr>
+            </thead>
+            <tbody id="submissions-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="advanced" class="glass panel reveal delay-5">
+        <div class="panel-head">
+          <h2>Advanced Workflow</h2>
+        </div>
+
+        <div class="dual-grid">
+          <div class="glass panel">
+            <div class="panel-head">
+              <h3>Duplicate Guard + Templates</h3>
+            </div>
+            <form id="duplicate-check-form" class="submission-form">
+              <input id="dup-platform" type="text" placeholder="Platform" required />
+              <input id="dup-program" type="text" placeholder="Program" required />
+              <input id="dup-title" type="text" placeholder="Bug title" required />
+              <input id="dup-notes" type="text" placeholder="Short notes" />
+              <button type="submit" class="btn soft">Check Duplicate</button>
+            </form>
+            <ul id="duplicate-results" class="event-list"></ul>
+
+            <div class="filters-row compact">
+              <label>
+                Template Platform
+                <select id="template-platform">
+                  <option value="HackenProof">HackenProof</option>
+                  <option value="Immunefi">Immunefi</option>
+                  <option value="Sherlock">Sherlock</option>
+                  <option value="Code4rena">Code4rena</option>
+                </select>
+              </label>
+              <button id="load-template" class="btn soft" type="button">Load Template</button>
+              <button id="validate-template" class="btn soft-alt" type="button">Validate Draft</button>
+            </div>
+            <textarea id="template-report-text" rows="8" placeholder="Write your draft report here"></textarea>
+            <p id="template-validation-result" class="hint">-</p>
+          </div>
+
+          <div class="glass panel">
+            <div class="panel-head">
+              <h3>Workflow + Evidence Vault</h3>
+            </div>
+            <form id="workflow-load-form" class="submission-form">
+              <input id="workflow-submission-id" type="number" min="1" placeholder="Submission ID" required />
+              <button type="submit" class="btn soft">Load Workflow</button>
+            </form>
+            <form id="workflow-assign-form" class="submission-form">
+              <input id="workflow-assign-user-id" type="number" min="1" placeholder="Assign User ID" />
+              <button type="submit" class="btn soft">Assign</button>
+            </form>
+            <form id="workflow-transition-form" class="submission-form">
+              <select id="workflow-stage">
+                <option value="triaged">triaged</option>
+                <option value="in_review">in_review</option>
+                <option value="needs_info">needs_info</option>
+                <option value="accepted">accepted</option>
+                <option value="rejected">rejected</option>
+                <option value="resolved">resolved</option>
+              </select>
+              <button type="submit" class="btn soft">Transition</button>
+            </form>
+            <form id="workflow-note-form" class="submission-form">
+              <input id="workflow-note-text" type="text" placeholder="Internal note" required />
+              <button type="submit" class="btn soft-alt">Add Note</button>
+            </form>
+            <p id="workflow-summary" class="hint">-</p>
+            <ul id="workflow-notes-list" class="event-list"></ul>
+
+            <form id="evidence-form" class="submission-form">
+              <input id="evidence-title" type="text" placeholder="Evidence title" required />
+              <input id="evidence-tx-hash" type="text" placeholder="Tx hash (optional)" />
+              <input id="evidence-url" type="url" placeholder="External URL (optional)" />
+              <input id="evidence-file" type="file" />
+              <button type="submit" class="btn soft">Add Evidence</button>
+            </form>
+            <ul id="evidence-list" class="event-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="insights" class="glass panel reveal delay-5">
+        <div class="panel-head">
+          <h2>Insights</h2>
+          <div class="inline-actions">
+            <button id="refresh-insights" class="btn soft">Refresh Insights</button>
+            <button id="run-digest" class="btn accent">Run Digest</button>
+            <button id="run-backup" class="btn accent-alt">Run Backup</button>
+          </div>
+        </div>
+
+        <div class="metrics-grid">
+          <article class="metric-card">
+            <h3>Stale Watches</h3>
+            <p id="metric-stale-watches">-</p>
+          </article>
+          <article class="metric-card">
+            <h3>Unhealthy Watches</h3>
+            <p id="metric-unhealthy-watches">-</p>
+          </article>
+          <article class="metric-card">
+            <h3>Rejected Reports</h3>
+            <p id="metric-rejected-reports">-</p>
+          </article>
+          <article class="metric-card">
+            <h3>Coverage Sources</h3>
+            <p id="metric-source-count">-</p>
+          </article>
+        </div>
+
+        <div class="dual-grid">
+          <div class="glass panel">
+            <div class="panel-head">
+              <h3>Watch Health</h3>
+            </div>
+            <p id="watch-health-summary" class="hint">-</p>
+            <ul id="watch-health-list" class="event-list"></ul>
+          </div>
+          <div class="glass panel">
+            <div class="panel-head">
+              <h3>Rejection Analytics</h3>
+            </div>
+            <p id="rejection-summary" class="hint">-</p>
+            <ul id="rejection-reasons" class="event-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="automation" class="glass panel reveal delay-5">
+        <div class="panel-head">
+          <h2>Automation and Team</h2>
+          <button id="load-admin-data" class="btn soft">Load Admin Data</button>
+        </div>
+
+        <div class="filters-row">
+          <label>
+            Admin API Key
+            <input id="admin-api-key" type="password" placeholder="Set BOOTSTRAP_ADMIN_API_KEY value" />
+          </label>
+        </div>
+
+        <div class="dual-grid">
+          <div class="glass panel">
+            <div class="panel-head">
+              <h3>Alert Rules</h3>
+            </div>
+
+            <form id="alert-rule-form" class="submission-form">
+              <input id="rule-name" type="text" placeholder="Rule name" required />
+              <input id="rule-min-bounty" type="number" min="0" placeholder="Min bounty (optional)" />
+              <input id="rule-platforms" type="text" placeholder="Platforms CSV (optional)" />
+              <input id="rule-keywords" type="text" placeholder="Keywords CSV (optional)" />
+              <input id="rule-event-types" type="text" placeholder="Event types CSV" value="new_program,program_updated,github_updated" />
+              <label class="check">
+                <input id="rule-digest-only" type="checkbox" />
+                Digest only
+              </label>
+              <button type="submit" class="btn soft">Create Rule</button>
+            </form>
+
+            <div class="table-wrap small">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Min Bounty</th>
+                    <th>Events</th>
+                    <th>Digest</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="alert-rules-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="glass panel">
+            <div class="panel-head">
+              <h3>Team Users</h3>
+            </div>
+
+            <form id="team-user-form" class="submission-form">
+              <input id="team-username" type="text" placeholder="Username" required />
+              <select id="team-role">
+                <option value="viewer">viewer</option>
+                <option value="analyst">analyst</option>
+                <option value="admin">admin</option>
+              </select>
+              <label class="check">
+                <input id="team-active" type="checkbox" checked />
+                Active
+              </label>
+              <button type="submit" class="btn soft">Create User</button>
+            </form>
+
+            <div class="table-wrap small">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                    <th>Active</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="team-users-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="api-backend" class="glass panel reveal delay-5">
+        <div class="panel-head">
+          <h2>API & Backend Separation</h2>
+          <div class="api-links">
+            <a href="/api" target="_blank" rel="noopener">/api</a>
+            <a href="/api/docs" target="_blank" rel="noopener">/api/docs</a>
+            <a href="/api/openapi.json" target="_blank" rel="noopener">openapi.json</a>
+          </div>
+        </div>
+
+        <div class="api-grid">
+          <article class="api-card">
+            <h3>Frontend App</h3>
+            <p>URL: <code>/app</code></p>
+            <p>Dashboard for programs, watches, events, and submissions.</p>
+          </article>
+          <article class="api-card">
+            <h3>Backend API</h3>
+            <p>Base URL: <code>/api</code></p>
+            <p>All backend operations are grouped under a dedicated API namespace.</p>
+          </article>
+          <article class="api-card">
+            <h3>Auth Endpoints</h3>
+            <p><code>/api/auth/github/login</code></p>
+            <p><code>/api/auth/github/callback</code></p>
+          </article>
+        </div>
+
+        <div class="table-wrap small">
+          <table>
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Endpoint</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody id="api-endpoints-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Bug Bounty Ops Platform</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <div id="toast" class="toast"></div>
+    <script src="/web/app.js" defer></script>
+  </body>
+</html>
