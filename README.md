@@ -21,14 +21,41 @@ Automated tracker for smart-contract bug bounty hunting workflows:
 - Reliability hardening (retry/backoff, source health alerts, API-key hashing, bounded workers, stale-job recovery, housekeeping retention)
 - Pre-audit pipeline (AI/manual findings, validation gate, and full report draft generation)
 
-## 1. Setup
+## Quick Start (New Contributors)
 
 ```bash
-cd /home/bratwork/Desktop/live
-python -m venv .venv
+git clone https://github.com/ashutoshshah1/bugbounty-tracker.git
+cd bugbounty-tracker
+chmod +x scripts/setup.sh
+./scripts/setup.sh
+source .venv/bin/activate
+python run.py
+```
+
+Open:
+
+- `http://127.0.0.1:3001/app`
+- `http://127.0.0.1:3001/api/docs`
+
+Detailed onboarding guide: [docs/SETUP.md](docs/SETUP.md).
+Agent-friendly quick setup: [AGENT.md](AGENT.md).
+
+## 1. Setup
+
+Recommended:
+
+```bash
+chmod +x scripts/setup.sh
+./scripts/setup.sh
+```
+
+Manual setup:
+
+```bash
+python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env
+cp .env.example .env  # skip if .env already exists
 ```
 
 Set Telegram values in `.env`:
