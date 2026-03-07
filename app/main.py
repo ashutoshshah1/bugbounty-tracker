@@ -71,6 +71,17 @@ async def lifespan(_: FastAPI):
         max_instances=1,
         next_run_time=datetime.now(timezone.utc) + timedelta(seconds=15),
     )
+    scheduler.add_job(
+        service.retry_pending_notifications,
+        trigger="interval",
+        minutes=settings.notification_retry_interval_minutes,
+        kwargs={"trigger": "scheduler"},
+        id="notification_retry_run",
+        replace_existing=True,
+        coalesce=True,
+        max_instances=1,
+        next_run_time=datetime.now(timezone.utc) + timedelta(seconds=20),
+    )
     if settings.digest_enabled:
         scheduler.add_job(
             service.run_daily_digest,

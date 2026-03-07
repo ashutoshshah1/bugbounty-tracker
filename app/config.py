@@ -42,6 +42,7 @@ class Settings:
     track_scope_keywords: list[str]
     bbradar_interval_minutes: int
     github_interval_minutes: int
+    notification_retry_interval_minutes: int
     digest_enabled: bool
     digest_interval_hours: int
     backup_enabled: bool
@@ -65,6 +66,8 @@ class Settings:
     database_path: Path
     telegram_bot_token: str | None
     telegram_chat_id: str | None
+    github_telegram_bot_token: str | None
+    github_telegram_chat_id: str | None
     github_token: str | None
     github_oauth_client_id: str | None
     github_oauth_client_secret: str | None
@@ -85,6 +88,11 @@ class Settings:
         reports_dir.mkdir(parents=True, exist_ok=True)
         database_path.parent.mkdir(parents=True, exist_ok=True)
 
+        telegram_bot_token = (os.getenv("TELEGRAM_BOT_TOKEN") or "").strip() or None
+        telegram_chat_id = (os.getenv("TELEGRAM_CHAT_ID") or "").strip() or None
+        github_telegram_bot_token = (os.getenv("GITHUB_TELEGRAM_BOT_TOKEN") or "").strip() or None
+        github_telegram_chat_id = (os.getenv("GITHUB_TELEGRAM_CHAT_ID") or "").strip() or None
+
         return cls(
             bbradar_base_url=os.getenv("BBRADAR_BASE_URL", "https://bbradar.io").rstrip("/"),
             vigilseek_base_url=os.getenv("VIGILSEEK_BASE_URL", "https://new-api.vigilseek.com").rstrip("/"),
@@ -93,6 +101,10 @@ class Settings:
             track_scope_keywords=[word.casefold() for word in _split_csv(os.getenv("TRACK_SCOPE_KEYWORDS", ""))],
             bbradar_interval_minutes=max(1, _to_int(os.getenv("BBRADAR_INTERVAL_MINUTES"), 30)),
             github_interval_minutes=max(1, _to_int(os.getenv("GITHUB_INTERVAL_MINUTES"), 60)),
+            notification_retry_interval_minutes=max(
+                1,
+                _to_int(os.getenv("NOTIFICATION_RETRY_INTERVAL_MINUTES"), 5),
+            ),
             digest_enabled=_to_bool(os.getenv("DIGEST_ENABLED"), True),
             digest_interval_hours=max(1, _to_int(os.getenv("DIGEST_INTERVAL_HOURS"), 24)),
             backup_enabled=_to_bool(os.getenv("BACKUP_ENABLED"), True),
@@ -116,8 +128,10 @@ class Settings:
             data_dir=data_dir,
             reports_dir=reports_dir,
             database_path=database_path,
-            telegram_bot_token=os.getenv("TELEGRAM_BOT_TOKEN"),
-            telegram_chat_id=os.getenv("TELEGRAM_CHAT_ID"),
+            telegram_bot_token=telegram_bot_token,
+            telegram_chat_id=telegram_chat_id,
+            github_telegram_bot_token=github_telegram_bot_token,
+            github_telegram_chat_id=(github_telegram_chat_id or telegram_chat_id),
             github_token=os.getenv("GITHUB_TOKEN"),
             github_oauth_client_id=os.getenv("GITHUB_OAUTH_CLIENT_ID"),
             github_oauth_client_secret=os.getenv("GITHUB_OAUTH_CLIENT_SECRET"),
@@ -130,6 +144,10 @@ class Settings:
     @property
     def telegram_enabled(self) -> bool:
         return bool(self.telegram_bot_token and self.telegram_chat_id)
+
+    @property
+    def github_telegram_enabled(self) -> bool:
+        return bool(self.github_telegram_bot_token and self.github_telegram_chat_id)
 
     @property
     def tracked_platform_set(self) -> set[str]:

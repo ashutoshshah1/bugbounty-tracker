@@ -43,6 +43,7 @@ Minimum local fields:
 ```env
 PORT=3001
 TRACK_PLATFORMS=Sherlock,Immunefi,Code4rena,HackenProof
+NOTIFICATION_RETRY_INTERVAL_MINUTES=5
 ```
 
 For Telegram alerts:
@@ -50,6 +51,13 @@ For Telegram alerts:
 ```env
 TELEGRAM_BOT_TOKEN=123456:ABC...
 TELEGRAM_CHAT_ID=-1001234567890
+```
+
+For a separate GitHub-update Telegram bot:
+
+```env
+GITHUB_TELEGRAM_BOT_TOKEN=123456:DEF...
+GITHUB_TELEGRAM_CHAT_ID=-1009876543210
 ```
 
 For reliable GitHub checks (recommended):
