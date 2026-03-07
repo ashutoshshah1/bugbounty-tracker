@@ -1,0 +1,11 @@
+[Unit]
+Description=Periodic health checks for Bug Bounty Tracker
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+AccuracySec=30s
+Unit=bug-bounty-tracker-healthcheck.service
+
+[Install]
+WantedBy=timers.target

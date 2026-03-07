@@ -1,0 +1,27 @@
+[Unit]
+Description=Bug Bounty Tracker API
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+WorkingDirectory=%h/Desktop/live
+EnvironmentFile=%h/Desktop/live/.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=%h/Desktop/live/.venv/bin/python %h/Desktop/live/run.py
+Restart=always
+RestartSec=5
+TimeoutStopSec=20
+KillSignal=SIGINT
+UMask=0077
+StandardOutput=journal
+StandardError=journal
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=read-only
+ReadWritePaths=%h/Desktop/live/data
+
+[Install]
+WantedBy=default.target

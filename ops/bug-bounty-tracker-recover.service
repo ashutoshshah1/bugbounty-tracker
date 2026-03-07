@@ -1,0 +1,6 @@
+[Unit]
+Description=Restart Bug Bounty Tracker after failed health check
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/systemctl --user restart bug-bounty-tracker.service

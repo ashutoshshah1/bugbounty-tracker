@@ -1,0 +1,11 @@
+[Unit]
+Description=Bug Bounty Tracker health check
+Wants=bug-bounty-tracker.service
+After=bug-bounty-tracker.service
+OnFailure=bug-bounty-tracker-recover.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/Desktop/live
+EnvironmentFile=%h/Desktop/live/.env
+ExecStart=%h/Desktop/live/ops/bug-bounty-tracker-healthcheck.sh
