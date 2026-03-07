@@ -66,6 +66,9 @@ GITHUB_OAUTH_CLIENT_SECRET=...
 GITHUB_OAUTH_REDIRECT_URI=http://127.0.0.1:3001/api/auth/github/callback
 ```
 
+If `GITHUB_TOKEN` is configured and the OAuth variables above are blank, the `GitHub Login`
+button will use that token for local login and redirect back to `/app`.
+
 ## 5. Run the app
 
 ```bash

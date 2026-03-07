@@ -233,6 +233,7 @@ class TrackerService:
         self._github_lock = threading.Lock()
         self._job_lock = threading.Lock()
         self._status_lock = threading.Lock()
+        self._shutdown_event = threading.Event()
         self._job_executor = ThreadPoolExecutor(
             max_workers=max(1, self.settings.job_worker_count),
             thread_name_prefix="scan-job",
@@ -249,7 +250,11 @@ class TrackerService:
         }
         self._bootstrap_admin_user()
 
+    def _shutdown_requested(self) -> bool:
+        return self._shutdown_event.is_set()
+
     def close(self) -> None:
+        self._shutdown_event.set()
         self._job_executor.shutdown(wait=False, cancel_futures=False)
         self.bbradar_client.close()
         if self.vigilseek_client is not None:
@@ -1393,6 +1398,19 @@ class TrackerService:
                         ("vigilseek", item) for item in self.vigilseek_client.fetch_programs()
                     )
                 except VigilSeekClientError as exc:
+                    if self._shutdown_requested():
+                        summary = {
+                            "status": "stopped",
+                            "trigger": trigger,
+                            "started_at": started_at,
+                            "tracked_programs": 0,
+                            "created": created,
+                            "updated": updated,
+                            "unchanged": unchanged,
+                            "notifications": notifications,
+                        }
+                        self._set_last_status("last_bbradar_run", summary)
+                        return summary
                     masked_error = self._mask_secrets(str(exc))
                     self.db.insert_event(
                         event_type="run_error",
@@ -1430,6 +1448,8 @@ class TrackerService:
 
             filtered: list[dict[str, Any]] = []
             for source, item in source_items:
+                if self._shutdown_requested():
+                    break
                 try:
                     normalized = self._normalize_program(item, source=source)
                 except ValueError:
@@ -1460,6 +1480,8 @@ class TrackerService:
                 )
 
             for normalized in filtered:
+                if self._shutdown_requested():
+                    break
                 action, changed_fields, field_diffs = self.db.upsert_program(normalized, started_at)
                 should_notify_program_event = normalized.get("source") != "vigilseek"
                 program_text = " ".join(
@@ -1550,7 +1572,12 @@ class TrackerService:
                 else:
                     unchanged += 1
 
-            if bootstrap_mode and created > 0 and not self.settings.bootstrap_notify_existing:
+            if (
+                not self._shutdown_requested()
+                and bootstrap_mode
+                and created > 0
+                and not self.settings.bootstrap_notify_existing
+            ):
                 self.db.insert_event(
                     event_type="bootstrap_seed",
                     title=f"Initial seed completed for {created} program(s)",
@@ -1564,7 +1591,7 @@ class TrackerService:
                 )
 
             summary = {
-                "status": "ok",
+                "status": "stopped" if self._shutdown_requested() else "ok",
                 "trigger": trigger,
                 "started_at": started_at,
                 "tracked_programs": len(filtered),
@@ -1577,6 +1604,19 @@ class TrackerService:
             return summary
 
         except BBRadarClientError as exc:
+            if self._shutdown_requested():
+                summary = {
+                    "status": "stopped",
+                    "trigger": trigger,
+                    "started_at": started_at,
+                    "tracked_programs": 0,
+                    "created": created,
+                    "updated": updated,
+                    "unchanged": unchanged,
+                    "notifications": notifications,
+                }
+                self._set_last_status("last_bbradar_run", summary)
+                return summary
             masked_error = self._mask_secrets(str(exc))
             summary = {
                 "status": "error",
@@ -1636,6 +1676,8 @@ class TrackerService:
                 },
             )
             for watch in watches:
+                if self._shutdown_requested():
+                    break
                 try:
                     state = self.github_client.fetch_target_state(
                         owner=watch["repo_owner"],
@@ -1644,6 +1686,8 @@ class TrackerService:
                         branch=watch["branch"],
                     )
                 except GitHubClientError as exc:
+                    if self._shutdown_requested():
+                        break
                     errors += 1
                     masked_error = self._mask_secrets(str(exc))
                     self.db.insert_event(
@@ -1668,6 +1712,8 @@ class TrackerService:
                 previous_sha = watch.get("last_sha")
                 new_sha = state["sha"]
                 effective_branch = state.get("resolved_branch") or watch["branch"]
+                if self._shutdown_requested():
+                    break
                 self.db.update_github_watch_state(watch_id=watch["id"], last_sha=new_sha, now_iso=started_at)
 
                 if not previous_sha:
@@ -1759,7 +1805,7 @@ class TrackerService:
                     self.db.mark_event_notified(event_id)
 
             summary = {
-                "status": "ok",
+                "status": "stopped" if self._shutdown_requested() else "ok",
                 "trigger": trigger,
                 "started_at": started_at,
                 "tracked_watches": len(watches),
@@ -1774,6 +1820,21 @@ class TrackerService:
             return summary
 
         except Exception as exc:  # pragma: no cover - defensive runtime handling
+            if self._shutdown_requested():
+                summary = {
+                    "status": "stopped",
+                    "trigger": trigger,
+                    "started_at": started_at,
+                    "tracked_watches": 0,
+                    "changed": changed,
+                    "unchanged": unchanged,
+                    "baseline": baseline,
+                    "errors": errors,
+                    "notifications": notifications,
+                    "rate_limited": rate_limited,
+                }
+                self._set_last_status("last_github_run", summary)
+                return summary
             masked_error = self._mask_secrets(str(exc))
             summary = {
                 "status": "error",

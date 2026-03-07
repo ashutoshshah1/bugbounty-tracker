@@ -89,6 +89,9 @@ GITHUB_OAUTH_REDIRECT_URI=http://127.0.0.1:3001/api/auth/github/callback
 GITHUB_OAUTH_SCOPE=read:user user:email
 ```
 
+If `GITHUB_TOKEN` is already configured for local use and OAuth app credentials are absent,
+the dashboard `GitHub Login` button will fall back to token-based login and redirect back to `/app`.
+
 ## 2. Run
 
 ```bash
