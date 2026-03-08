@@ -43,6 +43,7 @@ Minimum local fields:
 ```env
 PORT=3001
 TRACK_PLATFORMS=Sherlock,Immunefi,Code4rena,HackenProof
+NOTIFICATION_RETRY_INTERVAL_MINUTES=5
 ```
 
 For Telegram alerts:
@@ -50,6 +51,13 @@ For Telegram alerts:
 ```env
 TELEGRAM_BOT_TOKEN=123456:ABC...
 TELEGRAM_CHAT_ID=-1001234567890
+```
+
+For a separate GitHub-update Telegram bot:
+
+```env
+GITHUB_TELEGRAM_BOT_TOKEN=123456:DEF...
+GITHUB_TELEGRAM_CHAT_ID=-1009876543210
 ```
 
 For reliable GitHub checks (recommended):
@@ -65,6 +73,9 @@ GITHUB_OAUTH_CLIENT_ID=...
 GITHUB_OAUTH_CLIENT_SECRET=...
 GITHUB_OAUTH_REDIRECT_URI=http://127.0.0.1:3001/api/auth/github/callback
 ```
+
+If `GITHUB_TOKEN` is configured and the OAuth variables above are blank, the `GitHub Login`
+button will use that token for local login and redirect back to `/app`.
 
 ## 5. Run the app
 

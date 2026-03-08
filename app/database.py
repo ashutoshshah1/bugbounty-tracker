@@ -481,6 +481,38 @@ class Database:
             )
             self._conn.commit()
 
+    def list_unnotified_events(
+        self,
+        *,
+        limit: int = 100,
+        event_types: list[str] | tuple[str, ...] | None = None,
+        before_created_at: str | None = None,
+    ) -> list[dict[str, Any]]:
+        query = "SELECT * FROM events WHERE notified = 0"
+        params: list[Any] = []
+
+        if event_types:
+            placeholders = ", ".join("?" for _ in event_types)
+            query += f" AND event_type IN ({placeholders})"
+            params.extend(event_types)
+
+        if before_created_at:
+            query += " AND created_at <= ?"
+            params.append(before_created_at)
+
+        query += " ORDER BY created_at DESC LIMIT ?"
+        params.append(max(1, limit))
+
+        with self._lock:
+            rows = self._conn.execute(query, tuple(params)).fetchall()
+
+        events: list[dict[str, Any]] = []
+        for row in rows:
+            item = dict(row)
+            item["details"] = json.loads(item.pop("details_json"))
+            events.append(item)
+        return events
+
     def list_events(self, limit: int = 100, event_type: str | None = None) -> list[dict[str, Any]]:
         query = "SELECT * FROM events"
         params: list[Any] = []

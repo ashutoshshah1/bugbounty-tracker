@@ -129,6 +129,13 @@ PRE_AUDIT_FINDING_STATUSES = (
     "resolved",
 )
 
+NOTIFICATION_RETRY_EVENT_TYPES = ("program_updated", "github_updated")
+NOTIFICATION_RETRY_CANDIDATE_LIMIT = 100
+NOTIFICATION_RETRY_SEND_LIMIT = 25
+NOTIFICATION_RETRY_MIN_AGE_SECONDS = 120
+NOTIFICATION_CHANNEL_DEFAULT = "default"
+NOTIFICATION_CHANNEL_GITHUB = "github"
+
 SOLIDITY_HEURISTIC_RULES: tuple[dict[str, Any], ...] = (
     {
         "id": "tx_origin_auth",
@@ -228,11 +235,18 @@ class TrackerService:
             chat_id=settings.telegram_chat_id,
             timeout_seconds=settings.request_timeout_seconds,
         )
+        self.github_notifier = TelegramNotifier(
+            bot_token=settings.github_telegram_bot_token,
+            chat_id=settings.github_telegram_chat_id,
+            timeout_seconds=settings.request_timeout_seconds,
+        )
 
         self._bbradar_lock = threading.Lock()
         self._github_lock = threading.Lock()
+        self._notification_lock = threading.Lock()
         self._job_lock = threading.Lock()
         self._status_lock = threading.Lock()
+        self._shutdown_event = threading.Event()
         self._job_executor = ThreadPoolExecutor(
             max_workers=max(1, self.settings.job_worker_count),
             thread_name_prefix="scan-job",
@@ -241,6 +255,7 @@ class TrackerService:
         self._status: dict[str, Any] = {
             "last_bbradar_run": None,
             "last_github_run": None,
+            "last_notification_retry_run": None,
             "last_digest_run": None,
             "last_backup_run": None,
             "last_sla_run": None,
@@ -249,13 +264,18 @@ class TrackerService:
         }
         self._bootstrap_admin_user()
 
+    def _shutdown_requested(self) -> bool:
+        return self._shutdown_event.is_set()
+
     def close(self) -> None:
+        self._shutdown_event.set()
         self._job_executor.shutdown(wait=False, cancel_futures=False)
         self.bbradar_client.close()
         if self.vigilseek_client is not None:
             self.vigilseek_client.close()
         self.github_client.close()
         self.notifier.close()
+        self.github_notifier.close()
 
     def health(self) -> dict[str, Any]:
         with self._status_lock:
@@ -264,6 +284,7 @@ class TrackerService:
         status_snapshot.update(
             {
                 "telegram_enabled": self.notifier.enabled,
+                "github_telegram_enabled": self.github_notifier.enabled,
                 "github_token_configured": bool(self.settings.github_token),
                 "github_oauth_configured": bool(
                     self.settings.github_oauth_client_id
@@ -276,6 +297,7 @@ class TrackerService:
                 "scheduler": {
                     "bbradar_interval_minutes": self.settings.bbradar_interval_minutes,
                     "github_interval_minutes": self.settings.github_interval_minutes,
+                    "notification_retry_interval_minutes": self.settings.notification_retry_interval_minutes,
                     "digest_enabled": self.settings.digest_enabled,
                     "digest_interval_hours": self.settings.digest_interval_hours,
                     "backup_enabled": self.settings.backup_enabled,
@@ -1216,16 +1238,26 @@ class TrackerService:
         self._set_last_status("last_backup_run", result)
         return result
 
-    def _safe_send_notification(self, text: str) -> bool:
+    def _notifier_for_channel(self, channel: str) -> TelegramNotifier:
+        if channel == NOTIFICATION_CHANNEL_GITHUB and self.github_notifier.enabled:
+            return self.github_notifier
+        return self.notifier
+
+    def _safe_send_notification(self, text: str, *, channel: str = NOTIFICATION_CHANNEL_DEFAULT) -> bool:
         safe_text = self._mask_secrets(text)
+        notifier = self._notifier_for_channel(channel)
         try:
-            return self.notifier.send_message(safe_text)
+            return notifier.send_message(safe_text)
         except Exception as exc:  # pragma: no cover - network behavior
             logger.exception("telegram notification failed: %s", exc)
             self.db.insert_event(
                 event_type="notification_error",
                 title="Telegram notification failed",
-                details={"error": self._mask_secrets(str(exc)), "sample": safe_text[:500]},
+                details={
+                    "channel": channel,
+                    "error": self._mask_secrets(str(exc)),
+                    "sample": safe_text[:500],
+                },
                 created_at=utc_now_iso(),
             )
             return False
@@ -1263,6 +1295,14 @@ class TrackerService:
         if not changed_fields:
             return "details_changed"
         return ", ".join(changed_fields)
+
+    @staticmethod
+    def _parse_program_from_event_title(title: str | None) -> tuple[str | None, str | None]:
+        text = str(title or "").strip()
+        match = re.match(r"^Program updated: (?P<name>.+) \((?P<platform>.+)\)$", text)
+        if not match:
+            return None, None
+        return match.group("name").strip() or None, match.group("platform").strip() or None
 
     def _build_new_program_message(self, item: dict[str, Any]) -> str:
         return "\n".join(
@@ -1351,6 +1391,215 @@ class TrackerService:
             lines.append(f"Program: {program_name}")
         return "\n".join(lines)
 
+    def _notification_payload_from_event(self, event: dict[str, Any]) -> tuple[str, str, dict[str, Any]] | None:
+        event_type = str(event.get("event_type") or "").strip()
+        details = event.get("details") or {}
+        if not isinstance(details, dict):
+            return None
+
+        if event_type == "program_updated":
+            if bool(details.get("alert_suppressed")):
+                return None
+
+            external_id = str(
+                event.get("program_external_id")
+                or details.get("program_external_id")
+                or ""
+            ).strip()
+            program = self.db.get_program(external_id) if external_id else None
+            if program and str(program.get("source") or "").casefold().strip() == "vigilseek":
+                return None
+
+            title_name, title_platform = self._parse_program_from_event_title(str(event.get("title") or ""))
+            name = (str(program.get("name") or "").strip() if program else "") or title_name or external_id or "Unknown"
+            platform = (str(program.get("platform") or "").strip() if program else "") or title_platform or "Unknown"
+            changed_fields = [str(field).strip() for field in (details.get("changed_fields") or []) if str(field).strip()]
+            link = str(details.get("link") or (program.get("link") if program else "") or "").strip()
+            reward = str(details.get("reward") or "").strip()
+            if not reward and program:
+                reward = format_reward_range(program.get("bounty_min"), program.get("bounty_max"))
+
+            message = "\n".join(
+                [
+                    "[PROGRAM UPDATED]",
+                    f"Platform: {platform}",
+                    f"Name: {name}",
+                    f"Changed: {self._display_changed_fields(changed_fields)}",
+                    f"Reward: {reward or 'n/a'}",
+                    f"Link: {link or 'n/a'}",
+                    f"Program ID: {external_id or 'n/a'}",
+                ]
+            )
+            return (
+                event_type,
+                message,
+                {
+                    "platform": platform,
+                    "bounty_max": self._as_float(program.get("bounty_max")) if program else None,
+                    "text": f"{name} {platform} {link} {' '.join(changed_fields)}",
+                },
+            )
+
+        if event_type == "github_updated":
+            external_id = str(
+                event.get("program_external_id")
+                or details.get("program_external_id")
+                or ""
+            ).strip()
+            program = self.db.get_program(external_id) if external_id else None
+            program_name = str(program.get("name") or "").strip() if program else None
+            program_platform = str(program.get("platform") or "").strip() if program else None
+            program_bounty_max = self._as_float(program.get("bounty_max")) if program else None
+
+            changed_files_raw = details.get("changed_files") or []
+            changed_files: list[dict[str, str]] = []
+            if isinstance(changed_files_raw, list):
+                for item in changed_files_raw:
+                    if not isinstance(item, dict):
+                        continue
+                    filename = str(item.get("filename") or "").strip()
+                    status = str(item.get("status") or "modified").strip()
+                    if not filename:
+                        continue
+                    changed_files.append({"filename": filename, "status": status})
+
+            watch = {
+                "repo_owner": str(details.get("repo_owner") or "").strip(),
+                "repo_name": str(details.get("repo_name") or "").strip(),
+                "file_path": str(details.get("file_path") or "").strip(),
+                "branch": str(details.get("requested_branch") or details.get("branch") or "").strip(),
+            }
+            if not watch["repo_owner"] or not watch["repo_name"]:
+                return None
+
+            message = self._build_github_update_message(
+                watch=watch,
+                old_sha=str(details.get("old_sha") or "").strip(),
+                new_sha=str(details.get("new_sha") or "").strip(),
+                html_url=str(details.get("html_url") or "").strip(),
+                program_name=program_name,
+                changed_files=changed_files,
+                observed_branch=str(details.get("branch") or watch["branch"]).strip() or None,
+            )
+            return (
+                event_type,
+                message,
+                {
+                    "platform": program_platform or "",
+                    "bounty_max": program_bounty_max,
+                    "text": " ".join(
+                        [
+                            str(program_name or ""),
+                            f"{watch['repo_owner']}/{watch['repo_name']}",
+                            watch["file_path"],
+                            ", ".join(item.get("filename", "") for item in changed_files[:10]),
+                        ]
+                    ),
+                },
+            )
+
+        return None
+
+    def retry_pending_notifications(self, trigger: str = "scheduler") -> dict[str, Any]:
+        if not (self.notifier.enabled or self.github_notifier.enabled):
+            summary = {
+                "status": "skipped",
+                "trigger": trigger,
+                "reason": "telegram not configured",
+                "candidate_events": 0,
+                "reviewed": 0,
+                "attempted": 0,
+                "sent": 0,
+                "skipped": 0,
+            }
+            self._set_last_status("last_notification_retry_run", summary)
+            return summary
+
+        if not self._notification_lock.acquire(blocking=False):
+            return {
+                "status": "skipped",
+                "trigger": trigger,
+                "reason": "notification retry already in progress",
+            }
+
+        started_dt = datetime.now(timezone.utc)
+        started_at = started_dt.isoformat()
+        retry_before = (started_dt - timedelta(seconds=NOTIFICATION_RETRY_MIN_AGE_SECONDS)).isoformat()
+        reviewed = 0
+        attempted = 0
+        sent = 0
+        skipped = 0
+
+        try:
+            events = self.db.list_unnotified_events(
+                limit=NOTIFICATION_RETRY_CANDIDATE_LIMIT,
+                event_types=NOTIFICATION_RETRY_EVENT_TYPES,
+                before_created_at=retry_before,
+            )
+
+            for event in reversed(events):
+                if attempted >= NOTIFICATION_RETRY_SEND_LIMIT or self._shutdown_requested():
+                    break
+                reviewed += 1
+
+                payload = self._notification_payload_from_event(event)
+                if payload is None:
+                    skipped += 1
+                    continue
+
+                event_type, message, context = payload
+                if not self._should_send_immediate_alert(event_type=event_type, context=context):
+                    skipped += 1
+                    continue
+
+                attempted += 1
+                channel = (
+                    NOTIFICATION_CHANNEL_GITHUB
+                    if event_type == "github_updated"
+                    else NOTIFICATION_CHANNEL_DEFAULT
+                )
+                if self._safe_send_notification(message, channel=channel):
+                    sent += 1
+                    self.db.mark_event_notified(int(event["id"]))
+
+            summary = {
+                "status": "stopped" if self._shutdown_requested() else "ok",
+                "trigger": trigger,
+                "started_at": started_at,
+                "retry_before": retry_before,
+                "candidate_events": len(events),
+                "reviewed": reviewed,
+                "attempted": attempted,
+                "sent": sent,
+                "skipped": skipped,
+            }
+            self._set_last_status("last_notification_retry_run", summary)
+            return summary
+        except Exception as exc:
+            masked_error = self._mask_secrets(str(exc))
+            summary = {
+                "status": "error",
+                "trigger": trigger,
+                "started_at": started_at,
+                "error": masked_error,
+                "candidate_events": 0,
+                "reviewed": reviewed,
+                "attempted": attempted,
+                "sent": sent,
+                "skipped": skipped,
+            }
+            self.db.insert_event(
+                event_type="run_error",
+                title="notification retry failed",
+                details=summary,
+                created_at=started_at,
+                notified=False,
+            )
+            self._set_last_status("last_notification_retry_run", summary)
+            return summary
+        finally:
+            self._notification_lock.release()
+
     def _maybe_add_watch_from_program_link(self, program: dict[str, Any], now_iso: str) -> None:
         link = program.get("link") or ""
         parsed = parse_github_url(link)
@@ -1393,6 +1642,19 @@ class TrackerService:
                         ("vigilseek", item) for item in self.vigilseek_client.fetch_programs()
                     )
                 except VigilSeekClientError as exc:
+                    if self._shutdown_requested():
+                        summary = {
+                            "status": "stopped",
+                            "trigger": trigger,
+                            "started_at": started_at,
+                            "tracked_programs": 0,
+                            "created": created,
+                            "updated": updated,
+                            "unchanged": unchanged,
+                            "notifications": notifications,
+                        }
+                        self._set_last_status("last_bbradar_run", summary)
+                        return summary
                     masked_error = self._mask_secrets(str(exc))
                     self.db.insert_event(
                         event_type="run_error",
@@ -1430,6 +1692,8 @@ class TrackerService:
 
             filtered: list[dict[str, Any]] = []
             for source, item in source_items:
+                if self._shutdown_requested():
+                    break
                 try:
                     normalized = self._normalize_program(item, source=source)
                 except ValueError:
@@ -1460,6 +1724,8 @@ class TrackerService:
                 )
 
             for normalized in filtered:
+                if self._shutdown_requested():
+                    break
                 action, changed_fields, field_diffs = self.db.upsert_program(normalized, started_at)
                 should_notify_program_event = normalized.get("source") != "vigilseek"
                 program_text = " ".join(
@@ -1550,7 +1816,12 @@ class TrackerService:
                 else:
                     unchanged += 1
 
-            if bootstrap_mode and created > 0 and not self.settings.bootstrap_notify_existing:
+            if (
+                not self._shutdown_requested()
+                and bootstrap_mode
+                and created > 0
+                and not self.settings.bootstrap_notify_existing
+            ):
                 self.db.insert_event(
                     event_type="bootstrap_seed",
                     title=f"Initial seed completed for {created} program(s)",
@@ -1564,7 +1835,7 @@ class TrackerService:
                 )
 
             summary = {
-                "status": "ok",
+                "status": "stopped" if self._shutdown_requested() else "ok",
                 "trigger": trigger,
                 "started_at": started_at,
                 "tracked_programs": len(filtered),
@@ -1577,6 +1848,19 @@ class TrackerService:
             return summary
 
         except BBRadarClientError as exc:
+            if self._shutdown_requested():
+                summary = {
+                    "status": "stopped",
+                    "trigger": trigger,
+                    "started_at": started_at,
+                    "tracked_programs": 0,
+                    "created": created,
+                    "updated": updated,
+                    "unchanged": unchanged,
+                    "notifications": notifications,
+                }
+                self._set_last_status("last_bbradar_run", summary)
+                return summary
             masked_error = self._mask_secrets(str(exc))
             summary = {
                 "status": "error",
@@ -1636,6 +1920,8 @@ class TrackerService:
                 },
             )
             for watch in watches:
+                if self._shutdown_requested():
+                    break
                 try:
                     state = self.github_client.fetch_target_state(
                         owner=watch["repo_owner"],
@@ -1644,6 +1930,8 @@ class TrackerService:
                         branch=watch["branch"],
                     )
                 except GitHubClientError as exc:
+                    if self._shutdown_requested():
+                        break
                     errors += 1
                     masked_error = self._mask_secrets(str(exc))
                     self.db.insert_event(
@@ -1668,6 +1956,8 @@ class TrackerService:
                 previous_sha = watch.get("last_sha")
                 new_sha = state["sha"]
                 effective_branch = state.get("resolved_branch") or watch["branch"]
+                if self._shutdown_requested():
+                    break
                 self.db.update_github_watch_state(watch_id=watch["id"], last_sha=new_sha, now_iso=started_at)
 
                 if not previous_sha:
@@ -1754,12 +2044,12 @@ class TrackerService:
                         "text": context_text,
                     },
                 )
-                if can_notify and self._safe_send_notification(message):
+                if can_notify and self._safe_send_notification(message, channel=NOTIFICATION_CHANNEL_GITHUB):
                     notifications += 1
                     self.db.mark_event_notified(event_id)
 
             summary = {
-                "status": "ok",
+                "status": "stopped" if self._shutdown_requested() else "ok",
                 "trigger": trigger,
                 "started_at": started_at,
                 "tracked_watches": len(watches),
@@ -1774,6 +2064,21 @@ class TrackerService:
             return summary
 
         except Exception as exc:  # pragma: no cover - defensive runtime handling
+            if self._shutdown_requested():
+                summary = {
+                    "status": "stopped",
+                    "trigger": trigger,
+                    "started_at": started_at,
+                    "tracked_watches": 0,
+                    "changed": changed,
+                    "unchanged": unchanged,
+                    "baseline": baseline,
+                    "errors": errors,
+                    "notifications": notifications,
+                    "rate_limited": rate_limited,
+                }
+                self._set_last_status("last_github_run", summary)
+                return summary
             masked_error = self._mask_secrets(str(exc))
             summary = {
                 "status": "error",

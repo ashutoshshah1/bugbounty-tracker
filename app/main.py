@@ -71,6 +71,17 @@ async def lifespan(_: FastAPI):
         max_instances=1,
         next_run_time=datetime.now(timezone.utc) + timedelta(seconds=15),
     )
+    scheduler.add_job(
+        service.retry_pending_notifications,
+        trigger="interval",
+        minutes=settings.notification_retry_interval_minutes,
+        kwargs={"trigger": "scheduler"},
+        id="notification_retry_run",
+        replace_existing=True,
+        coalesce=True,
+        max_instances=1,
+        next_run_time=datetime.now(timezone.utc) + timedelta(seconds=20),
+    )
     if settings.digest_enabled:
         scheduler.add_job(
             service.run_daily_digest,
@@ -242,15 +253,58 @@ def _valid_return_url(url: str) -> bool:
     return url.startswith("https://") or url.startswith("http://")
 
 
+def _github_user_summary(user_payload: dict[str, Any], *, auth_mode: str) -> dict[str, Any]:
+    return {
+        "id": user_payload.get("id"),
+        "login": user_payload.get("login"),
+        "name": user_payload.get("name"),
+        "avatar_url": user_payload.get("avatar_url"),
+        "html_url": user_payload.get("html_url"),
+        "email": user_payload.get("email"),
+        "auth_mode": auth_mode,
+    }
+
+
+def _github_login_success_response(*, user_info: dict[str, Any], return_to: str | None = None) -> Any:
+    if return_to and _valid_return_url(return_to):
+        query = urlencode(
+            {
+                "github_login": user_info.get("login") or "",
+                "github_id": user_info.get("id") or "",
+            }
+        )
+        delimiter = "&" if "?" in return_to else "?"
+        return RedirectResponse(f"{return_to}{delimiter}{query}", status_code=302)
+
+    return {
+        "ok": True,
+        "message": (
+            "GitHub login succeeded. To return to your frontend automatically, call "
+            "/api/auth/github/login?return_to=https://your-site/callback"
+        ),
+        "github_user": user_info,
+    }
+
+
 @app.get("/auth/github/login", include_in_schema=False)
 @api.get("/auth/github/login")
-def github_login(return_to: str | None = Query(default=None)) -> RedirectResponse:
+def github_login(return_to: str | None = Query(default=None)) -> Any:
     if not _github_oauth_ready():
+        if settings.github_token:
+            try:
+                user_payload = service.github_client.fetch_authenticated_user()
+            except Exception as exc:
+                raise HTTPException(status_code=502, detail=f"GitHub token login failed: {exc}") from exc
+
+            user_info = _github_user_summary(user_payload, auth_mode="token")
+            return _github_login_success_response(user_info=user_info, return_to=return_to)
+
         raise HTTPException(
             status_code=503,
             detail=(
-                "GitHub OAuth is not configured. Set GITHUB_OAUTH_CLIENT_ID, "
-                "GITHUB_OAUTH_CLIENT_SECRET, and GITHUB_OAUTH_REDIRECT_URI."
+                "GitHub login is not configured. Set GITHUB_OAUTH_CLIENT_ID, "
+                "GITHUB_OAUTH_CLIENT_SECRET, and GITHUB_OAUTH_REDIRECT_URI, "
+                "or configure GITHUB_TOKEN for local token-based login."
             ),
         )
 
@@ -319,36 +373,11 @@ def github_callback(
         raise HTTPException(status_code=502, detail=f"GitHub user fetch failed ({user_response.status_code})")
 
     user_payload = user_response.json()
-    user_info = {
-        "id": user_payload.get("id"),
-        "login": user_payload.get("login"),
-        "name": user_payload.get("name"),
-        "avatar_url": user_payload.get("avatar_url"),
-        "html_url": user_payload.get("html_url"),
-        "email": user_payload.get("email"),
-    }
-
-    if gh_oauth_return_to and _valid_return_url(gh_oauth_return_to):
-        query = urlencode(
-            {
-                "github_login": user_info.get("login") or "",
-                "github_id": user_info.get("id") or "",
-            }
-        )
-        delimiter = "&" if "?" in gh_oauth_return_to else "?"
-        response = RedirectResponse(f"{gh_oauth_return_to}{delimiter}{query}", status_code=302)
+    user_info = _github_user_summary(user_payload, auth_mode="oauth")
+    response = _github_login_success_response(user_info=user_info, return_to=gh_oauth_return_to)
+    if isinstance(response, RedirectResponse):
         response.delete_cookie("gh_oauth_state")
         response.delete_cookie("gh_oauth_return_to")
-        return response
-
-    response = {
-        "ok": True,
-        "message": (
-            "GitHub login succeeded. To return to your frontend automatically, call "
-            "/api/auth/github/login?return_to=https://your-site/callback"
-        ),
-        "github_user": user_info,
-    }
     return response
 
 

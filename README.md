@@ -9,6 +9,7 @@ Automated tracker for smart-contract bug bounty hunting workflows:
 - De-duplicates vigilseek programs already present in your tracker (by external id/link/name+platform)
 - Watches GitHub file/repo targets (default every 60 minutes)
 - Sends Telegram alerts for new program launches and updates
+- Routes `github_updated` alerts through `GITHUB_TELEGRAM_*` when configured
 - Keeps a submissions/triage list with optional PDF report attachment and extracted summary
 - Async scan job queue (`job_id` + polling)
 - Program diff timeline (field-level and GitHub file changes)
@@ -65,6 +66,13 @@ TELEGRAM_BOT_TOKEN=123456:ABC...
 TELEGRAM_CHAT_ID=-1001234567890
 ```
 
+Optional separate GitHub-update bot:
+
+```env
+GITHUB_TELEGRAM_BOT_TOKEN=123456:DEF...
+GITHUB_TELEGRAM_CHAT_ID=-1009876543210
+```
+
 Optional (recommended):
 
 ```env
@@ -89,6 +97,9 @@ GITHUB_OAUTH_REDIRECT_URI=http://127.0.0.1:3001/api/auth/github/callback
 GITHUB_OAUTH_SCOPE=read:user user:email
 ```
 
+If `GITHUB_TOKEN` is already configured for local use and OAuth app credentials are absent,
+the dashboard `GitHub Login` button will fall back to token-based login and redirect back to `/app`.
+
 ## 2. Run
 
 ```bash
@@ -106,6 +117,7 @@ API and docs:
 
 - `BBRADAR_INTERVAL_MINUTES=30`
 - `GITHUB_INTERVAL_MINUTES=60`
+- `NOTIFICATION_RETRY_INTERVAL_MINUTES=5`
 - `DIGEST_INTERVAL_HOURS=24` (if `DIGEST_ENABLED=true`)
 - `BACKUP_INTERVAL_HOURS=24` (if `BACKUP_ENABLED=true`)
 - `SLA_REMINDER_INTERVAL_MINUTES=30` (if `SLA_REMINDER_ENABLED=true`)

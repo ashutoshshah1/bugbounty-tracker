@@ -57,6 +57,9 @@ class GitHubClient:
             api_message=message,
         )
 
+    def fetch_authenticated_user(self) -> dict[str, Any]:
+        return self._request("/user").json()
+
     def _fetch_target_state_raw(self, owner: str, repo: str, file_path: str, branch: str) -> dict[str, str]:
         cleaned_path = file_path.strip("/")
         if cleaned_path:
