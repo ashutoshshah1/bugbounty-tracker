@@ -9,6 +9,7 @@ import threading
 import math
 import hashlib
 import difflib
+import time
 from collections import Counter
 from concurrent.futures import Future, ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
@@ -21,7 +22,7 @@ from .config import Settings
 from .database import Database
 from .github_client import GitHubClient, GitHubClientError
 from .telegram_notifier import TelegramNotifier
-from .vigilseek_client import VigilSeekClient, VigilSeekClientError
+from .vigilseek_client import VigilSeekClient
 from .utils import (
     extract_pdf_summary,
     format_reward_range,
@@ -129,12 +130,15 @@ PRE_AUDIT_FINDING_STATUSES = (
     "resolved",
 )
 
-NOTIFICATION_RETRY_EVENT_TYPES = ("program_updated", "github_updated")
+NOTIFICATION_RETRY_EVENT_TYPES = ("new_program", "program_updated", "github_updated")
 NOTIFICATION_RETRY_CANDIDATE_LIMIT = 100
 NOTIFICATION_RETRY_SEND_LIMIT = 25
 NOTIFICATION_RETRY_MIN_AGE_SECONDS = 120
 NOTIFICATION_CHANNEL_DEFAULT = "default"
 NOTIFICATION_CHANNEL_GITHUB = "github"
+GITHUB_LOGIN_CACHE_TTL_SECONDS = 12 * 60 * 60
+AUTO_INVALID_WATCH_CLEANUP_MIN_ERRORS = 24
+AUTO_INVALID_WATCH_CLEANUP_LOOKBACK_HOURS = 24 * 14
 
 SOLIDITY_HEURISTIC_RULES: tuple[dict[str, Any], ...] = (
     {
@@ -226,9 +230,11 @@ class TrackerService:
             if settings.vigilseek_enabled
             else None
         )
+        github_timeout_seconds = max(3, min(settings.request_timeout_seconds, 5))
         self.github_client = GitHubClient(
             token=settings.github_token,
-            timeout_seconds=settings.request_timeout_seconds,
+            timeout_seconds=github_timeout_seconds,
+            retry_total=0,
         )
         self.notifier = TelegramNotifier(
             bot_token=settings.telegram_bot_token,
@@ -246,12 +252,14 @@ class TrackerService:
         self._notification_lock = threading.Lock()
         self._job_lock = threading.Lock()
         self._status_lock = threading.Lock()
+        self._github_login_user_lock = threading.Lock()
         self._shutdown_event = threading.Event()
         self._job_executor = ThreadPoolExecutor(
             max_workers=max(1, self.settings.job_worker_count),
             thread_name_prefix="scan-job",
         )
         self._job_futures: dict[int, Future[Any]] = {}
+        self._github_login_user_cache: dict[str, Any] | None = None
         self._status: dict[str, Any] = {
             "last_bbradar_run": None,
             "last_github_run": None,
@@ -321,8 +329,111 @@ class TrackerService:
         masked = str(text or "")
         masked = re.sub(r"github_pat_[A-Za-z0-9_]+", "github_pat_***", masked)
         masked = re.sub(r"\bgh[pousr]_[A-Za-z0-9]+\b", "gh***", masked)
+        masked = re.sub(r"(?i)(/bot)\d{6,12}:[A-Za-z0-9_-]{20,}", r"\1***:***", masked)
+        masked = re.sub(r"(?i)\bbot\d{6,12}:[A-Za-z0-9_-]{20,}", "bot***:***", masked)
         masked = re.sub(r"\b\d{6,12}:[A-Za-z0-9_-]{20,}\b", "***:***", masked)
         return masked
+
+    def _record_source_failure(
+        self,
+        *,
+        source: str,
+        error: Exception,
+        trigger: str,
+        started_at: str,
+    ) -> str:
+        error_text = str(error).strip() or error.__class__.__name__
+        masked_error = self._mask_secrets(error_text)
+        self.db.insert_event(
+            event_type="run_error",
+            title=f"{source} scan failed",
+            details={
+                "trigger": trigger,
+                "started_at": started_at,
+                "error": masked_error,
+            },
+            created_at=started_at,
+            notified=False,
+        )
+        self._maybe_send_source_health_alert(source=source, error=masked_error)
+        return masked_error
+
+    @staticmethod
+    def _github_login_fallback_user() -> dict[str, Any]:
+        return {
+            "id": "local-token",
+            "login": "token-user",
+            "name": "Token Login",
+            "avatar_url": None,
+            "html_url": "https://github.com/settings/tokens",
+            "email": None,
+            "auth_mode": "token_fallback",
+        }
+
+    def _cached_github_login_user(self, *, allow_stale: bool) -> dict[str, Any] | None:
+        now = time.monotonic()
+        with self._github_login_user_lock:
+            cached = self._github_login_user_cache
+            if not cached:
+                return None
+
+            expires_at = float(cached.get("expires_at") or 0.0)
+            if not allow_stale and expires_at and expires_at < now:
+                return None
+
+            user_info = cached.get("user_info")
+            if isinstance(user_info, dict):
+                return dict(user_info)
+        return None
+
+    def _store_github_login_user(self, user_info: dict[str, Any]) -> dict[str, Any]:
+        cached_user = dict(user_info)
+        with self._github_login_user_lock:
+            self._github_login_user_cache = {
+                "user_info": cached_user,
+                "expires_at": time.monotonic() + GITHUB_LOGIN_CACHE_TTL_SECONDS,
+            }
+        return dict(cached_user)
+
+    def _fetch_github_login_user_payload(self) -> dict[str, Any]:
+        timeout_seconds = max(1, min(5, self.settings.request_timeout_seconds))
+        client = GitHubClient(
+            token=self.settings.github_token,
+            timeout_seconds=timeout_seconds,
+            retry_total=0,
+        )
+        try:
+            return client.fetch_authenticated_user()
+        finally:
+            client.close()
+
+    def get_github_login_user(self) -> dict[str, Any]:
+        if not self.settings.github_token:
+            raise ValueError("github token is not configured")
+
+        cached_user = self._cached_github_login_user(allow_stale=False)
+        if cached_user is not None:
+            return cached_user
+
+        stale_user = self._cached_github_login_user(allow_stale=True)
+        fallback_user = stale_user or self._github_login_fallback_user()
+
+        try:
+            payload = self._fetch_github_login_user_payload()
+        except Exception as exc:
+            logger.warning("GitHub token login using fallback user: %s", self._mask_secrets(str(exc)))
+            return fallback_user
+
+        user_info = {
+            "id": payload.get("id") or fallback_user["id"],
+            "login": payload.get("login") or fallback_user["login"],
+            "name": payload.get("name"),
+            "avatar_url": payload.get("avatar_url"),
+            "html_url": payload.get("html_url") or fallback_user["html_url"],
+            "email": payload.get("email"),
+            "auth_mode": "token",
+        }
+        return self._store_github_login_user(user_info)
 
     def _hash_api_key(self, api_key: str) -> str:
         payload = f"{self.settings.api_key_signing_secret}:{api_key}".encode("utf-8")
@@ -563,6 +674,63 @@ class TrackerService:
         if exc.status_code not in {403, 429}:
             return False
         return "rate limit" in str(exc).casefold()
+
+    @staticmethod
+    def _is_github_source_health_error(exc: GitHubClientError) -> bool:
+        if exc.status_code is None:
+            return True
+        if exc.status_code in {429, 500, 502, 503, 504}:
+            return True
+        if exc.status_code == 403:
+            text = str(exc).casefold()
+            return "rate limit" in text or "abuse" in text
+        return False
+
+    def _maybe_send_github_source_health_alert(
+        self,
+        *,
+        errors: list[str],
+        processed: int,
+        successes: int,
+        rate_limited: bool,
+    ) -> bool:
+        if not errors:
+            return False
+
+        error_count = len(errors)
+        error_ratio = error_count / max(1, processed)
+        should_alert = (
+            rate_limited
+            or successes == 0
+            or (error_count >= 3 and error_ratio >= 0.5)
+        )
+        if not should_alert:
+            return False
+
+        sample_error = errors[0]
+        if error_count == 1:
+            alert_error = sample_error
+        else:
+            alert_error = (
+                f"{error_count}/{processed} GitHub watch checks failed "
+                f"({successes} succeeded). Sample error: {sample_error}"
+            )
+        self._maybe_send_source_health_alert(source="github", error=alert_error)
+        return True
+
+    def _new_program_alert_suppression_reason(self, item: dict[str, Any], *, started_at: str) -> str | None:
+        max_age_days = max(0, int(self.settings.new_program_alert_max_age_days or 0))
+        if max_age_days == 0:
+            return None
+
+        launched_at = self._parse_utc_iso(str(item.get("date_launched") or ""))
+        if launched_at is None:
+            return None
+
+        observed_at = self._parse_utc_iso(started_at) or datetime.now(timezone.utc)
+        if launched_at < observed_at - timedelta(days=max_age_days):
+            return f"date_launched_older_than_{max_age_days}_days"
+        return None
 
     def _matches_filters(self, item: dict[str, Any]) -> bool:
         platform = str(item.get("platform") or "").casefold()
@@ -1440,6 +1608,45 @@ class TrackerService:
                 },
             )
 
+        if event_type == "new_program":
+            if bool(details.get("alert_suppressed")):
+                return None
+
+            external_id = str(
+                event.get("program_external_id")
+                or details.get("program_external_id")
+                or ""
+            ).strip()
+            program = self.db.get_program(external_id) if external_id else None
+            if program and str(program.get("source") or "").casefold().strip() == "vigilseek":
+                return None
+
+            item = {
+                "external_id": external_id or str(details.get("program_external_id") or ""),
+                "platform": str(details.get("platform") or (program.get("platform") if program else "") or "Unknown"),
+                "name": str(details.get("name") or (program.get("name") if program else "") or "Unknown"),
+                "date_launched": str(details.get("date_launched") or (program.get("date_launched") if program else "") or ""),
+                "scope_type": str(program.get("scope_type") or "") if program else "",
+                "bounty_min": self._as_float(program.get("bounty_min")) if program else None,
+                "bounty_max": self._as_float(program.get("bounty_max")) if program else None,
+                "link": str(details.get("link") or (program.get("link") if program else "") or ""),
+            }
+            if self._new_program_alert_suppression_reason(
+                item,
+                started_at=str(event.get("created_at") or ""),
+            ):
+                return None
+
+            return (
+                event_type,
+                self._build_new_program_message(item),
+                {
+                    "platform": item["platform"],
+                    "bounty_max": item["bounty_max"],
+                    "text": f"{item['name']} {item['platform']} {item['scope_type']} {item['link']}",
+                },
+            )
+
         if event_type == "github_updated":
             external_id = str(
                 event.get("program_external_id")
@@ -1632,16 +1839,41 @@ class TrackerService:
 
         try:
             bootstrap_mode = self.db.count_programs() == 0
-            source_items: list[tuple[str, dict[str, Any]]] = [
-                ("bbradar", item) for item in self.bbradar_client.fetch_programs()
-            ]
+            source_items: list[tuple[str, dict[str, Any]]] = []
+            failed_sources: dict[str, str] = {}
+            cached_source_fallbacks: dict[str, dict[str, Any]] = {}
+
+            try:
+                source_items.extend(
+                    ("bbradar", item) for item in self.bbradar_client.fetch_programs()
+                )
+            except Exception as exc:
+                if self._shutdown_requested():
+                    summary = {
+                        "status": "stopped",
+                        "trigger": trigger,
+                        "started_at": started_at,
+                        "tracked_programs": 0,
+                        "created": created,
+                        "updated": updated,
+                        "unchanged": unchanged,
+                        "notifications": notifications,
+                    }
+                    self._set_last_status("last_bbradar_run", summary)
+                    return summary
+                failed_sources["bbradar"] = self._record_source_failure(
+                    source="bbradar",
+                    error=exc,
+                    trigger=trigger,
+                    started_at=started_at,
+                )
 
             if self.vigilseek_client is not None:
                 try:
                     source_items.extend(
                         ("vigilseek", item) for item in self.vigilseek_client.fetch_programs()
                     )
-                except VigilSeekClientError as exc:
+                except Exception as exc:
                     if self._shutdown_requested():
                         summary = {
                             "status": "stopped",
@@ -1655,19 +1887,35 @@ class TrackerService:
                         }
                         self._set_last_status("last_bbradar_run", summary)
                         return summary
-                    masked_error = self._mask_secrets(str(exc))
-                    self.db.insert_event(
-                        event_type="run_error",
-                        title="vigilseek scan failed",
-                        details={
-                            "trigger": trigger,
-                            "started_at": started_at,
-                            "error": masked_error,
-                        },
-                        created_at=started_at,
-                        notified=False,
-                    )
-                    self._maybe_send_source_health_alert(source="vigilseek", error=masked_error)
+                    cached_count = self.db.count_programs_by_source("vigilseek")
+                    if cached_count:
+                        cached_source_fallbacks["vigilseek"] = {
+                            "cached_programs": cached_count,
+                            "error": self._mask_secrets(str(exc)),
+                        }
+                    else:
+                        failed_sources["vigilseek"] = self._record_source_failure(
+                            source="vigilseek",
+                            error=exc,
+                            trigger=trigger,
+                            started_at=started_at,
+                        )
+
+            if not source_items and failed_sources:
+                summary = {
+                    "status": "error",
+                    "trigger": trigger,
+                    "started_at": started_at,
+                    "tracked_programs": 0,
+                    "created": created,
+                    "updated": updated,
+                    "unchanged": unchanged,
+                    "notifications": notifications,
+                    "failed_sources": sorted(failed_sources),
+                    "source_errors": failed_sources,
+                }
+                self._set_last_status("last_bbradar_run", summary)
+                return summary
 
             existing_programs = self.db.list_programs(limit=100000, focus="all")
             existing_external_ids = {
@@ -1744,6 +1992,11 @@ class TrackerService:
                     if bootstrap_mode and not self.settings.bootstrap_notify_existing:
                         continue
 
+                    alert_suppressed_reason = self._new_program_alert_suppression_reason(
+                        normalized,
+                        started_at=started_at,
+                    )
+
                     event_id = self.db.insert_event(
                         event_type="new_program",
                         title=f"New program: {normalized['name']} ({normalized['platform']})",
@@ -1754,18 +2007,25 @@ class TrackerService:
                             "link": normalized["link"],
                             "date_launched": normalized["date_launched"],
                             "reward": format_reward_range(normalized["bounty_min"], normalized["bounty_max"]),
+                            "alert_suppressed": bool(alert_suppressed_reason),
+                            "alert_suppressed_reason": alert_suppressed_reason or "",
                         },
                         created_at=started_at,
                         program_external_id=normalized["external_id"],
+                        notified=bool(alert_suppressed_reason) or not should_notify_program_event,
                     )
 
-                    can_notify = should_notify_program_event and self._should_send_immediate_alert(
-                        event_type="new_program",
-                        context={
-                            "platform": normalized.get("platform"),
-                            "bounty_max": normalized.get("bounty_max"),
-                            "text": program_text,
-                        },
+                    can_notify = (
+                        should_notify_program_event
+                        and not alert_suppressed_reason
+                        and self._should_send_immediate_alert(
+                            event_type="new_program",
+                            context={
+                                "platform": normalized.get("platform"),
+                                "bounty_max": normalized.get("bounty_max"),
+                                "text": program_text,
+                            },
+                        )
                     )
                     if can_notify and self._safe_send_notification(self._build_new_program_message(normalized)):
                         notifications += 1
@@ -1834,8 +2094,12 @@ class TrackerService:
                     notified=False,
                 )
 
+            status = "stopped" if self._shutdown_requested() else "ok"
+            if status == "ok" and failed_sources:
+                status = "partial"
+
             summary = {
-                "status": "stopped" if self._shutdown_requested() else "ok",
+                "status": status,
                 "trigger": trigger,
                 "started_at": started_at,
                 "tracked_programs": len(filtered),
@@ -1844,6 +2108,11 @@ class TrackerService:
                 "unchanged": unchanged,
                 "notifications": notifications,
             }
+            if failed_sources:
+                summary["failed_sources"] = sorted(failed_sources)
+                summary["source_errors"] = failed_sources
+            if cached_source_fallbacks:
+                summary["cached_source_fallbacks"] = cached_source_fallbacks
             self._set_last_status("last_bbradar_run", summary)
             return summary
 
@@ -1901,24 +2170,33 @@ class TrackerService:
         errors = 0
         notifications = 0
         rate_limited = False
+        processed = 0
+        invalid_watch_cleanup: dict[str, Any] | None = None
+        source_health_errors: list[str] = []
+        source_health_alerted = False
 
         try:
             watches = self.db.list_github_watches(active_only=True)
-            self._set_last_status(
-                "last_github_run",
-                {
-                    "status": "running",
-                    "trigger": trigger,
-                    "started_at": started_at,
-                    "tracked_watches": len(watches),
-                    "changed": 0,
-                    "unchanged": 0,
-                    "baseline": 0,
-                    "errors": 0,
-                    "notifications": 0,
-                    "rate_limited": False,
-                },
-            )
+
+            def publish_running_status() -> None:
+                self._set_last_status(
+                    "last_github_run",
+                    {
+                        "status": "running",
+                        "trigger": trigger,
+                        "started_at": started_at,
+                        "tracked_watches": len(watches),
+                        "processed_watches": processed,
+                        "changed": changed,
+                        "unchanged": unchanged,
+                        "baseline": baseline,
+                        "errors": errors,
+                        "notifications": notifications,
+                        "rate_limited": rate_limited,
+                    },
+                )
+
+            publish_running_status()
             for watch in watches:
                 if self._shutdown_requested():
                     break
@@ -1933,6 +2211,7 @@ class TrackerService:
                     if self._shutdown_requested():
                         break
                     errors += 1
+                    processed += 1
                     masked_error = self._mask_secrets(str(exc))
                     self.db.insert_event(
                         event_type="run_error",
@@ -1947,10 +2226,13 @@ class TrackerService:
                         },
                         created_at=started_at,
                     )
-                    self._maybe_send_source_health_alert(source="github", error=masked_error)
+                    if self._is_github_source_health_error(exc):
+                        source_health_errors.append(masked_error)
                     if self._is_rate_limit_error(exc):
                         rate_limited = True
+                        publish_running_status()
                         break
+                    publish_running_status()
                     continue
 
                 previous_sha = watch.get("last_sha")
@@ -1958,14 +2240,24 @@ class TrackerService:
                 effective_branch = state.get("resolved_branch") or watch["branch"]
                 if self._shutdown_requested():
                     break
-                self.db.update_github_watch_state(watch_id=watch["id"], last_sha=new_sha, now_iso=started_at)
+                self.db.update_github_watch_state(
+                    watch_id=watch["id"],
+                    last_sha=new_sha,
+                    now_iso=started_at,
+                    branch=effective_branch,
+                )
+                processed += 1
 
                 if not previous_sha:
                     baseline += 1
+                    if processed % 10 == 0:
+                        publish_running_status()
                     continue
 
                 if previous_sha == new_sha:
                     unchanged += 1
+                    if processed % 10 == 0:
+                        publish_running_status()
                     continue
 
                 changed += 1
@@ -2047,19 +2339,44 @@ class TrackerService:
                 if can_notify and self._safe_send_notification(message, channel=NOTIFICATION_CHANNEL_GITHUB):
                     notifications += 1
                     self.db.mark_event_notified(event_id)
+                publish_running_status()
+
+            status = "stopped" if self._shutdown_requested() else "ok"
+            if status == "ok" and errors:
+                status = "partial"
+
+            if status != "stopped":
+                source_health_alerted = self._maybe_send_github_source_health_alert(
+                    errors=source_health_errors,
+                    processed=processed,
+                    successes=changed + unchanged + baseline,
+                    rate_limited=rate_limited,
+                )
+
+            if status in {"ok", "partial"} and errors and not rate_limited:
+                invalid_watch_cleanup = self.cleanup_invalid_github_watches(
+                    min_errors=AUTO_INVALID_WATCH_CLEANUP_MIN_ERRORS,
+                    lookback_hours=AUTO_INVALID_WATCH_CLEANUP_LOOKBACK_HOURS,
+                    dry_run=False,
+                )
 
             summary = {
-                "status": "stopped" if self._shutdown_requested() else "ok",
+                "status": status,
                 "trigger": trigger,
                 "started_at": started_at,
                 "tracked_watches": len(watches),
+                "processed_watches": processed,
                 "changed": changed,
                 "unchanged": unchanged,
                 "baseline": baseline,
                 "errors": errors,
                 "notifications": notifications,
                 "rate_limited": rate_limited,
+                "source_health_error_count": len(source_health_errors),
+                "source_health_alerted": source_health_alerted,
             }
+            if invalid_watch_cleanup is not None:
+                summary["invalid_watch_cleanup"] = invalid_watch_cleanup
             self._set_last_status("last_github_run", summary)
             return summary
 
@@ -2236,9 +2553,16 @@ class TrackerService:
                 file_path=watch["file_path"],
                 branch=watch["branch"],
             )
-            self.db.update_github_watch_state(watch["id"], state["sha"], now_iso)
+            effective_branch = state.get("resolved_branch") or watch["branch"]
+            self.db.update_github_watch_state(
+                watch["id"],
+                state["sha"],
+                now_iso,
+                branch=effective_branch,
+            )
             watch["last_sha"] = state["sha"]
             watch["last_checked_at"] = now_iso
+            watch["branch"] = effective_branch
             if state.get("resolved_branch"):
                 watch["resolved_branch"] = state["resolved_branch"]
         except GitHubClientError as exc:

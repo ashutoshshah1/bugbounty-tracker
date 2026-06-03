@@ -279,6 +279,14 @@ class Database:
             row = self._conn.execute("SELECT COUNT(*) AS total FROM programs").fetchone()
         return int(row["total"]) if row else 0
 
+    def count_programs_by_source(self, source: str) -> int:
+        with self._lock:
+            row = self._conn.execute(
+                "SELECT COUNT(*) AS total FROM programs WHERE source = ?",
+                (source,),
+            ).fetchone()
+        return int(row["total"]) if row else 0
+
     def upsert_program(
         self,
         program: dict[str, Any],
@@ -1362,16 +1370,44 @@ class Database:
             self._conn.commit()
             return cursor.rowcount > 0
 
-    def update_github_watch_state(self, watch_id: int, last_sha: str, now_iso: str) -> None:
+    def update_github_watch_state(
+        self,
+        watch_id: int,
+        last_sha: str,
+        now_iso: str,
+        branch: str | None = None,
+    ) -> None:
+        clean_branch = str(branch or "").strip()
         with self._lock:
-            self._conn.execute(
-                """
-                UPDATE github_watches
-                SET last_sha = ?, last_checked_at = ?, updated_at = ?
-                WHERE id = ?
-                """,
-                (last_sha, now_iso, now_iso, watch_id),
-            )
+            try:
+                if clean_branch:
+                    self._conn.execute(
+                        """
+                        UPDATE github_watches
+                        SET last_sha = ?, last_checked_at = ?, branch = ?, updated_at = ?
+                        WHERE id = ?
+                        """,
+                        (last_sha, now_iso, clean_branch, now_iso, watch_id),
+                    )
+                else:
+                    self._conn.execute(
+                        """
+                        UPDATE github_watches
+                        SET last_sha = ?, last_checked_at = ?, updated_at = ?
+                        WHERE id = ?
+                        """,
+                        (last_sha, now_iso, now_iso, watch_id),
+                    )
+            except sqlite3.IntegrityError:
+                self._conn.rollback()
+                self._conn.execute(
+                    """
+                    UPDATE github_watches
+                    SET last_sha = ?, last_checked_at = ?, updated_at = ?
+                    WHERE id = ?
+                    """,
+                    (last_sha, now_iso, now_iso, watch_id),
+                )
             self._conn.commit()
 
     def create_submission(self, payload: dict[str, Any], now_iso: str) -> dict[str, Any]:

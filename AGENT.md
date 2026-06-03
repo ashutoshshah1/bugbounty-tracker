@@ -31,7 +31,11 @@ Important variables to set in `.env`:
 
 ```env
 PORT=3001
-TRACK_PLATFORMS=Sherlock,Immunefi,Code4rena,HackenProof
+TRACK_PLATFORMS=
+TRACK_SCOPE_KEYWORDS=
+NEW_PROGRAM_ALERT_MAX_AGE_DAYS=30
+BBRADAR_BASE_URL=https://bbradar.io
+VIGILSEEK_BASE_URL=https://www.vigilseek.com/bug-bounty
 ```
 
 Recommended:

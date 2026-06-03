@@ -21,12 +21,12 @@ class GitHubClientError(RuntimeError):
 
 
 class GitHubClient:
-    def __init__(self, token: str | None = None, timeout_seconds: int = 30) -> None:
+    def __init__(self, token: str | None = None, timeout_seconds: int = 30, retry_total: int = 3) -> None:
         self.base_url = "https://api.github.com"
         self.timeout_seconds = timeout_seconds
         self.session = requests.Session()
         retry = Retry(
-            total=3,
+            total=max(0, retry_total),
             backoff_factor=0.6,
             status_forcelist=(429, 500, 502, 503, 504),
             allowed_methods={"GET"},
@@ -34,7 +34,7 @@ class GitHubClient:
         )
         adapter = HTTPAdapter(max_retries=retry)
         self.session.mount("https://", adapter)
-        self.session.headers.update({"Accept": "application/vnd.github+json"})
+        self.session.headers.update({"Accept": "application/vnd.github+json", "Connection": "close"})
         if token:
             self.session.headers.update({"Authorization": f"Bearer {token}"})
 
@@ -42,7 +42,10 @@ class GitHubClient:
         self.session.close()
 
     def _request(self, path: str, params: dict[str, Any] | None = None) -> requests.Response:
-        response = self.session.get(f"{self.base_url}{path}", params=params, timeout=self.timeout_seconds)
+        try:
+            response = self.session.get(f"{self.base_url}{path}", params=params, timeout=self.timeout_seconds)
+        except requests.RequestException as exc:
+            raise GitHubClientError(f"GitHub request failed: {exc}") from exc
         if response.ok:
             return response
 

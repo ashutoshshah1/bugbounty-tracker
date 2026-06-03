@@ -84,9 +84,15 @@ For large GitHub watch lists, `GITHUB_TOKEN` is effectively required to avoid AP
 Optional source controls:
 
 ```env
+BBRADAR_BASE_URL=https://bbradar.io
+TRACK_PLATFORMS=
+TRACK_SCOPE_KEYWORDS=
+NEW_PROGRAM_ALERT_MAX_AGE_DAYS=30
 VIGILSEEK_ENABLED=true
-VIGILSEEK_BASE_URL=https://new-api.vigilseek.com
+VIGILSEEK_BASE_URL=https://www.vigilseek.com/bug-bounty
 ```
+
+Leave `TRACK_PLATFORMS` and `TRACK_SCOPE_KEYWORDS` empty to track the full BBRadar feed. `NEW_PROGRAM_ALERT_MAX_AGE_DAYS` prevents Telegram spam when old programs are backfilled after widening filters.
 
 For website GitHub login, configure OAuth values:
 

@@ -75,6 +75,7 @@ class Settings:
     github_oauth_scope: str
     bootstrap_admin_username: str
     bootstrap_admin_api_key: str | None
+    new_program_alert_max_age_days: int = 30
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -95,9 +96,9 @@ class Settings:
 
         return cls(
             bbradar_base_url=os.getenv("BBRADAR_BASE_URL", "https://bbradar.io").rstrip("/"),
-            vigilseek_base_url=os.getenv("VIGILSEEK_BASE_URL", "https://new-api.vigilseek.com").rstrip("/"),
+            vigilseek_base_url=os.getenv("VIGILSEEK_BASE_URL", "https://www.vigilseek.com/bug-bounty").rstrip("/"),
             vigilseek_enabled=_to_bool(os.getenv("VIGILSEEK_ENABLED"), True),
-            track_platforms=_split_csv(os.getenv("TRACK_PLATFORMS", "HackenProof")),
+            track_platforms=_split_csv(os.getenv("TRACK_PLATFORMS", "")),
             track_scope_keywords=[word.casefold() for word in _split_csv(os.getenv("TRACK_SCOPE_KEYWORDS", ""))],
             bbradar_interval_minutes=max(1, _to_int(os.getenv("BBRADAR_INTERVAL_MINUTES"), 30)),
             github_interval_minutes=max(1, _to_int(os.getenv("GITHUB_INTERVAL_MINUTES"), 60)),
@@ -139,6 +140,7 @@ class Settings:
             github_oauth_scope=os.getenv("GITHUB_OAUTH_SCOPE", "read:user user:email").strip(),
             bootstrap_admin_username=os.getenv("BOOTSTRAP_ADMIN_USERNAME", "owner").strip() or "owner",
             bootstrap_admin_api_key=(os.getenv("BOOTSTRAP_ADMIN_API_KEY") or "").strip() or None,
+            new_program_alert_max_age_days=max(0, _to_int(os.getenv("NEW_PROGRAM_ALERT_MAX_AGE_DAYS"), 30)),
         )
 
     @property

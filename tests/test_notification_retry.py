@@ -107,9 +107,26 @@ class NotificationRetryTest(unittest.TestCase):
         self.github_messages.append(text)
         return True
 
-    def test_retry_pending_notifications_replays_program_and_github_updates(self) -> None:
+    def test_retry_pending_notifications_replays_new_program_program_and_github_updates(self) -> None:
         seed_program(self.db, external_id="HackenProof:walrus", platform="HackenProof", name="Walrus")
 
+        new_program_event_id = self.db.insert_event(
+            event_type="new_program",
+            title="New program: Walrus (HackenProof)",
+            details={
+                "program_external_id": "HackenProof:walrus",
+                "platform": "HackenProof",
+                "name": "Walrus",
+                "link": "https://example.invalid/walrus",
+                "date_launched": "2026-03-01T00:00:00+00:00",
+                "reward": "$1,000 - $50,000",
+                "alert_suppressed": False,
+                "alert_suppressed_reason": "",
+            },
+            created_at="2026-03-01T00:30:00+00:00",
+            program_external_id="HackenProof:walrus",
+            notified=False,
+        )
         program_event_id = self.db.insert_event(
             event_type="program_updated",
             title="Program updated: Walrus (HackenProof)",
@@ -149,13 +166,15 @@ class NotificationRetryTest(unittest.TestCase):
         summary = self.service.retry_pending_notifications(trigger="test")
 
         self.assertEqual(summary["status"], "ok")
-        self.assertEqual(summary["attempted"], 2)
-        self.assertEqual(summary["sent"], 2)
+        self.assertEqual(summary["attempted"], 3)
+        self.assertEqual(summary["sent"], 3)
+        self.assertTrue(any("[NEW PROGRAM]" in item for item in self.default_messages))
         self.assertTrue(any("[PROGRAM UPDATED]" in item for item in self.default_messages))
         self.assertFalse(any("[GITHUB UPDATED]" in item for item in self.default_messages))
         self.assertTrue(any("[GITHUB UPDATED]" in item for item in self.github_messages))
 
         events = {item["id"]: item for item in self.db.list_events(limit=10)}
+        self.assertEqual(events[new_program_event_id]["notified"], 1)
         self.assertEqual(events[program_event_id]["notified"], 1)
         self.assertEqual(events[github_event_id]["notified"], 1)
 
@@ -176,6 +195,38 @@ class NotificationRetryTest(unittest.TestCase):
             },
             created_at="2026-03-01T01:00:00+00:00",
             program_external_id="HackenProof:quiet",
+            notified=False,
+        )
+
+        summary = self.service.retry_pending_notifications(trigger="test")
+
+        self.assertEqual(summary["attempted"], 0)
+        self.assertEqual(summary["sent"], 0)
+        self.assertEqual(summary["skipped"], 1)
+        self.assertEqual(self.default_messages, [])
+        self.assertEqual(self.github_messages, [])
+
+        events = {item["id"]: item for item in self.db.list_events(limit=10)}
+        self.assertEqual(events[event_id]["notified"], 0)
+
+    def test_retry_pending_notifications_skips_stale_new_program_backfill(self) -> None:
+        seed_program(self.db, external_id="HackenProof:old", platform="HackenProof", name="Old Program")
+
+        event_id = self.db.insert_event(
+            event_type="new_program",
+            title="New program: Old Program (HackenProof)",
+            details={
+                "program_external_id": "HackenProof:old",
+                "platform": "HackenProof",
+                "name": "Old Program",
+                "link": "https://example.invalid/old",
+                "date_launched": "2025-01-01T00:00:00+00:00",
+                "reward": "$1,000 - $50,000",
+                "alert_suppressed": False,
+                "alert_suppressed_reason": "",
+            },
+            created_at="2026-03-01T00:30:00+00:00",
+            program_external_id="HackenProof:old",
             notified=False,
         )
 

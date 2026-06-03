@@ -291,12 +291,7 @@ def _github_login_success_response(*, user_info: dict[str, Any], return_to: str 
 def github_login(return_to: str | None = Query(default=None)) -> Any:
     if not _github_oauth_ready():
         if settings.github_token:
-            try:
-                user_payload = service.github_client.fetch_authenticated_user()
-            except Exception as exc:
-                raise HTTPException(status_code=502, detail=f"GitHub token login failed: {exc}") from exc
-
-            user_info = _github_user_summary(user_payload, auth_mode="token")
+            user_info = service.get_github_login_user()
             return _github_login_success_response(user_info=user_info, return_to=return_to)
 
         raise HTTPException(
